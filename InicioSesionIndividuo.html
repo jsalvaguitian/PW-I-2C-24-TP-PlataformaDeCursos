@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesion | Unlamy</title>
+</head>
+<body>
+    <header>
+        <img 
+        src="./assets/UdemyLogo.png"
+        width="91"
+        alt="Logo udemy"
+        />
+        <h1>Unlamy</h1>
+    </header>
+
+    <main>
+        <section>
+            <form action="php/enviar.php" method="get" 
+            enctype="multipart/form-data" autocomplete="off" novalidate>
+                <label for="email">Correo electronico: </label>
+                <input type=email name="email" id="email"size=30>
+                
+            </form>
+
+            <form action="php/enviar.php" method="get"
+            enctype="multipart/form-data" autocomplete="off" novalidate>
+                <label for="contrasenia">Contraseña: </label>
+                <input type=password name="contrasenia" id="contrasenia"size=30>
+            </form>
+            
+            <form action="php/enviar.php" method="get"
+            enctype="multipart/form-data" autocomplete="off" novalidate>
+                <input type="submit" name="envioDatosInicioSesion" id="envioDatosInicioSesion" value="iniciar sesion" >
+            </form>
+
+
+        </section>
+    </main>
+
+
+</body>
+</html>
