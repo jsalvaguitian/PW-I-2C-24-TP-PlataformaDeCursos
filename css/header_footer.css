@@ -10,21 +10,121 @@
 .header__principal{
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #b6b6b6;
+    justify-content: space-evenly;
 }
+.header__principal a{
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
 .header__principal-buscador{
-    height: 20px;
-    width: 500px;
-    padding:10px;
+    height: 1.3rem;
+    width: 40%;
     display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 0px;
     border: 1px solid #000;
     border-radius: 50px;
+    margin: 0rem 1rem;
+    background-color: #F7F9FA;
+}
+.header__principal-buscador button{
+    border-radius: 50% 0% 0% 50%;
+    height: 2.8rem;
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+}
+
+.header__principal-buscador input{
+    height: 1.5em;
+    width: 100%;
+    margin-right: 0.6rem;
+    background-color: transparent;
+    border: none;
+
+}
+
+.header__principal-buscador input:focus{
+    outline: none;
+}
+.item-buscador:last-child{
+    order: -1;
 }
 .navbar ul{
     display: flex;
     list-style: none;
 }
+.header__principal-logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size:25px;
+    font-weight: bold;
+}
 
+.header__principal-logo p{
+    padding-right: 4px;
+}
 .header__principal-logo img{
-    width: 200px;
+    width: 50px;
+    padding: 1rem 0rem;
+}
+
+.header__principal-business, .header__principal-carrito, .header__principal-iniciar-sesion{
+    padding: 0.7rem 1rem;
+    color: #000;
+}
+.header__principal-business:hover, .header__principal-carrito:hover{
+    color: #048d68;
+    font-weight: 400;
+}
+.header__principal-iniciar-sesion, .header__principal-registrate{
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.header__principal-registrate{
+    background-color: #000;
+    padding: 0.7rem 1rem;
+    color: #fff
+}
+
+.header__principal-iniciar-sesion:hover{
+    background-color: #f0f0f0;
+}
+
+.header__principal-registrate:hover{
+    background-color: #494949;
+}
+
+.header__principal-carrito{
+    position: relative;
+}
+.texto-carrito{
+    position: absolute;
+    right: 0;
+    top: -1px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #01A679;
+    height: 22px;
+    width: 22px;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 22px;/*para centrarlo*/
+    border-radius: 50%;
+}
+.navbar__menu{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 4px 2px -0.5px rgba(184, 184, 184, 0.5); 
+}
+.navbar__menu-items{
+    list-style: none;
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 100%;
 }
