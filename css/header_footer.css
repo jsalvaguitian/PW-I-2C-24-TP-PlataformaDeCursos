@@ -13,7 +13,7 @@
     border-bottom: 1px solid #b6b6b6;
     justify-content: space-evenly;
 }
-.header__principal a, .navbar__menu-items a{
+.header__principal a, .navbar__menu-item a{
     font-size: 0.9rem;
     text-decoration: none;
 }
@@ -52,7 +52,7 @@
 .item-buscador:last-child{
     order: -1;
 }
-.navbar ul{
+.navbar > ul{
     display: flex;
     list-style: none;
 }
@@ -77,7 +77,7 @@
     padding: 0.7rem 1rem;
     color: #000;
 }
-.header__principal-business:hover, .header__principal-carrito:hover{
+.header__principal-business:hover, .header__principal-carrito:hover, .navbar__menu-item > a:hover, .menu-desplegable li a:hover{
     color: #048d68;
     font-weight: 400;
 }
@@ -122,14 +122,53 @@
     justify-content: space-around;
     box-shadow: 0px 4px 2px -0.5px rgba(184, 184, 184, 0.5); 
 }
-.navbar__menu-items{
+.navbar__menu-item{
     list-style: none;
     text-align: center;
     width: 100%;
 }
 
-.navbar__menu-items a{
+.navbar__menu-item a{
     color: black;
     padding: 0.5rem 0;
     display: block; 
 }
+
+
+.menu-desplegable{
+    position: absolute;
+    display: none;
+    border: 1px solid #b6b6b6;
+    background-color: #fff;
+    width: 25%;
+}
+
+
+.navbar__menu li:hover .menu-desplegable{
+    display: block;
+}
+/***************************[FOOTER]**************************************/
+
+.footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2D2F31;
+}
+.footer__iconos-de-redes-sociales a, .footer__columna-titulo{
+    text-decoration: none;
+    color:#ffffff ;
+}
+
+.footer__columna-uno p, .footer__columna-dos li a, .footer__columna-tres li a{
+    text-decoration: none;
+    color:#ffffff ;
+
+}
+
+.footer__columna-dos ul, .footer__columna-tres ul{
+    list-style: none;
+}
+
+

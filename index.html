@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UnLamy-cursos</title>
-    <link rel="stylesheet" href="/css/header_footer.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="shortcut icon" href="/assets/logo_unlam.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/header_footer.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./assets/logo_unlam.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c3af30a602.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body><!--Queda unlamy o udemy? decision entre equipo-->
+<body>
     <header class="header">
         <div class="header__principal">
-            <a href="/index.html" class="header__principal-logo">
+            <a href="./index.html" class="header__principal-logo">
                 <div class="header__principal-logo">
-                    <img src="/assets/logo_unlam.png" alt="logo unlam">
+                    <img src="./assets/logo_unlam.png" alt="logo unlam">
                     <p>Unlamy</p>
                 </div>
             </a>
@@ -31,37 +32,82 @@
                 </button>
             </form>
 
-            <a href="/pages/registrar_empresa.html" class="header__principal-business">Unlamy Business</a>
-            <a href="/pages/carrito.html" class="header__principal-carrito">
+            <a href="./pages/registrar_empresa.html" class="header__principal-business">Unlamy Business</a>
+            <a href="./pages/carrito.html" class="header__principal-carrito">
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>
                 <span class="texto-carrito">2</span>
             </a>
-            <a href="/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
+            <a href="./pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
             </a>
-            <a href="/pages/registrar_persona.html" class="header__principal-registrate">
+            <a href="./pages/registrar_persona.html" class="header__principal-registrate">
                 Registrate
             </a>
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
-                <li class="navbar__menu-items"><a href="/pages/categorias.html">Categorias</a></li>
-                <li class="navbar__menu-items"><a href="/pages/gift_cards.html">Gift Cards</a></li>
-                <li class="navbar__menu-items"><a href="/pages/calendario_lanzamiento.html">Lanzamiento</a></li>
-                <li class="navbar__menu-items"> <a href="/pages/contacto.html">Contacto</a></li>
+                <li class="navbar__menu-item">
+                    <a href="./pages/categorias.html">Categorias</a>
+                    <ul class="menu-desplegable">
+                        <li><a href="./pages/lista_de_cursos.html">Analisis de datos</a></li>
+                        <li><a href="./pages/lista_de_cursos.html">Ciberseguridad</a></li>
+                        <li><a href="./pages/lista_de_cursos.html">Desarrollo web</a></li>
+                        <li><a href="./pages/lista_de_cursos.html">Inteligencia artificial</a></li>
+                        <li><a href="./pages/lista_de_cursos.html">Testing QA</a></li>
+                    </ul>
+                </li>
+                <li class="navbar__menu-item"><a href="./pages/gift_cards.html">Gift Cards</a></li>
+                <li class="navbar__menu-item"><a href="./pages/calendario_lanzamiento.html">Lanzamiento</a></li>
+                <li class="navbar__menu-item"> <a href="./pages/contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
 
-        <h1>proyecto-cero-Unlamy-cursos</h1>
-        <h2>homero simpson</h2>
-        <h2>barto simpson</h2>
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="footer__columna-uno">
+            <p class="footer__columna-titulo">Equipo Fourteen:</p>
+            <p class="columna-uno-integrante">Alan Aspi</p>
+            <p class="columna-uno-integrante">Daiana Quispe</p>
+            <p class="columna-uno-integrante">Leonel Valenzuela</p>
+            <p class="columna-uno-integrante">Jesica Salva</pi>
+        </div>
+        <div class="footer__columna-dos">
+            <p class="footer__columna-titulo">Categorias</p>
+            <ul>
+                <li><a href="./pages/lista_de_cursos.html">Analisis de datos</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Ciberseguridad</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Desarrollo web</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Inteligencia artificial</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Testing QA</a></li>
+            </ul>
+        </div>
+        <div class="footer__columna-tres">
+            <p class="footer__columna-titulo">Secciones</p>
+            <ul>
+                <li><a href="./pages/registrar_empresa.html">Unlamy Business</a></li>
+                <li><a href="./pages/gift_cards.html">Gift Cards</a></li>
+                <li><a href="./pages/calendario_lanzamiento.html">Lanzamiento</a></li>
+                <li><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer__columna-cuatro">
+            <p class="footer__columna-titulo">Conecta</p>
+            <p class="footer__iconos-de-redes-sociales">
+                <a href="https://www.facebook.com/UnlamOficial/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/unlamoficial/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/UnlamOficial/" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </p>
+        </div>
     </footer>
 </body>
 
