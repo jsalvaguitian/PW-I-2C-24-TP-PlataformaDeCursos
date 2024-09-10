@@ -24,13 +24,24 @@
             </a>
 
             <form class="header__principal-buscador">
-                <input class="item-buscador input" type="text" name="" id="" placeholder="Buscar algun curso">
+                <label for="busqueda-cursos" class="label-oculto">Buscar:</label>
+                <input class="item-buscador input" type="text" name="" id="busqueda-cursos" list="opciones"
+                    placeholder="Buscar algun curso">
                 <button class="item-buscador boton" type="submit">
                     <span class="material-symbols-outlined">
                         search
                     </span>
                 </button>
             </form>
+            <datalist id="opciones">
+                <option value="Aprende Javascript, HTML5 y CSS3"></option>
+                <option value="Curso Power BI"></option>
+                <option value="Curso Python: Manejo de datos con Pandas"></option>
+                <option value="Curso completo de Hacking Ético"></option>
+                <option value="Aprende Angular"></option>
+                <option value="Test Driven Development (TDD) con Jest"></option>
+
+            </datalist>
 
             <a href="./pages/registrar_empresa.html" class="header__principal-business">Unlamy Business</a>
             <a href="./pages/carrito.html" class="header__principal-carrito">
@@ -49,7 +60,7 @@
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__menu-item">
-                    <a href="./pages/categorias.html">Categorias</a>
+                    <a href="#">Categorias</a>
                     <ul class="menu-desplegable">
                         <li><a href="./pages/lista_de_cursos.html">Analisis de datos</a></li>
                         <li><a href="./pages/lista_de_cursos.html">Ciberseguridad</a></li>
@@ -65,18 +76,36 @@
         </nav>
     </header>
     <main>
+        <section class="contenedor_carrusel_principal">
+            <div class="contenedor_carrusel_principal-carrusel">
+                <div class="slider-seccion">
+                    <img src="./assets/slider1.jpg" alt="" class="slider-img">
+                </div>
+            </div>
+            <div class="slider-btn btn-slider-right" id="btn-right">
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+            </div>
+
+            <div class="slider-btn btn-slider-left" id="btn-left">
+                <span class="material-symbols-outlined">
+                    chevron_left
+                    </span>
+            </div>
+        </section>
 
     </main>
     <footer class="footer">
         <div class="footer__columna-uno">
-            <p class="footer__columna-titulo">Equipo Fourteen:</p>
-            <p class="columna-uno-integrante">Alan Aspi</p>
-            <p class="columna-uno-integrante">Daiana Quispe</p>
-            <p class="columna-uno-integrante">Leonel Valenzuela</p>
-            <p class="columna-uno-integrante">Jesica Salva</pi>
+            <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
+            <p class="columna-uno-integrante">Alan Aspi - DNI </p>
+            <p class="columna-uno-integrante">Daiana Quispe - DNI 41204857</p>
+            <p class="columna-uno-integrante">Jesica Salva - DNI 39907003</p>
+            <p class="columna-uno-integrante">Leonel Valenzuela - DNI </p>
         </div>
         <div class="footer__columna-dos">
-            <p class="footer__columna-titulo">Categorias</p>
+            <p class="footer__columna-titulo">CATEGORIAS</p>
             <ul>
                 <li><a href="./pages/lista_de_cursos.html">Analisis de datos</a></li>
                 <li><a href="./pages/lista_de_cursos.html">Ciberseguridad</a></li>
@@ -86,7 +115,7 @@
             </ul>
         </div>
         <div class="footer__columna-tres">
-            <p class="footer__columna-titulo">Secciones</p>
+            <p class="footer__columna-titulo">SECCIONES</p>
             <ul>
                 <li><a href="./pages/registrar_empresa.html">Unlamy Business</a></li>
                 <li><a href="./pages/gift_cards.html">Gift Cards</a></li>
@@ -95,7 +124,7 @@
             </ul>
         </div>
         <div class="footer__columna-cuatro">
-            <p class="footer__columna-titulo">Conecta</p>
+            <p class="footer__columna-titulo">CONECTA</p>
             <p class="footer__iconos-de-redes-sociales">
                 <a href="https://www.facebook.com/UnlamOficial/" target="_blank">
                     <i class="fa-brands fa-facebook"></i>
