@@ -76,26 +76,444 @@
         </nav>
     </header>
     <main>
+        <!--CARRUSEL-->
         <section class="contenedor_carrusel_principal">
             <div class="contenedor_carrusel_principal-carrusel">
                 <div class="slider-seccion">
-                    <img src="./assets/slider1.jpg" alt="" class="slider-img">
+                    <img src="./assets/1-slider.jpg" alt="" class="slider-img">
                 </div>
             </div>
-            <div class="slider-btn btn-slider-right" id="btn-right">
+            <button class="slider-btn btn-slider-right">
                 <span class="material-symbols-outlined">
                     chevron_right
                 </span>
-            </div>
+            </button>
 
-            <div class="slider-btn btn-slider-left" id="btn-left">
+            <button class="slider-btn btn-slider-left">
                 <span class="material-symbols-outlined">
                     chevron_left
-                    </span>
-            </div>
+                </span>
+            </button>
         </section>
 
+        <!--PASOS PARA INSCRIBIRSE-->
+        <section class="section">
+            <h2 class="titulo">Pasos para inscribirte</h2>
+            <ul class="lista_pasos">
+                <li class="lista_pasos-item">
+                    <div class="contenedor-imagen">
+                        <img src="./assets/1-registrate.svg" alt="" class="paso_item-imagen">
+                    </div>
+                    <div class="paso_item-descripcion">
+                        <h4>1 - Crea tu cuenta</h4>
+                        <p>
+                            Si no tienes una cuenta, haz clic en el botón
+                            "Registrate" y sigue las instrucciones para crear
+                            una cuenta.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="lista_pasos-item">
+                    <div class="contenedor-imagen">
+                        <img src="./assets/2-iniciar-sesion.svg" alt="" class="paso_item-imagen">
+                    </div>
+                    <div class="paso_item-descripcion">
+                        <h4>2 - Inicia sesión</h4>
+                        <p>
+                            Si ya tienes una cuenta, haz clic en "Iniciar sesión" e ingresa tus credenciales.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="lista_pasos-item">
+                    <div class="contenedor-imagen">
+                        <img src="./assets/3-busqueda.svg" alt="" class="paso_item-imagen">
+                    </div>
+                    <div class="paso_item-descripcion">
+                        <h4>3 - Encuentra tu curso ideal</h4>
+                        <ul>
+                            <li>Navega por las categorías o usa la barra de búsqueda para encontrar el curso que te
+                                interesa.</li>
+                            <li>Haz clic en el curso para acceder a la página de detalles del curso.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="lista_pasos-item">
+                    <div class="contenedor-imagen">
+                        <img src="./assets/4-compra.svg" alt="" class="paso_item-imagen">
+                    </div>
+                    <div class="paso_item-descripcion">
+                        <h4>4 - Realiza la Inscripción</h4>
+                        <ul>
+                            <li>En la página del curso, haz clic en el boton "Inscribirse" o agrega el curso a tu
+                                carrito </li>
+                            <li>Luego, completa el pago.</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="lista_pasos-item">
+                    <div class="contenedor-imagen contenedor-imagen-especial">
+                        <img src="./assets/5-curso.svg" alt="" class="paso_item-imagen">
+                    </div>
+                    <div class="paso_item-descripcion">
+                        <h4>5 - Accede a los contenidos del curso</h4>
+                        <p>Una vez inscrito, podrás acceder a las lecciones y/o materiales del curso en la sección "Mi
+                            aprendizaje" o directamente en la página del curso.</p>
+                    </div>
+                </li>
+
+                <li class="lista_pasos-item">
+                    <div class="contenedor-imagen contenedor-imagen-especial">
+                        <img src="./assets/6-certificacion.svg" alt="" class="paso_item-imagen">
+                    </div>
+                    <div class="paso_item-descripcion">
+                        <h4>6 - ¡Culmina con éxito tu trayectoria académica!</h4>
+                        <p>Luego de finalizar tu curso, podrás acceder a tu certificado.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!--DESTACADOS-->
+        <aside class="aside">
+            <h2 class="titulo">Cursos destacados</h2>
+
+            <div class="cursos_destacados">
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-1-Microsoft-Power-BI.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Online</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-2-html-js-css.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Online</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-3-pandas.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Presencial</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-4-angular.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Online</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-5-hacking.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Online</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-6-java.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Presencial</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-7-docker.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Online</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="./pages/detalles_de_un_curso.html">
+                    <article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="./assets/curso-8-jest.jpg" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">Online</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">Curso Power BI- Analisis de Datos y Business Intelligence</h3>
+                            <p class="card_curso-mentor">Javier Gomez</p>
+                            <div class="card_curso-puntaje">
+                                <p>4,7 <span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span><span class="material-symbols-outlined">
+                                        star_rate
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="card_curso-alumnos">
+                                <p><span class="material-symbols-outlined">person</span> (210.900)</p>
+                            </div>
+                            <p class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span> 152 hrs.
+                            </p>
+                            <p class="card_curso-precio">$25000</p>
+                            <button class="card_curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                Comprar
+                            </button>
+                        </div>
+                    </article>
+                </a>
+
+            </div>
+        </aside>
+
+        <!--CARRUSEL DE METODOS DE PAGOS-->
+        <aside class="carrusel_metodos_de_pagos">
+            <h2 class="titulo">Métodos de pago</h2>
+            <div class="contenedor-metodos-de-pago" id="contenedor-metodos-de-pago">
+                <div class="carrusel-pagos" id="carrousel-pagos">
+                    <img class="metodo" src="./assets/mastercard-logo.png" alt="">
+                    <img class="metodo" src="./assets/mercado-pago-logo.jpg" alt="">
+                    <img class="metodo" src="./assets/visa-debito.png" alt="">
+                </div>
+                <button class="">
+                    <span class="material-symbols-outlined">
+                        chevron_right
+                    </span>
+                </button>
+    
+                <button class="">
+                    <span class="material-symbols-outlined">
+                        chevron_left
+                    </span>
+                </button>
+            </div>
+        </aside>
     </main>
+
     <footer class="footer">
         <div class="footer__columna-uno">
             <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
