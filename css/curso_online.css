@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.course-details {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.course-details h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+}
+
+aside.video-list {
+    flex: 1;
+    padding-left: 30px;
+    border-left: 2px solid #ddd;
+}
+
+aside.video-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+aside.video-list ul {
+    list-style-type: none;
+    padding: .8rem, 1.6rem;
+}
+
+aside.video-list li {
+    margin-bottom: 10px;
+    
+}
+
+aside.video-list a {
+    text-decoration: none;
+    color: #01060b;
+    font-size: 1.1em;
+}
+
+aside.video-list a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+/* Agrega estos estilos a tu archivo CSS */
+
+.video-embed {
+    margin-top: 20px;
+}
+
+.video-embed h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* 
+.video-embed iframe {
+    width: 100%;
+    height: 350px; 
+    border: none;
+    border-radius: 8px;
+    padding: auto;
+    margin-bottom: 10px;}*/
