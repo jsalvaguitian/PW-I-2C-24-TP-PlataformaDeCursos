@@ -1,27 +1,31 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-.contenedor_carrusel_principal{
+.contenedor_carrusel_principal {
     width: 100%;
     height: 25em;
     background-color: aqua;
     position: relative;
     z-index: 1;
 }
-.contenedor_carrusel_principal-carrusel{
+
+.contenedor_carrusel_principal-carrusel {
     height: 100%;
 }
-.slider-seccion{
+
+.slider-seccion {
     height: 100%;
 }
-.slider-img{
+
+.slider-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.slider-btn{
+
+.slider-btn {
     position: absolute;
     bottom: 50%;
     line-height: 50%;
@@ -33,36 +37,103 @@
     color: white;
 }
 
-.slider-btn span{
+.slider-btn span {
     text-align: center;
     font-weight: bold;
 }
 
-.slider-btn:hover{
+.slider-btn:hover {
     background-color: #4b4d4e;
 }
 
-.btn-slider-right{
+.btn-slider-right {
     right: 1rem;
 }
 
-.btn-slider-left{
+.btn-slider-left {
     left: 1rem;
 }
 
 /******** Listado de pasos *******/
-.section_pasos{
-    border: 1px solid aqua;
+.section{
     width: 100%;
 }
 
-.lista_pasos{
+.titulo{
+    text-align: center;
+    padding: 2rem 0 0.5rem 0;
+}
+.lista_pasos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:center;
+    align-items: center;
+    list-style: none;
+}
+
+.paso_item-imagen {
+    width: 280px;
+}
+
+.lista_pasos-item {
+    width: 300px;
+    height: 450px;
+    margin: 15px;
+    padding: 2px 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-sizing: none;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
-.paso_item-imagen{
+
+.paso_item-descripcion p,
+.paso_item-descripcion li {
+    /*text-indent: 10px;*/
+    list-style: none;
+
+}
+
+.contenedor-imagen {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contenedor-imagen-especial {
+    height: 284px;
+    position: relative;
+}
+
+.contenedor-imagen-especial img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.cursos_destacados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+
+.cursos_destacados-card{
     border: 1px solid red;
-    width: 30%;
+    width: 300px;
+    height: 450px;
+    margin: 15px;
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-sizing: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-imagen{
+    width: 100%;
 }
