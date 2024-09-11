@@ -173,6 +173,7 @@
     border: 1px solid #b6b6b6;
     background-color: #fff;
     width: 25%;
+    z-index: 10;/*para que el menu no se tape con alguna imagen*/
 }
 
 
@@ -216,7 +217,6 @@
 }
 
 .columna-uno-integrante {
-    text-indent: 1rem;
     color: #c3c3c3;
     padding: 0.3rem;
 }
