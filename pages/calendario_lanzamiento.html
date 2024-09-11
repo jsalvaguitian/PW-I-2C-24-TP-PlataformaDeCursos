@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="./../css/header_footer.css">
+    <link rel="shortcut icon" href="./../assets/logo_unlam.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c3af30a602.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./../css/calendario.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__principal">
+            <a href="./index.html" class="header__principal-logo">
+                <div class="header__principal-logo">
+                    <img src="./../assets/logo_unlam.png" alt="logo unlam">
+                    <p>Unlamy</p>
+                </div>
+            </a>
+
+            <form class="header__principal-buscador">
+                <label for="busqueda-cursos" class="label-oculto">Buscar:</label>
+                <input class="item-buscador input" type="text" name="" id="busqueda-cursos" list="opciones"
+                    placeholder="Buscar algun curso">
+                <button class="item-buscador boton" type="submit">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+            </form>
+            <datalist id="opciones">
+                <option value="Aprende Javascript, HTML5 y CSS3"></option>
+                <option value="Curso Power BI"></option>
+                <option value="Curso Python: Manejo de datos con Pandas"></option>
+                <option value="Curso completo de Hacking Ético"></option>
+                <option value="Aprende Angular"></option>
+                <option value="Test Driven Development (TDD) con Jest"></option>
+
+            </datalist>
+
+            <a href="./pages/registrar_empresa.html" class="header__principal-business">Unlamy Business</a>
+            <a href="./pages/carrito.html" class="header__principal-carrito">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+                <span class="texto-carrito">2</span>
+            </a>
+            <!--<a href="./pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
+                Iniciar sesión
+            </a>
+            <a href="./pages/registrar_persona.html" class="header__principal-registrate">
+                Registrate
+            </a>-->
+        </div>
+    </header>
+    <section>
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="prev">←</button>
+                <h2>Septiembre 2024</h2>
+                <button class="next">→</button>
+            </div>
+            <div class="calendar-weekdays">
+                <div class="weekday">Lun</div>
+                <div class="weekday">Mar</div>
+                <div class="weekday">Mié</div>
+                <div class="weekday">Jue</div>
+                <div class="weekday">Vie</div>
+                <div class="weekday">Sáb</div>
+                <div class="weekday">Dom</div>
+            </div>
+            <div class="calendar-grid">
+                <div class="day">
+                    1
+                    <div class="course">Curso A</div>
+                    <div class="course">Curso B</div>
+                </div>
+                <div class="day">
+                    2
+                    <div class="course">Curso A</div>
+                </div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+    
+                <!-- Segunda semana -->
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day current-day">
+                    <div class="day-number">10</div>
+                </div>
+                <div class="day">
+                    11
+                    <div class="course">Curso A</div>
+                </div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+    
+                <!-- Tercera semana -->
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">
+                    18
+                    <div class="course">Curso A</div>
+                </div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+    
+                <!-- Cuarta semana -->
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">
+                    24
+                    <div class="course">Curso A</div>
+                </div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+
+                <div class="day">29</div>
+                <div class="day">30</div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__columna-uno">
+            <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
+            <p class="columna-uno-integrante">Alan Aspi - DNI 40243824</p>
+            <p class="columna-uno-integrante">Daiana Quispe - DNI 41204857</p>
+            <p class="columna-uno-integrante">Jesica Salva - DNI 39907003</p>
+            <p class="columna-uno-integrante">Leonel Valenzuela - DNI </p>
+        </div>
+        <div class="footer__columna-dos">
+            <p class="footer__columna-titulo">CATEGORIAS</p>
+            <ul>
+                <li><a href="./pages/lista_de_cursos.html">Analisis de datos</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Ciberseguridad</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Desarrollo web</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Inteligencia artificial</a></li>
+                <li><a href="./pages/lista_de_cursos.html">Testing QA</a></li>
+            </ul>
+        </div>
+        <div class="footer__columna-tres">
+            <p class="footer__columna-titulo">SECCIONES</p>
+            <ul>
+                <li><a href="./pages/registrar_empresa.html">Unlamy Business</a></li>
+                <li><a href="./pages/gift_cards.html">Gift Cards</a></li>
+                <li><a href="./pages/calendario_lanzamiento.html">Lanzamiento</a></li>
+                <li><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer__columna-cuatro">
+            <p class="footer__columna-titulo">CONECTA</p>
+            <p class="footer__iconos-de-redes-sociales">
+                <a href="https://www.facebook.com/UnlamOficial/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/unlamoficial/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/UnlamOficial/" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

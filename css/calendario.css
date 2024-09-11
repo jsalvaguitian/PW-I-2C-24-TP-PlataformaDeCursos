@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body section{
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calendar-container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.calendar-header button {
+    background-color: #01A679;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calendar-header button:hover {
+    background-color: #4DD3A8;
+}
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.weekday {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    position: relative;
+    height: 120px;
+    cursor: default;
+}
+
+.day.event {
+    background-color: #01A679;
+    color: white;
+    font-weight: bold;
+}
+
+.course {
+    font-size: 0.8em;
+    background-color: #FFB74D;
+    color: #333;
+    padding: 2px 3px;
+    border-radius: 5px;
+    /*position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);*/
+    margin-bottom: 3px;
+}
+
+.course:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+/*A parti de aca es para el dia actual*/
+.day-number {
+    position: relative;
+    z-index: 1; /* Asegura que el número esté encima del círculo */
+}
+
+.current-day {
+    background-color: #fafafa; /* Fondo de la celda si se desea */
+    border: 1px solid #ddd;
+}
+
+.current-day .day-number {
+    position: relative;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.current-day .day-number::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Ajusta el tamaño del círculo */
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff; /* Color azul del círculo */
+    z-index: -1; /* Para que el círculo quede detrás del número */
+}
+
