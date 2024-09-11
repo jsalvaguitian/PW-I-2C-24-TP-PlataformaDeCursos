@@ -1,0 +1,115 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+header, footer {
+    background-color: #01A679;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.payment-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.payment-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-row .input-group {
+    width: 48%;
+}
+
+.coupon-section {
+    margin-top: 30px;
+}
+
+.payment-summary {
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.payment-summary p {
+    margin-bottom: 10px;
+}
+
+.payment-summary p strong {
+    font-size: 1.2em;
+}
+
+.submit-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.submit-btn button {
+    background-color: #01A679;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.submit-btn button:hover {
+    background-color: #018f63;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row .input-group {
+        width: 100%;
+    }
+}
