@@ -6,7 +6,6 @@
 .contenedor_carrusel_principal {
     width: 100%;
     height: 25em;
-    background-color: aqua;
     position: relative;
     z-index: 1;
 }
@@ -136,4 +135,46 @@
 
 .card-imagen{
     width: 100%;
+}
+
+.cursos_destacados a{
+    text-decoration: none;
+}
+
+.card_curso-titulo{
+    color: #000000;
+}
+
+.carrusel_metodos_de_pagos{
+    height: 15rem;
+    padding: 0 0 1em 0;
+}
+
+.carrusel-pagos{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.metodo{
+    height: 9rem;
+}
+.contenedor-metodos-de-pago{
+    position: relative;
+}   
+
+.slider-metodos-pagos-btn {
+    position: absolute;
+    bottom: 40%;
+    line-height: 50%;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: #2D2F31;
+    color: white;
+}
+
+.slider-metodos-pagos-btn:hover{
+    background-color: #4b4d4e;
 }

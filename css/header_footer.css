@@ -93,14 +93,14 @@
     padding: 1rem 0rem;
 }
 
-.header__principal-business,
+
 .header__principal-carrito,
 .header__principal-iniciar-sesion {
     padding: 0.7rem 1rem;
     color: #000;
 }
 
-.header__principal-business:hover,
+
 .header__principal-carrito:hover,
 .navbar__menu-item>a:hover,
 .menu-desplegable li a:hover {
