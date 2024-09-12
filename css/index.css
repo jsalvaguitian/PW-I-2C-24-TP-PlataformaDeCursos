@@ -54,18 +54,19 @@
 }
 
 /******** Listado de pasos *******/
-.section{
+.section {
     width: 100%;
 }
 
-.titulo{
+.titulo {
     text-align: center;
     padding: 2rem 0 0.5rem 0;
 }
+
 .lista_pasos {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     list-style: none;
 }
@@ -100,6 +101,7 @@
 }
 
 .contenedor-imagen-especial {
+    /*Es especial porque tiene imagenes de un alto diferente que las otras*/
     height: 284px;
     position: relative;
 }
@@ -112,17 +114,17 @@
 
 }
 
-.cursos_destacados{
+/**CURSOS DESTACADOS*/
+.cursos_destacados {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 
-.cursos_destacados-card{
-    border: 1px solid red;
+.cursos_destacados-card {
     width: 300px;
-    height: 450px;
+    height: 23em;
     margin: 15px;
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -133,35 +135,138 @@
     align-items: center;
 }
 
-.card-imagen{
+.card-imagen {
     width: 100%;
 }
 
-.cursos_destacados a{
+.cursos_destacados a {
     text-decoration: none;
 }
 
-.card_curso-titulo{
+.card_contenedor-descripcion {
+    padding: 0.5em;
     color: #000000;
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "mentor mentor mentor"
+        "puntaje puntaje usuario"
+        "hora hora precio"
+        "carrito carrito carrito";
+
 }
 
-.carrusel_metodos_de_pagos{
+.card_curso-titulo {
+    grid-area: titulo;
+}
+
+.card_curso-mentor {
+    grid-area: mentor;
+    margin: 0.3em;
+}
+
+.card_curso-puntaje {
+    grid-area: puntaje;
+}
+
+.card_curso-alumnos {
+    grid-area: usuario;
+    text-align: end;
+}
+
+.card_curso-hora {
+    grid-area: hora;
+    height: 1.45em;
+    line-height: 2em;
+    display: flex;
+    padding-top: 0.2em;
+    margin-top: 0.2em;
+}
+
+.card_curso-precio {
+    grid-area: precio;
+    text-align: end;
+    font-size: 1.5em;
+    margin-top: 0.2em;
+
+}
+
+.card_curso-carrito {
+    grid-area: carrito;
+    margin-top: 0.5em;
+    padding: 0.4em;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
+    cursor: pointer;
+    border: 1px solid #40A77A;
+
+}
+
+.card_curso-carrito:active {
+    background-image: linear-gradient(270deg, #a1fcb5 0, #72d69b 16.67%, #6ed1a4 33.33%, #5db99b 50%, #4ca38f 66.67%, #378579 83.33%, #43a098 100%);
+    transform: translateY(2px);
+    /* Efecto de "hundimiento" */
+    box-shadow: 0 2px #245551;
+}
+
+.card_curso-carrito:hover {
+    background-image: linear-gradient(270deg, #a1fcb5 0, #72d69b 16.67%, #6ed1a4 33.33%, #5db99b 50%, #4ca38f 66.67%, #378579 83.33%, #43a098 100%);
+    /* Efecto de "hundimiento" */
+    box-shadow: 0 2px #245551;
+}
+
+.card_contenedor-imagen {
+    position: relative;
+}
+
+.modalidad-curso {
+    color: #272727;
+    background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
+    border-radius: 5rem;
+    width: 6.3em;
+    text-align: center;
+    position: absolute;
+    top: 0.2em;
+    margin: 0.5em;
+}
+
+.card_curso-puntaje {
+    color: #B46A27;
+    font-weight: bold;
+}
+
+.card_curso-precio,
+.card_curso-carrito {
+    font-weight: bold;
+}
+
+.cursos_destacados-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
+
+/***Carrusel de metodoso de pagos**/
+.carrusel_metodos_de_pagos {
     height: 15rem;
     padding: 0 0 1em 0;
 }
 
-.carrusel-pagos{
+.carrusel-pagos {
     display: flex;
     justify-content: space-around;
     position: relative;
 }
 
-.metodo{
+.metodo {
     height: 9rem;
 }
-.contenedor-metodos-de-pago{
+
+.contenedor-metodos-de-pago {
     position: relative;
-}   
+}
 
 .slider-metodos-pagos-btn {
     position: absolute;
@@ -175,6 +280,6 @@
     color: white;
 }
 
-.slider-metodos-pagos-btn:hover{
+.slider-metodos-pagos-btn:hover {
     background-color: #4b4d4e;
 }
