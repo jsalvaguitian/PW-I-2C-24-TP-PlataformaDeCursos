@@ -6,7 +6,8 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,7 @@ body {
 
 .Wrapper-User-Login {
     width: 420px;
-    background: purple;
+    background: green;
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;

@@ -6,22 +6,66 @@
     <title>Iniciar sesion | Unlamy</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/InicioSesionIndividuo.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="shortcut icon" href="./assets/logo_unlam.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d3605530f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
-    <header>
-        <!--
-        <div class="titulo">
-            <h1>Unlamy</h1>
+    
+    <header class="header"></header>
+        <div class="header__principal">
+            <a href="../index.html" class="header__principal-logo">
+                <div class="header__principal-logo">
+                    <img src="../assets/logo_unlam.png" alt="logo unlam">
+                    <p>Unlamy</p>
+                </div>
+            </a>
+
+            <form class="header__principal-buscador">
+                <label for="busqueda-cursos" class="label-oculto">Buscar:</label>
+                <input class="item-buscador input" type="text" name="" id="busqueda-cursos" list="opciones"
+                    placeholder="Buscar algun curso">
+                <button class="item-buscador boton" type="submit">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+            </form>
+            <datalist id="opciones">
+                <option value="Aprende Javascript, HTML5 y CSS3"></option>
+                <option value="Curso Power BI"></option>
+                <option value="Curso Python: Manejo de datos con Pandas"></option>
+                <option value="Curso completo de Hacking Ético"></option>
+                <option value="Aprende Angular"></option>
+                <option value="Test Driven Development (TDD) con Jest"></option>
+
+            </datalist>
+            <a href="./carrito.html" class="header__principal-carrito">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+                <span class="texto-carrito">2</span>
+            </a>
+            <a href="./InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
+                Iniciar sesión
+            </a>
+            <a href="./registrar_persona.html" class="header__principal-registrate">
+                Registrate
+            </a>
         </div>
-        -->
+       
     </header>
 
-    <main> <!-- Poner regreso a homepage-->
+
+    <main class="main"> 
         <section class="Wrapper-User-Login">
-            <form action=""> <!-- Modificar form-->
+            <form action="" method="get" autocomplete="off" > 
                 <h1>Iniciar sesión</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Usuario" requiered></input>
+                    <input type="text" placeholder="Usuario" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
@@ -51,21 +95,3 @@
 </body>
 </html>
 
-<!--
-            <form action="php/enviar.php" method="get" 
-            enctype="multipart/form-data" autocomplete="off" novalidate>
-                <label for="email">Correo electronico: </label>
-                <input type=email name="email" id="email"size=30>
-            </form>
-
-            <form action="php/enviar.php" method="get"
-            enctype="multipart/form-data" autocomplete="off" novalidate>
-                <label for="contrasenia">Contraseña: </label>
-                <input type=password name="contrasenia" id="contrasenia"size=30>
-            </form>
-            
-            <form action="php/enviar.php" method="get"
-            enctype="multipart/form-data" autocomplete="off" novalidate>
-                <input type="submit" name="envioDatosInicioSesion" id="envioDatosInicioSesion" value="iniciar sesion" >
-            </form>
--->
