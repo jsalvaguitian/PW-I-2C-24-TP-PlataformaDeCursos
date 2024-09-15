@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: radial-gradient(circle at 73.27% 0.09%, #d7d75d 0, #c7d961 6.25%, #b5d966 12.5%, #a2d76c 18.75%, #8dd271 25%, #77cb76 31.25%, #60c179 37.5%, #48b67b 43.75%, #2ea87b 50%, #0a9a79 56.25%, #008e78 62.5%, #008477 68.75%, #007b76 75%, #007477 81.25%, #006f78 87.5%, #006b7a 93.75%, #00697d 100%);
+    background-repeat: no-repeat;
+    height: 100vh;/*ocupa toda la ventana*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-registrate{
+    background-color:#fff;
+    height: 30em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+}
+.encabezado-registrate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado-registrate h1{
+    margin-bottom: 1.3rem;
+}
+
+.logo-titulo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 6rem;
+    margin: 1em 0;
+    text-decoration: none;
+}
+
+.logo-titulo img{
+    width: 6rem;
+}
+
+.logo-titulo p{
+    color: #000;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.form-element label{/*mantener accesibilidad*/
+    position: absolute;/*le digo que no ocupe espacio y le puedo permitir posicionarse en cualquier lado*/
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0,0,0,0);/*rectangulo de 0 px es la clave para la accesibilidad*/
+    overflow: hidden;/*de yapa lo complementamos para ocultar cualquier cosa que sobresalga del rec de 0px*/
+}
+
+.form-element{
+    margin-bottom: 1rem;
+    width: 15rem;
+}
+
+.form-element input{
+    border: none;
+    border-bottom: 1px solid #808080;
+    outline: none;
+    width: 100%;
+    padding-bottom: 0.5em;
+    font-size: 1em;
+}
+
+.form-element input:focus{
+    border-bottom: 1px solid #000000;
+}
+
+.form-element input:focus::placeholder{
+    color: #000;
+}
+
+.form-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-button button{
+    width: 45%;
+    height: 2.5em;
+    border: none;
+    border-radius: 6px;
+    background-color: #399B77;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.form-button-cancelar a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+/*POPUP*/
+
+.ventana{
+    background-color:#ffffff;
+    width:30em;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    height: 10em;
+  }
+
+
+.modal{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:-250px;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+  }
+  #IrVentanaFlotante:target{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+
+  .ventana-emogic{
+    width: 5rem;
+    margin-right: 0.6rem;
+  }
+
+  .ventana p{
+    display: inline;
+  }
+
+  .mensaje-exito a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #008e78;
+  }
+  .mensaje-exito a:hover{
+    text-decoration: underline;
+    color: #60c179;
+  }
