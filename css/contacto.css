@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%; /* Base de 1em = 16px */
+  }
+  
+  h2 {
+    font-size: 2em; /* Escalado relativo */
+    margin-bottom: 0.5em;
+  }
+  
+  h3 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Contenedor principal para el formulario y el mapa */
+  .contact-map-container {
+    width: 90%; /* Limitar el ancho al 90% del viewport */
+    margin: 0 auto;
+    padding: 2em 0;
+  }
+  
+  /* Contacto (formulario y datos de la empresa) */
+  .contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+  
+  .formulario-contacto, .info-empresa {
+    width: 48%; /* Cada una ocupa el 48% del ancho */
+    padding: 1em;
+    background-color: #f5f5f5;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+  }
+  
+  .info-empresa p{
+    font-size: 1.2em;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.2em; /* Tamaño de fuente basado en em */
+  }
+  
+  form input, form textarea, form button {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    font-size: 1em; /* Em como base */
+  }
+  
+  form input, form textarea {
+    max-width: 100%; /* Asegura que no se extiendan más allá del contenedor */
+  }
+
+  form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.8em;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Mapa */
+  .mapa {
+    width: 100%; /* El mapa ocupa el 100% del contenedor */
+  }
+  
+  .mapa iframe {
+    width: 100%;
+    height: 25em; /* Altura en em */
+    border: 0;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .formulario-contacto, .info-empresa {
+      width: 100%; /* En pantallas pequeñas ocupan el 100% */
+    }
+  
+    form label, form input, form textarea, form button {
+      font-size: 1em;
+    }
+  
+    h2, h3 {
+      font-size: 1.5em; /* Ajuste del tamaño de las cabeceras */
+    }
+  }
+  
