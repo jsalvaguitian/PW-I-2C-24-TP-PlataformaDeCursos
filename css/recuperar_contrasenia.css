@@ -1,0 +1,113 @@
+/* Estilo general */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: radial-gradient(circle at 73.27% 0.09%, #d7d75d 0%, #60c179 50%, #00697d 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-registrate {
+  background-color: #fff;
+  width: 100%;
+  max-width: 25em;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.encabezado-registrate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.encabezado-registrate h1 {
+  margin-bottom: 1.3rem;
+  font-size: 1.8em;
+}
+
+.logo-titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5em;
+  text-decoration: none;
+}
+
+.logo-titulo img {
+  width: 6rem;
+}
+
+.logo-titulo p {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* Formulario */
+.form-element {
+  margin-bottom: 1.5rem;
+}
+
+.form-element input {
+  width: 100%;
+  padding: 0.8em;
+  border: none;
+  border-bottom: 2px solid #808080;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-element input:focus {
+  border-bottom: 2px solid #000;
+}
+
+/* Botones */
+.form-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-button button {
+  width: 45%;
+  height: 2.5em;
+  border: none;
+  border-radius: 6px;
+  background-color: #399B77;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.form-button button:hover {
+  background-color: #2a7659;
+}
+
+.form-button-cancelar a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+
+.form-button-cancelar {
+  background-color: #808080;
+}
+
+.form-button-cancelar:hover {
+  background-color: #666;
+}
