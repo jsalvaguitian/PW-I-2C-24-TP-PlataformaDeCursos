@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.descripcion_del_curso{
+    background-color: #2D2F31;
+    color: #ffffff;
+    display: flex;
+    padding: 3em 3em;
+    justify-content:center
+}
+
+.descripcion_del_curso h1{
+    font-size: 1.8em;
+    font-weight: 905;
+    padding-bottom: 1em;
+
+}
+
+.descripcion_del_curso p{
+    font-size: 1.3em;
+    padding-bottom: 0.5em;
+}
+
+.curso-puntaje{
+    color: #F69D39;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.curso_foto_comprar img{
+    height: 20em;
+}
+
+.curso-mentor{
+    margin-top: 0.3em;
+}
+
+.curso-mentor span, .curso-mentor a{
+    font-size: 1rem;/*por defecto 16px html*/
+}
+
+.curso-mentor a{
+    color: #ffffff;
+}
+
+.curso-mentor a:hover{
+    font-weight: bold;
+}
+
+.curso-modalidad{
+    color: #272727;
+    background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 1em;
+    padding: 0.3em 1em;
+}
+
+
+
