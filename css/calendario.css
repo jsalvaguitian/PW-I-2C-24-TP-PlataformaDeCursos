@@ -71,11 +71,12 @@ body section{
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
-    padding: 20px;
-    font-size: 1.2em;
+    padding: 1em;
+    font-size: 1em;
     position: relative;
-    height: 120px;
     cursor: default;
+    min-width: 0; /* Asegura que los días puedan reducirse al ancho mínimo */
+    box-sizing: border-box;
 }
 
 .day.event {
@@ -132,3 +133,89 @@ body section{
     z-index: -1; /* Para que el círculo quede detrás del número */
 }
 
+@media (max-width: 600px) {
+    .calendar-container {
+        padding: 1em; /* Cambiado a em */
+    }
+
+    .calendar-header h2 {
+        font-size: 1.4em; /* Cambiado a em */
+    }
+
+    .calendar-header button {
+        padding: 0.5em; /* Cambiado a em */
+        font-size: 1em; /* Cambiado a em */
+    }
+
+    .calendar-weekdays .weekday {
+        font-size: 1em; /* Cambiado a em */
+    }
+
+    .calendar-grid {
+        gap: 0.5em; /* Cambiado a em */
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .day {
+        padding: 0.2em; /* Cambiado a em */
+        font-size: 0.9em; /* Cambiado a em */
+        height: 5em; /* Cambiado a em */
+        height: auto; /* Ajusta la altura automática para el contenido */
+        min-height: 6em; /* Establece una altura mínima para los días */
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+    }
+
+    .course {
+        font-size: 0.7em; /* Cambiado a em */
+        padding: 0.1em 0.15em; /* Cambiado a em */
+    }
+
+    .current-day .day-number::before {
+        width: 2.5em; /* Cambiado a em */
+        height: 2.5em; /* Cambiado a em */
+    }
+ 
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .calendar-container {
+        width: 95%;
+        padding: 1.5em;
+        max-width: none; /* Quita el ancho máximo para tabletas */
+    }
+
+    .calendar-header h2 {
+        font-size: 1.5em;
+    }
+
+    .calendar-header button {
+        padding: 0.8em;
+        font-size: 1em;
+    }
+
+    .calendar-weekdays {
+        font-size: 1em;
+    }
+
+    .calendar-grid {
+        gap: 1em;
+    }
+
+    .day {
+        padding: 1em;
+        font-size: 1em;
+        height: auto; /* Permite que el alto del día se ajuste según el contenido */
+    }
+
+    .course {
+        font-size: 0.7em;
+        padding: 1px 2px;
+    }
+
+    .current-day .day-number::before {
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
