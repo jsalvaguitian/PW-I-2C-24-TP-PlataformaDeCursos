@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Medio de Pago</title>
+
     <link rel="stylesheet" href="./../css/header_footer.css">
     <link rel="shortcut icon" href="./../assets/logo_unlam.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c3af30a602.js" crossorigin="anonymous"></script>
@@ -14,9 +15,9 @@
 <body>
     <header class="header">
         <div class="header__principal">
-            <a href="./index.html" class="header__principal-logo">
+            <a href="../index.html" class="header__principal-logo">
                 <div class="header__principal-logo">
-                    <img src="./../assets/logo_unlam.png" alt="logo unlam">
+                    <img src="../assets/logo_unlam.png" alt="logo unlam">
                     <p>Unlamy</p>
                 </div>
             </a>
@@ -38,27 +39,42 @@
                 <option value="Curso completo de Hacking Ético"></option>
                 <option value="Aprende Angular"></option>
                 <option value="Test Driven Development (TDD) con Jest"></option>
-            </datalist>
 
-            <a href="./pages/registrar_empresa.html" class="header__principal-business">Unlamy Business</a>
-            <a href="./pages/carrito.html" class="header__principal-carrito">
+            </datalist>
+            <a href="../pages/carrito.html" class="header__principal-carrito">
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>
                 <span class="texto-carrito">2</span>
             </a>
-            <!--<a href="./pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
+            <a href="../pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
             </a>
-            <a href="./pages/registrar_persona.html" class="header__principal-registrate">
+            <a href="../pages/registrar_persona.html" class="header__principal-registrate">
                 Registrate
-            </a>-->
+            </a>
         </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__menu-item">
+                    <a href="#">Categorias</a>
+                    <ul class="menu-desplegable">
+                        <li><a href="../pages/lista_de_cursos.html">Analisis de datos</a></li>
+                        <li><a href="../pages/lista_de_cursos.html">Ciberseguridad</a></li>
+                        <li><a href="../pages/lista_de_cursos.html">Desarrollo web</a></li>
+                        <li><a href="../pages/lista_de_cursos.html">Inteligencia artificial</a></li>
+                        <li><a href="../pages/lista_de_cursos.html">Testing QA</a></li>
+                    </ul>
+                </li>
+                <li class="navbar__menu-item"><a href="../pages/gift_cards.html">Gift Cards</a></li>
+                <li class="navbar__menu-item"><a href="../pages/calendario_lanzamiento.html">Lanzamiento</a></li>
+                <li class="navbar__menu-item"> <a href="../pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="payment-form">
             <form action="#" method="POST">
-                <!-- Información de la Tarjeta -->
                 <div class="card-info">
                     <h2>Datos de la Tarjeta</h2>
                     <div class="input-group">
@@ -81,7 +97,6 @@
                     </div>
                 </div>
 
-                <!-- Campo de Cupón -->
                 <div class="coupon-section">
                     <h2>¿Tienes un Cupón?</h2>
                     <div class="input-group">
@@ -90,14 +105,12 @@
                     </div>
                 </div>
 
-                <!-- Resumen del Pago -->
                 <div class="payment-summary">
                     <h2>Resumen del Pago</h2>
                     <p>Subtotal: $3000</p>
                     <p><strong>Total a Pagar: $3000</strong></p>
                 </div>
 
-                <!-- Botón de Pago -->
                 <div class="submit-btn">
                     <button type="submit">Pagar Ahora</button>
                 </div>
@@ -107,10 +120,10 @@
     <footer class="footer">
         <div class="footer__columna-uno">
             <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
-            <p class="columna-uno-integrante">Alan Aspi - DNI 40243824</p>
+            <p class="columna-uno-integrante">Alan Aspi - DNI </p>
             <p class="columna-uno-integrante">Daiana Quispe - DNI 41204857</p>
             <p class="columna-uno-integrante">Jesica Salva - DNI 39907003</p>
-            <p class="columna-uno-integrante">Leonel Valenzuela - DNI </p>
+            <p class="columna-uno-integrante">Leonel Valenzuela - DNI 45074142 </p>
         </div>
         <div class="footer__columna-dos">
             <p class="footer__columna-titulo">CATEGORIAS</p>
@@ -125,7 +138,6 @@
         <div class="footer__columna-tres">
             <p class="footer__columna-titulo">SECCIONES</p>
             <ul>
-                <li><a href="./pages/registrar_empresa.html">Unlamy Business</a></li>
                 <li><a href="./pages/gift_cards.html">Gift Cards</a></li>
                 <li><a href="./pages/calendario_lanzamiento.html">Lanzamiento</a></li>
                 <li><a href="./pages/contacto.html">Contacto</a></li>

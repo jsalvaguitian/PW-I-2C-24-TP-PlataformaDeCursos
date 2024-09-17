@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/header_footer.css">
-    <link rel="shortcut icon" href="./assets/logo_unlam.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/gift_cards.css">
+    <link rel="shortcut icon" href="../assets/logo_unlam.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/d3605530f4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Gift Cards | Unlamy</title>
 </head>
+
 <body>
     <header class="header">
         <div class="header__principal">
@@ -70,8 +73,152 @@
             </ul>
         </nav>
     </header>
-    
+    <main class="main-gift-card">
+        <section class="secction-columna1">
+            <article class="cuadro-gift-card">
+                <div class="giftcard-cuadro-texto">
+                    <p>GIFT CARD para </p>
+                    <p>Luana</p>
+                </div>
+                <p class="giftcard_box-monto">$ 90000</p>
 
+            </article>
+            <h3 class="subtitulo-previzualizacion">Vista previa del resultado de personalización</h3>
+        </section>
+        <section class="section-columna2">
+            <h1>Personalización de Gifcard</h1>
+            <form action="#" method="post">
+                <label for="destinatario">
+                    <h3>Para: </h3>
+                </label>
+                <input id="destinatario" type="text" name="destinatario" class="destinatario"
+                    placeholder="Nombre del destinatario" value="Luana">
+
+                <h3 class="subtitulo">Color</h3>
+                <div class="colores">
+                    <div class="color1">
+                        <input type="radio" name="tipo_color" id="blanco" value="blanco">
+                        <div class="color"></div>
+                    </div>
+
+                    <div class="color2">
+                        <input type="radio" name="tipo_color" id="negro" value="negro" checked>
+                        <div class="color"></div>
+                    </div>
+
+                    <div class="color3">
+                        <input type="radio" name="tipo_color" id="dorado" value="dorado">
+                        <div class="color"></div>
+                    </div>
+
+                    <div class="color4">
+                        <input type="radio" name="tipo_color" id="azul" value="azul">
+                        <div class="color"></div>
+                    </div>
+
+                    <div class="color5">
+                        <input type="radio" name="tipo_color" id="rojo" value="rojo">
+                        <div class="color"></div>
+                    </div>
+                </div>
+
+                <h3 class="subtitulo">Tamaño de fuente</h3>
+                <div class="tamanio-fuentes">
+                    <div class="fuente20">
+                        <input type="radio" name="tamanio_fuente" id="fuente20"><span class="fuente">20px</span>
+                    </div>
+
+                    <div class="fuente28">
+                        <input type="radio" name="tamanio_fuente" id="fuente20" checked><span class="fuente">28px</span>
+                    </div>
+
+                    <div class="fuente32">
+                        <input type="radio" name="tamanio_fuente" id="fuente20"><span class="fuente">32px</span>
+                    </div>
+
+                    <div class="fuente48">
+                        <input type="radio" name="tamanio_fuente" id="fuente20"><span class=fuente>48px</span>
+                    </div>
+
+                    <div class="fuente60">
+                        <input type="radio" name="tamanio_fuente" id="fuente20"><span class="fuente">60px</span>
+                    </div>
+                </div>
+
+                <div class="div-monto">
+                    <label for="monto">
+                        <h3 class="subtitulo-monto">Monto $</h3>
+                    </label>
+                    <input id="monto" type="number" name="edad" min="0" max="90000" value="90000">
+                </div>
+
+                <h3 class="subtitulo">Ubicación</h3>
+                <div class="ubicaciones">
+                    <div class="ubicacion1">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf">
+                        <div class="ubicacion ub1">
+                            <p class="ubicacion-precio-der-inf">$</p>
+                        </div>
+                    </div>
+
+                    <div class="ubicacion2">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-izq-sup" value="ubicacion-izq-sup">
+                        <div class="ubicacion">
+                            <p class="ubicacion-precio-izq-sup">$</p>
+                        </div>
+                    </div>
+
+                    <div class="ubicacion3">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-sup" value="ubicacion-der-sup"
+                            checked>
+                        <div class="ubicacion">
+                            <p class="ubicacion-precio-der-sup">$</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="subtitulo">Fondo</h3>
+                <div class="fondos">
+                    <div class="fondo1">
+                        <input type="radio" name="tipo_fondo" id="fondo-cumple" value="fondo-cumple" checked>
+                        <div class="fondo">
+                            <img src="../assets/1-fondo-cumple.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fondo2">
+                        <input type="radio" name="tipo_fondo" id="fondo-brillo" value="fondo-brillo">
+                        <div class="fondo">
+                            <img src="../assets/2-fondo-gliter.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fondo3">
+                        <input type="radio" name="tipo_fondo" id="fondo-galaxy" value="fondo-galaxy">
+                        <div class="fondo">
+                            <img src="../assets/3-fondo-galaxy.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fondo4">
+                        <input type="radio" name="tipo_fondo" id="fondo-navidad" value="fondo-navidad">
+                        <div class="fondo">
+                            <img src="../assets/4-fondo-navidad-nuevo.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="fondo5">
+                        <input type="radio" name="tipo_fondo" id="fondo-san-valentin" value="fondo-san-valentin">
+                        <div class="fondo">
+                            <img src="../assets/5-san-valentin.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <input class="boton-enviar-formulario" type="submit" value="Confirmar">
+            </form>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer__columna-uno">
             <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
@@ -112,6 +259,7 @@
                 </a>
             </p>
         </div>
-    </footer>    
+    </footer>
 </body>
+
 </html>

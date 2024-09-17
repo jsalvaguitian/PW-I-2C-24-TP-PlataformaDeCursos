@@ -3,37 +3,79 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.main {
+body {
+    background-image: radial-gradient(circle at 73.27% 0.09%, #d7d75d 0, #c7d961 6.25%, #b5d966 12.5%, #a2d76c 18.75%, #8dd271 25%, #77cb76 31.25%, #60c179 37.5%, #48b67b 43.75%, #2ea87b 50%, #0a9a79 56.25%, #008e78 62.5%, #008477 68.75%, #007b76 75%, #007477 81.25%, #006f78 87.5%, #006b7a 93.75%, #00697d 100%);
+    background-repeat: no-repeat;
+    height: 100vh;/*ocupa toda la ventana*/
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+}
+
+.main {
+   background-color: #fff;
+    height: 35em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3rem;
+    width: 28em;
+}
+
+.encabezado-inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
+.encabezado-inicio-sesion h1 {
+    margin-bottom: 1.3rem;
+}
+
+.logo-titulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 6rem;
+    margin: 1em 0;
+    text-decoration: none;
+}
+
+.logo-titulo img {
+    width: 6rem;
+}
+
+.logo-titulo p {
+    color: #000;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+
 .Wrapper-User-Login {
-    width: 420px;
-    background: green;
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 40px;
+    width: 100%;
 }
 
-.Wrapper-User-Login h1 {
-    font-size: 36px;
-    text-align: center;
-}
 
-.Wrapper-User-Login .input-box {
+
+
+.input-box {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
+    margin-bottom: 1rem;
 }
+
 
 .input-box input {
     width: 100%;
@@ -41,15 +83,15 @@
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(0, 0, 0, 0.7);
     border-radius: 40px;
-    font-size: 16px;
-    color: #fff;
+    font-size: 1em;
+    color: #000;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-    color: #fff;
+    color: #000;
 }
 
 .input-box i {
@@ -64,7 +106,11 @@
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
-    margin: -15px 0 15px;
+    margin: 15px 0 15px;
+}
+
+.remember-forgot label {
+    color: black;
 }
 
 .remember-forgot label input {
@@ -73,8 +119,9 @@
 }
 
 .remember-forgot a {
-    color:#fff;
+    color: black;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .remember-forgot a:hover {
@@ -84,25 +131,29 @@
 .Wrapper-User-Login .btn {
     width: 100%;
     height: 45px;
-    background-color: #fff;
+    background-color: #000;
     border: none;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: #fff;
     font-weight: 600;
 }
 
 .Wrapper-User-Login .register-link {
     font-size: 14.5px;
     text-align: center;
-    margin: 20px 0 15px;
+    margin: 15px 0 15px;
+}
+
+.register-link p {
+    color: #000;
 }
 
 .register-link p a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-weight: 600;
 }
