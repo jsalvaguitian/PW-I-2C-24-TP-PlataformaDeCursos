@@ -71,9 +71,6 @@ aside.video-list a:hover {
 }
 
 
-
-/* Agrega estos estilos a tu archivo CSS */
-
 .video-embed {
     margin-top: 20px;
 }
@@ -84,7 +81,7 @@ aside.video-list a:hover {
 }
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     max-width: 100%;
@@ -108,9 +105,7 @@ aside.video-list a:hover {
     padding: auto;
     margin-bottom: 10px;}*/
 
-    /* Media Queries para hacerlo responsivo */
 
-/* Para dispositivos móviles (ancho máximo 600px) */
 @media screen and (max-width: 600px) {
     main {
         flex-direction: column;
@@ -142,7 +137,7 @@ aside.video-list a:hover {
     }
 }
 
-/* Para tablets (ancho máximo 900px) */
+
 @media screen and (max-width: 900px) {
     main {
         flex-direction: column;
