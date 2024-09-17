@@ -1,56 +1,60 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.descripcion_del_curso{
+.descripcion_del_curso {
     background-color: #2D2F31;
     color: #ffffff;
     display: flex;
     padding: 3em 3em;
-    justify-content:center
+    justify-content: center
 }
 
-.descripcion_del_curso h1{
+.descripcion_del_curso h1 {
     font-size: 1.8em;
     font-weight: 905;
     padding-bottom: 1em;
 
 }
 
-.descripcion_del_curso p{
+.descripcion_del_curso p {
     font-size: 1.3em;
     padding-bottom: 0.5em;
 }
 
-.curso-puntaje{
+.curso-puntaje {
     color: #F69D39;
     font-weight: bold;
     margin-right: 1em;
 }
 
-.curso_foto_comprar img{
-    height: 20em;
+.curso_foto_comprar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.curso-mentor{
+.curso-mentor {
     margin-top: 0.3em;
 }
 
-.curso-mentor span, .curso-mentor a{
-    font-size: 1rem;/*por defecto 16px html*/
+.curso-mentor span,
+.curso-mentor a {
+    font-size: 1rem;
+    /*por defecto 16px html*/
 }
 
-.curso-mentor a{
+.curso-mentor a {
     color: #ffffff;
 }
 
-.curso-mentor a:hover{
+.curso-mentor a:hover {
     font-weight: bold;
 }
 
-.curso-modalidad{
+.curso-modalidad {
     color: #272727;
     background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
     text-align: center;
@@ -60,5 +64,190 @@
     padding: 0.3em 1em;
 }
 
+.precio-comprar {
+    display: flex;
+    align-items: center;
 
+}
 
+.precio-comprar h3 {
+    font-size: 2em;
+}
+
+.curso-carrito {
+    padding: 1em 1em;
+    margin: 1em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 3em;
+    font-weight: bold;
+    color: #272727;
+    background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
+
+}
+
+.curso-carrito:hover {
+    color: #fff;
+    background-image: radial-gradient(circle at 79.88% -14.09%, #b3cd7a 0, #a5cd7d 12.5%, #8fc87a 25%, #72bd74 37.5%, #49ae6a 50%, #009e62 62.5%, #009362 75%, #008d67 87.5%, #008b72 100%);
+}
+
+.curso-caracteristicas-y-requerimientos{
+    padding: 3em 2.2em;
+}
+.titulo{
+    padding:  0 2em 0 1.3em}
+.docente_del_curso{
+    background-color: #474747;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    padding: 0 3em 0 3em;
+}
+
+.foto-perfil-profesor{
+    background-color: #ffffff;
+    width:fit-content;
+    border-radius: 50% 50%;
+    margin: 1em 1em;
+}
+
+.foto-perfil-profesor img{
+    border-radius: 50% 50%;
+}
+/************************************************************/
+/*cursos relacionados*/
+.cursos_destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursos_destacados-card {
+    width: 300px;
+    height: 23em;
+    margin: 15px;
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-sizing: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-imagen {
+    width: 100%;
+}
+
+.cursos_destacados a {
+    text-decoration: none;
+}
+
+.card_contenedor-descripcion {
+    padding: 0.5em;
+    color: #000000;
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "mentor mentor mentor"
+        "puntaje puntaje usuario"
+        "hora hora precio"
+        "carrito carrito carrito";
+
+}
+
+.card_curso-titulo {
+    grid-area: titulo;
+}
+
+.card_curso-mentor {
+    grid-area: mentor;
+    margin: 0.3em;
+}
+
+.card_curso-puntaje {
+    grid-area: puntaje;
+}
+
+.card_curso-alumnos {
+    grid-area: usuario;
+    text-align: end;
+}
+
+.card_curso-hora {
+    grid-area: hora;
+    height: 1.45em;
+    line-height: 2em;
+    display: flex;
+    padding-top: 0.2em;
+    margin-top: 0.2em;
+}
+
+.card_curso-precio {
+    grid-area: precio;
+    text-align: end;
+    font-size: 1.5em;
+    margin-top: 0.2em;
+
+}
+
+.card_curso-carrito {
+    grid-area: carrito;
+    margin-top: 0.5em;
+    padding: 0.4em;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
+    cursor: pointer;
+    border: 1px solid #40A77A;
+
+}
+
+.card_curso-carrito:active {
+    background-image: linear-gradient(270deg, #a1fcb5 0, #72d69b 16.67%, #6ed1a4 33.33%, #5db99b 50%, #4ca38f 66.67%, #378579 83.33%, #43a098 100%);
+    transform: translateY(2px);
+    /* Efecto de "hundimiento" */
+    box-shadow: 0 2px #245551;
+}
+
+.card_curso-carrito:hover {
+    background-image: linear-gradient(270deg, #a1fcb5 0, #72d69b 16.67%, #6ed1a4 33.33%, #5db99b 50%, #4ca38f 66.67%, #378579 83.33%, #43a098 100%);
+    /* Efecto de "hundimiento" */
+    box-shadow: 0 2px #245551;
+}
+
+.card_contenedor-imagen {
+    position: relative;
+}
+
+.modalidad-curso {
+    color: #272727;
+    background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
+    border-radius: 5rem;
+    width: 6.3em;
+    text-align: center;
+    position: absolute;
+    top: 0.2em;
+    margin: 0.5em;
+}
+
+.card_curso-puntaje {
+    color: #B46A27;
+    font-weight: bold;
+}
+
+.card_curso-precio,
+.card_curso-carrito {
+    font-weight: bold;
+}
+
+.cursos_destacados-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
