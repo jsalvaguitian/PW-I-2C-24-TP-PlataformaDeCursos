@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -12,7 +12,6 @@ main {
     margin: 2em auto;
 }
 
-/* Encapsular las reglas para evitar conflicto */
 main h2 {
     font-size: 1.8em;
     margin-bottom: 1em;
@@ -24,7 +23,6 @@ main form {
     gap: 1.5em;
 }
 
-/* Estilos de los campos de formulario */
 main .input-group {
     flex: 1 1 45%;
     display: flex;
@@ -43,7 +41,6 @@ main .input-group input, main select {
     border-radius: 0.3em;
 }
 
-/* Estilos de la fotografía */
 main .photo-section {
     margin-top: 2em;
     text-align: center;
@@ -76,7 +73,6 @@ main .photo-upload button:hover {
     background-color: #018f63;
 }
 
-/* Botón de guardar */
 main .save-btn {
     margin-top: 2em;
     text-align: center;
@@ -96,7 +92,6 @@ main .save-btn button:hover {
     background-color: #018f63;
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
     main {
         width: 90%;
