@@ -3,37 +3,69 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.main {
+body {
+    height: 100vh;/*ocupa toda la ventana*/
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    
 }
 
-.Wrapper-User-Login {
-    width: 420px;
-    background: green;
-    color: #fff;
+.main {
+    background-color: green;
+    height: 30em;
     border-radius: 10px;
-    padding: 30px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
 }
 
-.Wrapper-User-Login h1 {
-    font-size: 36px;
-    text-align: center;
+.encabezado-inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.Wrapper-User-Login .input-box {
+.encabezado-inicio-sesion h1 {
+    margin-bottom: 1.3rem;
+}
+
+.logo-titulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 6rem;
+    margin: 1em 0;
+    text-decoration: none;
+}
+
+.logo-titulo img {
+    width: 6rem;
+}
+
+.logo-titulo p {
+    color: #000;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+
+.input-box {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
+    margin-bottom: 1rem;
+    width: 15rem;
 }
+
 
 .input-box input {
     width: 100%;
@@ -43,7 +75,7 @@
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 1em;
     color: #fff;
     padding: 20px 45px 20px 20px;
 }
@@ -64,7 +96,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
-    margin: -15px 0 15px;
+    margin: 15px 0 15px;
 }
 
 .remember-forgot label input {
@@ -98,7 +130,7 @@
 .Wrapper-User-Login .register-link {
     font-size: 14.5px;
     text-align: center;
-    margin: 20px 0 15px;
+    margin: 15px 0 15px;
 }
 
 .register-link p a {
