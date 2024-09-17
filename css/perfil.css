@@ -1,0 +1,119 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+main {
+    width: 60%;
+    padding: 2em;
+    background-color: white;
+    border-radius: 0.5em;
+    margin: 2em auto;
+}
+
+/* Encapsular las reglas para evitar conflicto */
+main h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+main form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+/* Estilos de los campos de formulario */
+main .input-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .input-group label {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+main .input-group input, main select {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+}
+
+/* Estilos de la fotografía */
+main .photo-section {
+    margin-top: 2em;
+    text-align: center;
+}
+
+main .photo-upload {
+    display: inline-block;
+    text-align: center;
+}
+
+main .photo-upload img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+main .photo-upload button {
+    display: block;
+    padding: 0.8em;
+    background-color: #01A679;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+main .photo-upload button:hover {
+    background-color: #018f63;
+}
+
+/* Botón de guardar */
+main .save-btn {
+    margin-top: 2em;
+    text-align: center;
+}
+
+main .save-btn button {
+    padding: 1em 2em;
+    background-color: #01A679;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+main .save-btn button:hover {
+    background-color: #018f63;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+
+    main form {
+        flex-direction: column;
+    }
+
+    main .input-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    main .photo-upload img {
+        width: 100px;
+        height: 100px;
+    }
+}
