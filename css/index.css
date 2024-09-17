@@ -258,10 +258,12 @@
     display: flex;
     justify-content: space-around;
     position: relative;
+    overflow: hidden;
 }
 
 .metodo {
     height: 9rem;
+
 }
 
 .contenedor-metodos-de-pago {
