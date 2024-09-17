@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     margin: 0;
     padding: 0;
 }
@@ -64,6 +64,7 @@ body section{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
+    
 }
 
 .day {
@@ -75,8 +76,10 @@ body section{
     font-size: 1em;
     position: relative;
     cursor: default;
-    min-width: 0; /* Asegura que los días puedan reducirse al ancho mínimo */
+    min-width: 0; 
     box-sizing: border-box;
+    min-height: 8em; 
+    height: 8em; 
 }
 
 .day.event {
@@ -103,14 +106,14 @@ body section{
     cursor: pointer;
 }
 
-/*A parti de aca es para el dia actual*/
+
 .day-number {
     position: relative;
-    z-index: 1; /* Asegura que el número esté encima del círculo */
+    z-index: 1; 
 }
 
 .current-day {
-    background-color: #fafafa; /* Fondo de la celda si se desea */
+    background-color: #fafafa; 
     border: 1px solid #ddd;
 }
 
@@ -126,55 +129,54 @@ body section{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50px; /* Ajusta el tamaño del círculo */
+    width: 50px; 
     height: 50px;
     border-radius: 50%;
-    background-color: #007bff; /* Color azul del círculo */
-    z-index: -1; /* Para que el círculo quede detrás del número */
+    background-color: #007bff; 
+    z-index: -1; 
 }
 
 @media (max-width: 600px) {
     .calendar-container {
-        padding: 1em; /* Cambiado a em */
+        padding: 1em; 
     }
 
     .calendar-header h2 {
-        font-size: 1.4em; /* Cambiado a em */
+        font-size: 1.4em; 
     }
 
     .calendar-header button {
-        padding: 0.5em; /* Cambiado a em */
-        font-size: 1em; /* Cambiado a em */
+        padding: 0.5em; 
+        font-size: 1em;
     }
 
     .calendar-weekdays .weekday {
-        font-size: 1em; /* Cambiado a em */
+        font-size: 1em; 
     }
 
     .calendar-grid {
-        gap: 0.5em; /* Cambiado a em */
+        gap: 0.5em;
         grid-template-columns: repeat(7, 1fr);
     }
 
     .day {
-        padding: 0.2em; /* Cambiado a em */
-        font-size: 0.9em; /* Cambiado a em */
-        height: 5em; /* Cambiado a em */
-        height: auto; /* Ajusta la altura automática para el contenido */
-        min-height: 6em; /* Establece una altura mínima para los días */
+        padding: 0.2em; 
+        font-size: 0.9em; 
+        min-height: 6em; 
+        height: 6em; 
         align-items: center;
         justify-content: center;
         min-width: 0;
     }
 
     .course {
-        font-size: 0.7em; /* Cambiado a em */
-        padding: 0.1em 0.15em; /* Cambiado a em */
+        font-size: 0.7em;
+        padding: 0.1em 0.15em; 
     }
 
     .current-day .day-number::before {
-        width: 2.5em; /* Cambiado a em */
-        height: 2.5em; /* Cambiado a em */
+        width: 2.5em; 
+        height: 2.5em; 
     }
  
 }
@@ -183,7 +185,7 @@ body section{
     .calendar-container {
         width: 95%;
         padding: 1.5em;
-        max-width: none; /* Quita el ancho máximo para tabletas */
+        max-width: none; 
     }
 
     .calendar-header h2 {
@@ -204,9 +206,10 @@ body section{
     }
 
     .day {
-        padding: 1em;
+        padding: 0.7em;
         font-size: 1em;
-        height: auto; /* Permite que el alto del día se ajuste según el contenido */
+        min-height: 7em;
+        height: 7em; 
     }
 
     .course {
