@@ -11,7 +11,7 @@ header, footer {
     background-color: #01A679;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 2em;
 }
 
 h1, h2 {
@@ -21,39 +21,39 @@ h1, h2 {
 main {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 2em;
 }
 
 .payment-form {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 2em;
+    border-radius: 1em;
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 60%; /* Para que siempre ocupe el 100% del contenedor */
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.2);
 }
 
 .payment-form h2 {
-    margin-bottom: 20px;
+    margin-bottom: 1em;
     color: #333;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
     width: 100%;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5em;
     color: #555;
 }
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 0.8em;
+    border: 0.1em solid #ddd;
+    border-radius: 0.5em;
     font-size: 1em;
 }
 
@@ -63,21 +63,21 @@ main {
 }
 
 .input-row .input-group {
-    width: 48%;
+    width: 46%;
 }
 
 .coupon-section {
-    margin-top: 30px;
+    margin-top: 3em;
 }
 
 .payment-summary {
-    margin-top: 30px;
+    margin-top: 3em;
     font-size: 1.1em;
     color: #333;
 }
 
 .payment-summary p {
-    margin-bottom: 10px;
+    margin-bottom: 1em;
 }
 
 .payment-summary p strong {
@@ -86,15 +86,15 @@ main {
 
 .submit-btn {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 4em;
 }
 
 .submit-btn button {
     background-color: #01A679;
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
+    padding: 1.5em 3em;
+    border-radius: 0.5em;
     cursor: pointer;
     font-size: 1.2em;
 }
@@ -104,12 +104,26 @@ main {
 }
 
 /* Responsividad */
-@media (max-width: 600px) {
+@media (max-width: 40em) { /* Aproximadamente 640px para teléfonos */
     .input-row {
         flex-direction: column;
     }
 
     .input-row .input-group {
         width: 100%;
+    }
+
+    .payment-form {
+        padding: 2em;
+    }
+}
+
+@media (max-width: 60em) { /* Aproximadamente 960px para tablets */
+    .payment-form {
+        max-width: 80%; /* Ocupa el 80% de la pantalla en tabletas */
+    }
+
+    .payment-summary {
+        font-size: 1.2em;
     }
 }
