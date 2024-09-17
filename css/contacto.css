@@ -1,112 +1,158 @@
-*,
-*::before,
-*::after {
+/* Estilos generales */
+main,
+main * {
   box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 100%; 
-  }
-  
-  h2 {
-    font-size: 2em; 
-    margin-bottom: 0.5em;
-  }
-  
-  h3 {
-    font-size: 1.8em;
-    margin-bottom: 0.5em;
-  }
-  
-  .contact-map-container {
-    width: 90%; 
-    margin: 0 auto;
-    padding: 2em 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
 
-  .contact-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 2em;
-  }
-  
-  .formulario-contacto, .info-empresa {
-    width: 48%; 
-    padding: 1em;
-    background-color: #f5f5f5;
-    border-radius: 0.5em;
-    margin-bottom: 1em;
-  }
-  
-  .info-empresa p{
-    font-size: 1.2em;
-  }
 
-  form label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-size: 1.2em; 
-  }
-  
-  form textarea, form button {
-    width: 100%;
-    padding: 0.8em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 0.5em;
-    font-size: 1em; 
-  }
-  #nombre,#email,#telefono{
-    width: 100%;
-    padding: 0.8em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 0.5em;
-    font-size: 1em; 
-    max-width: 100%; 
-  }
-  form textarea {
-    max-width: 100%; 
-  }
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
 
-  form button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 0.8em;
-  }
-  
-  form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .mapa {
+h3 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+
+.contact-map-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.formulario-contacto,
+.info-empresa {
+  width: 48%;
+  padding: 1em;
+  background-color: #f5f5f5;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+.info-empresa p, .info-empresa p a{
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.info-empresa p a{
+    color: black;
+}
+
+.formulario-contacto form label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.formulario-contacto form textarea,
+.formulario-contacto form button,
+.formulario-contacto form input[type="text"],
+.formulario-contacto form input[type="email"],
+.formulario-contacto form input[type="tel"] {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  font-size: 1em;
+  max-width: 100%;
+}
+
+.formulario-contacto form textarea {
+  max-width: 100%;
+}
+
+
+.formulario-contacto form button {
+  background-color: #399b77;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.8em;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  width: 35%; 
+  text-align: center;
+  margin-right: 0;
+}
+
+.formulario-contacto form button:hover {
+  background-color: #2a7659;
+}
+
+
+.mapa {
+  width: 100%;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 25em;
+  border: 0;
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .formulario-contacto,
+  .info-empresa {
     width: 100%; 
   }
-  
-  .mapa iframe {
-    width: 100%;
-    height: 25em; 
-    border: 0;
+
+  form label,
+  form input,
+  form textarea,
+  form button {
+    font-size: 1em; 
   }
-  
-  @media (max-width: 768px) {
-    .formulario-contacto, .info-empresa {
-      width: 100%; /
-    }
-  
-    form label, form input, form textarea, form button {
-      font-size: 1em;
-    }
-  
-    h2, h3 {
-      font-size: 1.5em; 
-    }
+
+  h2,
+  h3 {
+    font-size: 1.5em;
   }
-  
+
+  .formulario-contacto form button {
+    width: 60%; 
+  }
+}
+
+
+@media (max-width: 600px){
+  .formulario-contacto,
+  .info-empresa {
+    width: 100%; 
+  }
+
+  .formulario-contacto form button {
+    width: 100%; 
+    font-size: 1em; 
+    padding: 0.8em;
+  }
+
+  form label,
+  form input,
+  form textarea,
+  form button {
+    font-size: 1em;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2em;
+  }
+}
