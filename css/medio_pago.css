@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -29,7 +29,7 @@ main {
     padding: 2em;
     border-radius: 1em;
     width: 100%;
-    max-width: 60%; /* Para que siempre ocupe el 100% del contenedor */
+    max-width: 60%; 
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.2);
 }
 
@@ -103,8 +103,8 @@ main {
     background-color: #018f63;
 }
 
-/* Responsividad */
-@media (max-width: 40em) { /* Aproximadamente 640px para teléfonos */
+
+@media (max-width: 40em) { 
     .input-row {
         flex-direction: column;
     }
@@ -118,9 +118,9 @@ main {
     }
 }
 
-@media (max-width: 60em) { /* Aproximadamente 960px para tablets */
+@media (max-width: 60em) { 
     .payment-form {
-        max-width: 80%; /* Ocupa el 80% de la pantalla en tabletas */
+        max-width: 80%; 
     }
 
     .payment-summary {
