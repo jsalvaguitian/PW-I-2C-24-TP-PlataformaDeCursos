@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     margin: 0;
     padding: 0;
 }
@@ -70,12 +70,7 @@ aside.video-list a:hover {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-}
+
 
 /* Agrega estos estilos a tu archivo CSS */
 
@@ -112,3 +107,68 @@ footer {
     border-radius: 8px;
     padding: auto;
     margin-bottom: 10px;}*/
+
+    /* Media Queries para hacerlo responsivo */
+
+/* Para dispositivos móviles (ancho máximo 600px) */
+@media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .course-details {
+        padding-right: 0;
+    }
+
+    aside.video-list {
+        padding-left: 0;
+        border-left: none;
+        margin-top: 20px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .course-details h2, 
+    aside.video-list h2 {
+        font-size: 1.2em;
+    }
+
+    .course-details p,
+    aside.video-list a {
+        font-size: 1em;
+    }
+}
+
+/* Para tablets (ancho máximo 900px) */
+@media screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    .course-details {
+        padding-right: 0;
+    }
+
+    aside.video-list {
+        padding-left: 0;
+        border-left: none;
+        margin-top: 20px;
+    }
+
+    .course-details h2,
+    aside.video-list h2 {
+        font-size: 1.5em;
+    }
+
+    .course-details p,
+    aside.video-list a {
+        font-size: 1.1em;
+    }
+
+    header {
+        padding: 15px;
+    }
+}
