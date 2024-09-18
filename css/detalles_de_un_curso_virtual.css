@@ -86,7 +86,6 @@
     font-weight: bold;
     color: #272727;
     background-image: linear-gradient(270deg, #a1fcb5 0, #8ef2b7 16.67%, #7ce6b7 33.33%, #6cd8b4 50%, #5ecab0 66.67%, #53bdad 83.33%, #4bb2aa 100%);
-
 }
 
 .curso-carrito:hover {
@@ -97,8 +96,42 @@
 .curso-caracteristicas-y-requerimientos{
     padding: 3em 2.2em;
 }
+
+.cosas-cursos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:first baseline;
+    align-items:flex-start;
+}
+
+.descripcion-item{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1rem 1rem 0;
+}
+
+.descripcion-item i{
+    margin-left: 0.3rem;
+}
+
+.descripcion-item p{
+    margin-left: 0.3rem;
+}
 .titulo{
-    padding:  0 2em 0 1.3em}
+    padding:  0 2em 0 1.3em
+}
+.curso-caracteristicas-y-requerimientos h2{
+    margin-bottom: 1rem;
+}
+
+.descripcion-texto{
+    margin-bottom: 1.5rem;
+}
+
+.listado-requerimientos{
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
 .docente_del_curso{
     background-color: #474747;
     color: #f5f5f5;
@@ -117,8 +150,37 @@
 .foto-perfil-profesor img{
     border-radius: 50% 50%;
 }
+
+.details-contenido{
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+.details-contenido summary{
+    background-color: #F7F9FA;
+    padding: 10px;
+}
+
+.summary-fila{
+    display: flex;
+    justify-content:space-between;
+    padding: 0.5em 1em;
+}
+
+.summary-columna{
+    display: flex;
+}
+
+.summary-columna p{
+    margin-left: 0.5rem;
+}
+
+
 /************************************************************/
 /*cursos relacionados*/
+.aside{
+    margin: 3em 0;
+}
 .cursos_destacados {
     display: flex;
     flex-wrap: wrap;
