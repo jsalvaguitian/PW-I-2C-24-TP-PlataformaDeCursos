@@ -27,9 +27,9 @@
 .cuadro-gift-card {
     height: 28rem;
     background-image: url(../assets/1-fondo-cumple.jpg);
-    border: 1px solid red;
+    border: 1px solid  #8a8a8a;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     position: relative;
 }
@@ -42,20 +42,22 @@
 }
 
 .giftcard-cuadro-texto p {
-    font-size: 60px;
+    font-size: 270%;
     text-align: center;
     font-weight: bold;
 }
 
 .giftcard_box-monto{
-    font-size: 3rem;
+    font-size: 130%;
     border:  1px solid #000000;
     background-color: #000000;
     color: #ffffff;
-    width: 14rem;
+    width: 30%;
+    height: 8%;
     position: absolute;
     right: 0.2em;
     top: 0.2em;
+    text-align: center;
 }
 
 .main-gift-card {
@@ -89,14 +91,25 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
 .colores,
-.ubicaciones,
-.fondos {
+.ubicaciones{
     display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.fondos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
 }
 
 .tamanio-fuentes {
     display: flex;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items:flex-end;
 }
 
 .color {
@@ -163,23 +176,23 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .fuente20 span {
-    font-size: 20px;
+    font-size: 100%;
 }
 
 .fuente28 span {
-    font-size: 28px;
+    font-size: 130%;
 }
 
 .fuente32 {
-    font-size: 32px;
+    font-size: 150%;
 }
 
 .fuente48 {
-    font-size: 48px;
+    font-size: 170%;
 }
 
 .fuente60 {
-    font-size: 60px;
+    font-size: 200%;
 }
 
 .fuente {
@@ -192,7 +205,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 6em;
     height: 4em;
     border: 1px solid black;
-    margin: 0.5em;
+    margin: 0.5em 0; 
 
 }
 
@@ -239,15 +252,19 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
 .boton-enviar-formulario {
-    width: 45%;
-    height: 2.5em;
+    width: 35%;
+    height: 1.5em;
     border: none;
     border-radius: 6px;
     background-color: #399B77;
     color: #ffffff;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.2em;
     margin: 1em 0 2em 0;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.8rem;
 }
 
 /*recorda la unidad de medida em cambiar solo segun su contenedor
