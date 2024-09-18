@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/c3af30a602.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/lista_de_cursos.css">
 </head>
 <body>
     <header class="header">
@@ -71,7 +72,74 @@
         </nav>
     </header>
 
-<main></main>
+    <main>
+        <section class="cursos">
+            <h2 class="titulo">Cursos Presenciales</h2>
+            <div class="cursos_lista">
+                <!-- Curso: Python -->
+                <div class="curso_card">
+                    <div class="curso_imagen">
+                        <img src="../assets/curso-3-pandas.jpg" alt="Curso Python">
+                    </div>
+                    <div class="curso_descripcion">
+                        <h3>Curso de Python</h3>
+                        <p>Aprende Python desde cero en este curso presencial.</p>
+                        <button class="curso_carrito" onclick="window.location.href='detalles-curso-python.html'">Carrito</button>
+                    </div>
+                </div>
+                <!-- Curso: Java -->
+                <div class="curso_card">
+                    <div class="curso_imagen">
+                        <img src="../assets/curso-6-java.jpg" alt="Curso Java">
+                    </div>
+                    <div class="curso_descripcion">
+                        <h3>Curso de Java</h3>
+                        <p>Curso intensivo de Java en modalidad presencial.</p>
+                        <button class="curso_carrito" onclick="window.location.href='detalles-curso-java.html'">Carrito</button>
+                    </div>
+                </div>
+                <!-- Agrega más cursos presenciales aquí -->
+            </div>
+
+            <h2 class="titulo">Cursos Virtuales</h2>
+            <div class="cursos_lista">
+                <!-- Curso: Angular -->
+                <div class="curso_card">
+                    <div class="curso_imagen">
+                        <img src="../assets/curso-4-angular.jpg" alt="Curso Angular">
+                    </div>
+                    <div class="curso_descripcion">
+                        <h3>Curso de Angular</h3>
+                        <p>Aprende Angular en modalidad virtual.</p>
+                        <button class="curso_carrito" onclick="window.location.href='detalles-curso-angular.html'">Carrito</button>
+                    </div>
+                </div>
+                <!-- Curso: HTML -->
+                <div class="curso_card">
+                    <div class="curso_imagen">
+                        <img src="../assets/curso-2-html-js-css.jpg" alt="Curso HTML">
+                    </div>
+                    <div class="curso_descripcion">
+                        <h3>Curso de HTML</h3>
+                        <p>Curso de HTML para desarrollar sitios web.</p>
+                        <button class="curso_carrito" onclick="window.location.href='detalles-curso-html.html'">Carrito</button>
+                    </div>
+                </div>
+                <!-- Curso: Docker -->
+                <div class="curso_card">
+                    <div class="curso_imagen">
+                        <img src="../assets/curso-7-docker.jpg" alt="Curso Docker">
+                    </div>
+                    <div class="curso_descripcion">
+                        <h3>Curso de Docker</h3>
+                        <p>Curso virtual para aprender Docker.</p>
+                        <button class="curso_carrito" onclick="window.location.href='detalles-curso-docker.html'">Carrito</button>
+                    </div>
+                </div>
+                <!-- Agrega más cursos virtuales aquí -->
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer__columna-uno">
