@@ -269,3 +269,68 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /*recorda la unidad de medida em cambiar solo segun su contenedor
 en cambio rem segun el html*/
+
+/*POPUP*/
+
+.ventana{
+    background-color:#ffffff;
+    width:35em;
+    height: 13em;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 1px solid red;
+  }
+
+  .ventana-principal{
+    display: flex;
+
+  }
+
+
+.modal{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:-250px;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+  }
+  #IrVentanaFlotante:target{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+
+  .ventana-emogic{
+    width: 5rem;
+    object-fit: contain;
+    margin-right: 0.6rem;
+  }
+
+  .ventana p{
+    display: inline;
+  }
+
+  .pop-up-btn{
+    width: 27%;
+    height: 2.2em;
+    border: none;
+    border-radius: 6px;
+    background-color: #399B77;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1em;
+    padding-top: 0.9rem;
+  }
+
