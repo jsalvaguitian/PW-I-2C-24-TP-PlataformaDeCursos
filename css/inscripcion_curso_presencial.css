@@ -1,3 +1,11 @@
+/*
+CAMBIOS:
+Agrego form-btn, btn-person
+Se saco button y button hover
+*/
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,19 +13,13 @@ body {
     box-sizing: border-box;
 }
 
-header {
-    background-color: #01A679;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
 
 h1, h2 {
     margin: 4px;
     padding-bottom: 5px;
 }
 
-main {
+.main {
     padding: 20px;
 }
 
@@ -37,6 +39,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .input-group {
@@ -57,12 +60,48 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-.add-person-btn {
-    text-align: center;
-    margin-bottom: 20px;
+
+
+.person-btn {
+    border-radius: 50%;
+    padding: 0rem 0.5rem;
+    color: white;
+    background-color: black;
+    font-size: 1.8em;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-button {
+.add-person {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/*
+button:hover {
+    background-color: #018f63;
+}
+*/
+
+.payment-info {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    width: 4.5rem;
+    text-align: center;
+}
+
+.submit-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-btn .form-btn {
     background-color: #01A679;
     color: white;
     padding: 10px 20px;
@@ -73,16 +112,3 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #018f63;
-}
-
-.payment-info {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.submit-btn {
-    text-align: center;
-    margin-top: 20px;
-}

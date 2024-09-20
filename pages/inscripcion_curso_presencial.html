@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de inscripción a un curso presencial | Unlamy</title>
+    <title>Formulario de inscripción a un curso presencial | Unlamy</title> <!-- Puse titulo -->
 
-    <link rel="stylesheet" href="./../css/header_footer.css">
-    <link rel="shortcut icon" href="./../assets/logo_unlam.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="shortcut icon" href="../assets/logo_unlam.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c3af30a602.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d3605530f4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../css/inscripcion_curso_presencial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> <!-- link para iconos +/- -->
 </head>
+
+<!-- CAMBIOS:
+1-Actualize el header y el footer
+2-Arregle los redirects del header y footer
+3- Saque el btn de registrarse
+4-Agregue links
+En main:
+-Div add-person-btn: Cambie btn de agregar persona y puse <p>, cambie class a add-person
+- div person-container: agrege div delete-person
+-->
+
+
+
 <body>
+    
     <header class="header">
         <div class="header__principal">
-            <a href="./index.html" class="header__principal-logo">
+            <a href="../index.html" class="header__principal-logo">
                 <div class="header__principal-logo">
-                    <img src="./../assets/logo_unlam.png" alt="logo unlam">
+                    <img src="../assets/logo_unlam.png" alt="logo unlam">
                     <p>Unlamy</p>
                 </div>
             </a>
@@ -41,28 +57,43 @@
                 <option value="Test Driven Development (TDD) con Jest"></option>
 
             </datalist>
-
-            <a href="./pages/registrar_empresa.html" class="header__principal-business">Unlamy Business</a>
-            <a href="./pages/carrito.html" class="header__principal-carrito">
+            <a href="./carrito.html" class="header__principal-carrito">
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>
                 <span class="texto-carrito">2</span>
             </a>
-            <!--<a href="./pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
+            <a href="./InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
             </a>
-            <a href="./pages/registrar_persona.html" class="header__principal-registrate">
-                Registrate
-            </a>-->
+            
         </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__menu-item">
+                    <a href="#">Categorias</a>
+                    <ul class="menu-desplegable">
+                        <li><a href="./lista_de_cursos.html">Analisis de datos</a></li>
+                        <li><a href="./lista_de_cursos.html">Ciberseguridad</a></li>
+                        <li><a href="./lista_de_cursos.html">Desarrollo web</a></li>
+                        <li><a href="./lista_de_cursos.html">Inteligencia artificial</a></li>
+                        <li><a href="./lista_de_cursos.html">Testing QA</a></li>
+                    </ul>
+                </li>
+                <li class="navbar__menu-item"><a href="./gift_cards.html">Gift Cards</a></li>
+                <li class="navbar__menu-item"><a href="./calendario_lanzamiento.html">Lanzamiento</a></li>
+                <li class="navbar__menu-item"> <a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
+
+
+    <main class="main">
         <section class="registration-form">
             <h1>Titulo del Curso</h1>
             <br>
-            <h2>Datos de los Inscriptos</h2>
-            <form id="registrationForm" action="#" method="POST">
+            <h2>Datos de los inscriptos:</h2>
+            <form id="registrationForm" action="./medio_pago.html" method="POST"> <!-- Agregue redirect a medio pago-->
                 <!-- Contenedor de personas inscritas -->
                 <div id="person-container">
                     <div class="person-data">
@@ -78,6 +109,9 @@
                             <label for="dni1">DNI:</label>
                             <input type="text" id="dni1" name="dni1" required>
                         </div>
+                        <div class="delete-person">
+                            <button type="button" class="person-btn"> − </button>
+                        </div>
                     </div>
                     <div class="person-data">
                         <div class="input-group">
@@ -91,6 +125,9 @@
                         <div class="input-group">
                             <label for="dni2">DNI:</label>
                             <input type="text" id="dni2" name="dni2" required>
+                        </div>
+                        <div class="delete-person">
+                            <button type="button" class="person-btn"> − </button>
                         </div>
                     </div>
                     <div class="person-data">
@@ -106,52 +143,59 @@
                             <label for="dni3">DNI:</label>
                             <input type="text" id="dni3" name="dni3" required>
                         </div>
+                        <div class="delete-person">
+                            <button type="button" class="person-btn"> − </button>
+                        </div>
                     </div>
                 </div>
-
+                
                 <!-- Botón para agregar más personas -->
-                <div class="add-person-btn">
-                    <button type="button" id="addPerson">+ Agregar Más Personas</button>
+                <div class="add-person">
+                    <button type="button" class="person-btn"> + </button>
+                    <p class="p-add-person">Agregar Persona</p>
                 </div>
 
                 <!-- Importe a pagar -->
                 <div class="payment-info">
-                    <h2>Importe a Pagar</h2>
-                    <p id="totalAmount">Total: $3000</p> <!-- Fijo por ahora -->
+                    <!-- <h2>Importe a pagar: </h2> -->
+                    <p id="totalAmount">$000.-</p> <!-- Fijo por ahora -->
                 </div>
 
                 <!-- Botón de Envío -->
                 <div class="submit-btn">
-                    <button type="submit">Registrar Inscripción</button>
+                    <button type="submit" class="form-btn">Inscribirse</button>
                 </div>
             </form>
         </section>
     </main>
+
+
+
+
     <footer class="footer">
         <div class="footer__columna-uno">
             <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
-            <p class="columna-uno-integrante">Alan Aspi - DNI 40243824</p>
+            <p class="columna-uno-integrante">Alan Aspi - DNI 40243824 </p>
             <p class="columna-uno-integrante">Daiana Quispe - DNI 41204857</p>
             <p class="columna-uno-integrante">Jesica Salva - DNI 39907003</p>
-            <p class="columna-uno-integrante">Leonel Valenzuela - DNI </p>
+            <p class="columna-uno-integrante">Leonel Valenzuela - DNI 45074142 </p>
         </div>
         <div class="footer__columna-dos">
             <p class="footer__columna-titulo">CATEGORIAS</p>
             <ul>
-                <li><a href="../pages/lista_de_cursos.html">Analisis de datos</a></li>
-                <li><a href="../pages/lista_de_cursos.html">Ciberseguridad</a></li>
-                <li><a href="../pages/lista_de_cursos.html">Desarrollo web</a></li>
-                <li><a href="../pages/lista_de_cursos.html">Inteligencia artificial</a></li>
-                <li><a href="../pages/lista_de_cursos.html">Testing QA</a></li>
+                <li><a href="./lista_de_cursos.html">Analisis de datos</a></li>
+                <li><a href="./lista_de_cursos.html">Ciberseguridad</a></li>
+                <li><a href="./lista_de_cursos.html">Desarrollo web</a></li>
+                <li><a href="./lista_de_cursos.html">Inteligencia artificial</a></li>
+                <li><a href="./lista_de_cursos.html">Testing QA</a></li>
             </ul>
         </div>
         <div class="footer__columna-tres">
             <p class="footer__columna-titulo">SECCIONES</p>
             <ul>
-                <li><a href="../pages/registrar_empresa.html">Unlamy Business</a></li>
-                <li><a href="../pages/gift_cards.html">Gift Cards</a></li>
-                <li><a href="../pages/calendario_lanzamiento.html">Lanzamiento</a></li>
-                <li><a href="../pages/contacto.html">Contacto</a></li>
+                <li><a href="./gift_cards.html">Gift Cards</a></li>
+                <li><a href="./calendario_lanzamiento.html">Lanzamiento</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
             </ul>
         </div>
         <div class="footer__columna-cuatro">
@@ -169,5 +213,12 @@
             </p>
         </div>
     </footer>
+
+
+
 </body>
 </html>
+
+
+
+
