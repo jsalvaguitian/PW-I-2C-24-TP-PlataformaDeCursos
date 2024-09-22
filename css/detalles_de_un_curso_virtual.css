@@ -118,7 +118,7 @@
     margin-left: 0.3rem;
 }
 .titulo{
-    padding:  0 2em 0 1.3em
+    padding:  0 2em 1em 1.3em
 }
 .curso-caracteristicas-y-requerimientos h2{
     margin-bottom: 1rem;
@@ -137,7 +137,8 @@
     color: #f5f5f5;
     display: flex;
     align-items: center;
-    padding: 0 3em 0 3em;
+    padding: 1em 3em;
+    gap:1em;
 }
 
 .foto-perfil-profesor{
@@ -183,6 +184,7 @@
 }
 .cursos_destacados {
     display: flex;
+    gap: 1em;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -191,7 +193,7 @@
 .cursos_destacados-card {
     width: 300px;
     height: 23em;
-    margin: 15px;
+    /*margin: 15px;*/
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fff;
@@ -312,4 +314,19 @@
 .cursos_destacados-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
     transform: scale(1.02);
+}
+
+/***** RESPONSIVE *****/
+@media screen and (max-width:576px) {
+    .descripcion_del_curso {
+        flex-direction:column-reverse
+    }
+
+    .docente_del_curso{
+        flex-direction: column;
+       
+    }
+
+
+
 }

@@ -3,6 +3,7 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -96,113 +97,118 @@ html {
     background-image: radial-gradient(circle at 79.88% -14.09%, #b3cd7a 0, #a5cd7d 12.5%, #8fc87a 25%, #72bd74 37.5%, #49ae6a 50%, #009e62 62.5%, #009362 75%, #008d67 87.5%, #008b72 100%);
 }
 
-.curso-caracteristicas-y-requerimientos{
+.curso-caracteristicas-y-requerimientos {
     padding: 3em 2.2em;
 }
 
-.cosas-cursos{
+.cosas-cursos {
     display: flex;
     flex-wrap: wrap;
-    justify-content:first baseline;
-    align-items:flex-start;
+    justify-content: first baseline;
+    align-items: flex-start;
 }
 
-.descripcion-item{
+.descripcion-item {
     display: flex;
     flex-wrap: wrap;
     padding: 0 1rem 1rem 0;
 }
 
-.descripcion-item i{
+.descripcion-item i {
     margin-left: 0.3rem;
 }
 
-.descripcion-item p{
+.descripcion-item p {
     margin-left: 0.3rem;
 }
-.titulo{
-    padding:  0 2em 0 1.3em
+
+.titulo {
+    padding: 0 2em 1em 1.3em
 }
-.curso-caracteristicas-y-requerimientos h2{
+
+.curso-caracteristicas-y-requerimientos h2 {
     margin-bottom: 1rem;
 }
 
-.descripcion-texto{
+.descripcion-texto {
     margin-bottom: 1.5rem;
 }
 
-.listado-requerimientos{
+.listado-requerimientos {
     padding: 0 1rem;
     margin-bottom: 1.5rem;
 }
-.docente_del_curso{
+
+.docente_del_curso {
     background-color: #474747;
     color: #f5f5f5;
     display: flex;
     align-items: center;
-    padding: 0 3em 0 3em;
+    padding: 1em 3em;
     justify-content: space-around;
+    gap:1em;
 }
 
-/*CORREGIR el ovalo blanco*/
-.foto-perfil-profesor{
+.foto-perfil-profesor {
     background-color: #ffffff;
     border-radius: 50% 50%;
-    width:100%;
-    text-align: center;
-    padding: 1em 1em;
-    margin:1em 1em 1em 0;
+    font-size: 7em;
+    padding: 0.10em 0.2em;
 }
 
-.foto-perfil-profesor i{
+.foto-perfil-profesor i {
     color: #000000;
-    font-size: 9rem;
+    
 }
 
-.descripcion-texto, .descripcion-profesor p{
+.descripcion-texto,
+.descripcion-profesor p {
     text-align: justify;
 }
-.details-contenido{
+
+.details-contenido {
     border: 1px solid #ccc;
     width: 70%;
 }
 
-.details-contenido summary{
+.details-contenido summary {
     background-color: #F7F9FA;
     padding: 10px;
 }
 
-.summary-fila{
+.summary-fila {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 0.5em 1em;
 }
 
-.summary-columna{
+.summary-columna {
     display: flex;
 }
 
-.summary-columna p{
+.summary-columna p {
     margin-left: 0.5rem;
 }
 
 
 /************************************************************/
 /*cursos relacionados*/
-.aside{
+.aside {
     margin: 3em 0;
 }
+
 .cursos_destacados {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 1em;
 }
 
 .cursos_destacados-card {
     width: 300px;
     height: 23em;
-    margin: 15px;
+    /*margin: 15px;*/
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fff;
@@ -323,4 +329,19 @@ html {
 .cursos_destacados-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
     transform: scale(1.02);
+}
+
+/*** RESPONSIVE ***/
+
+@media screen and (max-width:576px) {
+    .descripcion_del_curso {
+        flex-direction:column-reverse
+    }
+
+    .docente_del_curso{
+        flex-direction: column;
+    }
+
+
+
 }

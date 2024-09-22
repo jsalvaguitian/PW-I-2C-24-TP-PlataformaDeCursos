@@ -117,19 +117,19 @@
     font-weight: bold;
 }
 
-.header__principal-registrate {
+/*.header__principal-registrate {
     background-color: #000;
     padding: 0.7rem 1rem;
     color: #fff
-}
+}*/
 
 .header__principal-iniciar-sesion:hover {
     background-color: #f0f0f0;
 }
 
-.header__principal-registrate:hover {
+/*.header__principal-registrate:hover {
     background-color: #494949;
-}
+}*/
 
 .header__principal-carrito {
     position: relative;
@@ -236,6 +236,15 @@
 .footer__iconos-de-redes-sociales a:hover {
     color: #fff;
 }
+/*********** Header-usuario-logueado*******/
+.btn-aprendizaje-usuario{
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-aprendizaje-usuario:hover{
+    color: #048d68;
+}
 
 /*********** RESPONSIVE***********************/
 @media screen and (max-width:576px) {
@@ -244,6 +253,10 @@
     }
 
     .header__principal-iniciar-sesion, .header__principal-registrate, .header__principal-logo p, .navbar {
+        display: none;
+    }
+
+    .btn-aprendizaje-usuario{
         display: none;
     }
 

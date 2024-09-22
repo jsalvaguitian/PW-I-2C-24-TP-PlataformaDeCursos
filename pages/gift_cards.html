@@ -21,17 +21,25 @@
                 <a href="#IrVentanaFlotante" class="menu-hamburguesa"><i class="fa-solid fa-bars"></i></a>
             </div>
 
-            <div id="IrVentanaFlotante" class="menu-responsive-flotante" >
+            <div id="IrVentanaFlotante" class="menu-responsive-flotante">
                 <div class="ventana-menu">
                     <a href="#" class="elemento-cancelar-responsive">
                         X
                     </a>
 
                     <ul class="menu_responsive-lista">
-                        <li class="responsive_lista-item"><a href="../pages/InicioSesionIndividuo.html"><h4>Iniciar sesion</h4></a></li>
-                        <li class="responsive_lista-item"><a href="../pages/gift_cards.html"><h4>Gift Cards</h4></a></li>
-                        <li class="responsive_lista-item"><a href="../pages/calendario_lanzamiento.html"><h4>Lanzamiento</h4></a></li>
-                        <li class="responsive_lista-item"><a href="../pages/contacto.html"><h4>Contacto</h4></a></li>
+                        <li class="responsive_lista-item"><a href="../pages/InicioSesionIndividuo.html">
+                                <h4>Iniciar sesion</h4>
+                            </a></li>
+                        <li class="responsive_lista-item"><a href="../pages/gift_cards.html">
+                                <h4>Gift Cards</h4>
+                            </a></li>
+                        <li class="responsive_lista-item"><a href="../pages/calendario_lanzamiento.html">
+                                <h4>Lanzamiento</h4>
+                            </a></li>
+                        <li class="responsive_lista-item"><a href="../pages/contacto.html">
+                                <h4>Contacto</h4>
+                            </a></li>
                         <li class="esponsive_lista-item">
                             <h4>Categorias</h4>
                             <ul class="menu_responsive-sublista">
@@ -83,7 +91,7 @@
             <a href="../pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
             </a>
-            
+
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
@@ -110,8 +118,9 @@
                     <p>GIFT CARD para </p>
                     <p>Luana</p>
                 </div>
-                <p class="giftcard_box-monto">$ 90000</p>
-
+                <div class="giftcard_box_muestra-monto">
+                    <p class="giftcard_box-monto">$ 90000</p>
+                </div>
             </article>
             <h3 class="subtitulo-previzualizacion">Vista previa del resultado de personalización</h3>
         </section>
@@ -123,6 +132,12 @@
                 </label>
                 <input id="destinatario" type="text" name="destinatario" class="destinatario"
                     placeholder="Nombre del destinatario" value="Luana">
+
+                <label for="correo-destinatario">
+                    <h3>Correo electrónico del destinatario: </h3>
+                </label>
+                <input id="correo-destinatario" type="mail" name="correo-destinatario" class="destinatario" placeholder="Ingrese su mail" required>
+
 
                 <h3 class="subtitulo">Color</h3>
                 <div class="colores">
@@ -244,9 +259,12 @@
                         </div>
                     </div>
                 </div>
-                <a class="boton-enviar-formulario" href="#IrVentanaFlotante">Confirmar</a>
+                <div class="contenedor-boton-confirmar">
+                    <a class="boton-enviar-formulario" href="../pages/medio_pago.html">Confirmar</a>
+                </div>
 
-                <div id="IrVentanaFlotante" class="modal">
+                <!--
+                <div id="IrVentanaFlotante2" class="modal">
 
                     <div class="ventana">
                         <a href="#" style='text-decoration:none;'>
@@ -275,14 +293,14 @@
 
                     </div>
 
-                </div>
+                </div>-->
             </form>
         </section>
     </main>
     <footer class="footer">
         <div class="footer__columna-uno">
             <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
-            <p class="columna-uno-integrante">Alan Aspi - DNI </p>
+            <p class="columna-uno-integrante">Alan Aspi - DNI 40243824 </p>
             <p class="columna-uno-integrante">Daiana Quispe - DNI 41204857</p>
             <p class="columna-uno-integrante">Jesica Salva - DNI 39907003</p>
             <p class="columna-uno-integrante">Leonel Valenzuela - DNI 45074142 </p>

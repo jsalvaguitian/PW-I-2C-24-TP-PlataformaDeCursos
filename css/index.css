@@ -117,6 +117,7 @@
 /**CURSOS DESTACADOS*/
 .cursos_destacados {
     display: flex;
+    gap: 1.5em;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -125,7 +126,7 @@
 .cursos_destacados-card {
     width: 300px;
     height: 23em;
-    margin: 15px;
+    /*margin: 15px;*/
     padding: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #fff;
@@ -247,6 +248,7 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
     transform: scale(1.02);
 }
+
 
 /***Carrusel de metodoso de pagos**/
 .carrusel_metodos_de_pagos {

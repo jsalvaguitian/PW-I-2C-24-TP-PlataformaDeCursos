@@ -1,0 +1,83 @@
+html, .body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex:1;
+}
+.titulo-aprendizaje{
+    text-align: center;
+    margin: 1em 0 0.7em 0;
+}
+.contenedor-cursos-del-usuario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1.3em;
+}
+.cursos_destacados-card{
+    width: 15em;
+    /*margin: 15px;*/
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-sizing: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-imagen {
+    width: 100%;
+}
+
+.contenedor-cursos-del-usuario a {
+    text-decoration: none;
+}
+
+.card_contenedor-descripcion {
+    padding: 0.5em;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.fila-puntaje-hora{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.estrella-puntaje{
+    display: flex;
+}
+
+.card_curso-hora {
+    grid-area: hora;
+    height: 1.45em;
+    line-height: 2em;
+    display: flex;
+    padding-top: 0.2em;
+    margin-top: 0.2em;
+}
+
+
+.card_contenedor-imagen {
+    position: relative;
+}
+
+
+.card_curso-puntaje, .estrella {
+    color: #B46A27;
+    font-weight: bold;
+}
+
+
+.cursos_destacados-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
