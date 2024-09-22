@@ -16,6 +16,38 @@
 <body>
     <header class="header">
         <div class="header__principal">
+            <!--Nuestro menu hamburguesa-->
+            <div class="header__principal-menu-responsive">
+                <a href="#IrVentanaFlotante" class="menu-hamburguesa"><i class="fa-solid fa-bars"></i></a>
+            </div>
+
+            <div id="IrVentanaFlotante" class="menu-responsive-flotante" >
+                <div class="ventana-menu">
+                    <a href="#" class="elemento-cancelar-responsive">
+                        X
+                    </a>
+
+                    <ul class="menu_responsive-lista">
+                        <li class="responsive_lista-item"><a href="./pages/InicioSesionIndividuo.html"><h4>Iniciar sesion</h4></a></li>
+                        <li class="responsive_lista-item"><a href="./pages/gift_cards.html"><h4>Gift Cards</h4></a></li>
+                        <li class="responsive_lista-item"><a href="./pages/calendario_lanzamiento.html"><h4>Lanzamiento</h4></a></li>
+                        <li class="responsive_lista-item"><a href="./pages/contacto.html"><h4>Contacto</h4></a></li>
+                        <li class="esponsive_lista-item">
+                            <h4>Categorias</h4>
+                            <ul class="menu_responsive-sublista">
+                                <li><a href="./pages/lista_de_cursos.html">Analisis de datos</a></li>
+                                <li><a href="./pages/lista_de_cursos.html">Ciberseguridad</a></li>
+                                <li><a href="./pages/lista_de_cursos.html">Desarrollo web</a></li>
+                                <li><a href="./pages/lista_de_cursos.html">Inteligencia artificial</a></li>
+                                <li><a href="./pages/lista_de_cursos.html">Testing QA</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--Sin menu RESPONSIVE-->
             <a href="../index.html" class="header__principal-logo">
                 <div class="header__principal-logo">
                     <img src="../assets/logo_unlam.png" alt="logo unlam">
@@ -51,9 +83,7 @@
             <a href="../pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
             </a>
-            <a href="../pages/registrar_persona.html" class="header__principal-registrate">
-                Registrate
-            </a>
+        
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
