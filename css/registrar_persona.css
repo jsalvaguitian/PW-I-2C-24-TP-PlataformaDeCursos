@@ -95,7 +95,7 @@ body{
 
 .form-button button{
     width: 45%;
-    height: 2.5em;
+    height: 100%;
     border: none;
     border-radius: 6px;
     background-color: #399B77;
@@ -107,8 +107,13 @@ body{
 .form-button-cancelar a{
     text-decoration: none;
     color: #ffffff;
+    display: block;  
+    padding: 0.5em;  
 }
 
+.btn-guardar{
+    padding: 0.5em;
+}
 
 /*POPUP*/
 
