@@ -6,7 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+.body {
     background-image: radial-gradient(circle at 73.27% 0.09%, #d7d75d 0, #c7d961 6.25%, #b5d966 12.5%, #a2d76c 18.75%, #8dd271 25%, #77cb76 31.25%, #60c179 37.5%, #48b67b 43.75%, #2ea87b 50%, #0a9a79 56.25%, #008e78 62.5%, #008477 68.75%, #007b76 75%, #007477 81.25%, #006f78 87.5%, #006b7a 93.75%, #00697d 100%);
     background-repeat: no-repeat;
     height: 100vh;/*ocupa toda la ventana*/
@@ -161,3 +161,47 @@ body {
 .register-link p a:hover {
     text-decoration: underline;
 }
+
+
+/* -------- Responsive -------- */
+
+@media screen and (max-height:564px) {
+    
+    .body {
+        height: 37em;
+    }
+    
+    .main {
+        height: 100%;
+
+    }
+
+
+}
+
+@media screen and (max-width:458px) {
+
+    .main {
+        height: 100%;
+        width: 100%;
+        font-size: 0.7em;
+        justify-content: center;
+    }
+
+    .Wrapper-User-Login {
+        width: 26em;
+    }
+
+    .Wrapper-User-Login .remember-forgot {
+        font-size: 1.1em;
+    }
+
+    .Wrapper-User-Login .form-button .btn {
+        font-size: 1.2em;
+    }
+
+    .Wrapper-User-Login .register-link {
+        font-size: 1.2em;
+    }
+}
+
