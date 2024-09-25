@@ -1,6 +1,6 @@
 # Trabajo Práctico Parte 1 - Programación Web 1
 ## Enunciado
-	Se necesita maquetar una página web para una empresa que ofrece una plataforma de cursos, tanto en modalidad online como presencial, similar a Udemy o Platzi.
+Se necesita maquetar una página web para una empresa que ofrece una plataforma de cursos, tanto en modalidad online como presencial, similar a Udemy o Platzi.
 
 ## Requisitos
 + **Tecnologías:** HTML5 y CSS3.
