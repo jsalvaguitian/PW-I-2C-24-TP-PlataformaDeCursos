@@ -41,37 +41,6 @@ main .input-group input, main select {
     border-radius: 0.3em;
 }
 
-main .photo-section {
-    margin-top: 2em;
-    text-align: center;
-}
-
-main .photo-upload {
-    display: inline-block;
-    text-align: center;
-}
-
-main .photo-upload img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1em;
-}
-
-main .photo-upload button {
-    display: block;
-    padding: 0.8em;
-    background-color: #01A679;
-    color: white;
-    border: none;
-    border-radius: 0.3em;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-main .photo-upload button:hover {
-    background-color: #018f63;
-}
 
 main .save-btn {
     margin-top: 2em;
@@ -94,7 +63,7 @@ main .save-btn button:hover {
 
 @media (max-width: 768px) {
     main {
-        width: 90%;
+        width: 80%;
     }
 
     main form {
@@ -106,9 +75,3 @@ main .save-btn button:hover {
     }
 }
 
-@media (max-width: 600px) {
-    main .photo-upload img {
-        width: 100px;
-        height: 100px;
-    }
-}
