@@ -12,7 +12,7 @@ body {
 }
 
 .main-carrito {
-  width: 90%;
+  width: 70%;
   max-width: 60em;
   margin: 2em auto;
   padding: 2em;
@@ -95,7 +95,7 @@ h1 {
   }
 
   .btn-siguiente {
-    width: 100%;
+    width: 50%;
     text-align: center;
   }
 }
