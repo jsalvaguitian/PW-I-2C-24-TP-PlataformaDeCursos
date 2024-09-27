@@ -15,15 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> <!-- link para iconos +/- -->
 </head>
 
-<!-- CAMBIOS:
-1-Actualize el header y el footer
-2-Arregle los redirects del header y footer
-3- Saque el btn de registrarse
-4-Agregue links
-En main:
--Div add-person-btn: Cambie btn de agregar persona y puse <p>, cambie class a add-person
-- div person-container: agrege div delete-person
--->
 
 
 
@@ -122,10 +113,14 @@ En main:
 
     <main class="main">
         <section class="registration-form">
-            <h1>Titulo del Curso</h1>
-            <br>
-            <h2>Datos de los inscriptos:</h2>
-            <form id="registrationForm" action="./medio_pago.html" method="POST"> <!-- Agregue redirect a medio pago-->
+            
+            <div class="registration-titulos">
+                <h1>Titulo del Curso</h1>
+                <br>
+                <h2>Datos de los inscriptos:</h2>
+            </div>
+
+            <form id="registrationForm" action="./medio_pago.html" method="GET"> <!-- Agregue redirect a medio pago-->
                 <!-- Contenedor de personas inscritas -->
                 <div id="person-container">
                     <div class="person-data">
@@ -139,7 +134,7 @@ En main:
                         </div>
                         <div class="input-group">
                             <label for="dni1">DNI:</label>
-                            <input type="text" id="dni1" name="dni1" required>
+                            <input type="number" id="dni1" name="dni1" required>
                         </div>
                         <div class="delete-person">
                             <button type="button" class="person-btn"> − </button>
@@ -156,7 +151,7 @@ En main:
                         </div>
                         <div class="input-group">
                             <label for="dni2">DNI:</label>
-                            <input type="text" id="dni2" name="dni2" required>
+                            <input type="number" id="dni2" name="dni2" required>
                         </div>
                         <div class="delete-person">
                             <button type="button" class="person-btn"> − </button>
@@ -173,7 +168,7 @@ En main:
                         </div>
                         <div class="input-group">
                             <label for="dni3">DNI:</label>
-                            <input type="text" id="dni3" name="dni3" required>
+                            <input type="number" id="dni3" name="dni3" required>
                         </div>
                         <div class="delete-person">
                             <button type="button" class="person-btn"> − </button>
@@ -189,7 +184,6 @@ En main:
 
                 <!-- Importe a pagar -->
                 <div class="payment-info">
-                    <!-- <h2>Importe a pagar: </h2> -->
                     <p id="totalAmount">$000.-</p> <!-- Fijo por ahora -->
                 </div>
 

@@ -2,6 +2,8 @@
 CAMBIOS:
 Agrego form-btn, btn-person
 Se saco button y button hover
+Agrege responsive
+Puse imput number con datos igual a text
 */
 
 
@@ -14,7 +16,7 @@ body {
 }
 
 
-h1, h2 {
+.registration-form .registration-titulos {
     margin: 4px;
     padding-bottom: 5px;
 }
@@ -60,7 +62,13 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
 .person-btn {
     border-radius: 50%;
@@ -81,11 +89,6 @@ input[type="text"] {
 }
 
 
-/*
-button:hover {
-    background-color: #018f63;
-}
-*/
 
 .payment-info {
     font-size: 1.2em;
@@ -112,3 +115,31 @@ button:hover {
     transition: background-color 0.3s;
 }
 
+/************************Responsive***************************/
+
+@media screen and (max-width:576px) {
+
+    .registration-form {
+        font-size: 0.8em;
+    }
+
+    .person-data {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+}
+
+@media screen and (min-width:576px) and (max-width:752px) {
+
+    .registration-form {
+        font-size: 0.8em;
+    }
+
+    .input-group {
+        flex-basis: 33%;
+        
+    }
+
+
+}
