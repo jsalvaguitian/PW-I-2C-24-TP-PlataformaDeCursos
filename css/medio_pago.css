@@ -65,9 +65,12 @@ main {
 .input-row .input-group {
     width: 46%;
 }
-
+.card-info {
+    padding-right: 2em;
+}
 .coupon-section {
     margin-top: 3em;
+    padding-right: 2em;
 }
 
 .payment-summary {
