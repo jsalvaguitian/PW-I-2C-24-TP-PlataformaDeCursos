@@ -258,28 +258,23 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 0.9em;
     padding: 0 0.7em;
 }
-.contenedor-boton-confirmar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
 
 .boton-enviar-formulario {
     width: 35%;
-    height: 1.5em;
     border: none;
     border-radius: 6px;
     background-color: #399B77;
     color: #ffffff;
     font-weight: bold;
     font-size: 1.2em;
-    margin: 1em 0 2em 0;
+    margin: 1em auto 2em auto; /*auto para centrar horizontalmente*/
     display: block;
     text-decoration: none;
     text-align: center;
     padding: 0.8rem;
 }
+
+
 
 /*recorda la unidad de medida em cambiar solo segun su contenedor
 en cambio rem segun el html*/

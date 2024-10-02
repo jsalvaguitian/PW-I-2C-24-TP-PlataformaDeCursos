@@ -126,23 +126,24 @@
         </section>
         <section class="section-columna2">
             <h1>Personalización de Gifcard</h1>
-            <form action="#" method="post">
+            <form action="./medio_pago.html" method="#" class="formulario-gift">
                 <label for="destinatario">
                     <h3>Para: </h3>
                 </label>
                 <input id="destinatario" type="text" name="destinatario" class="destinatario"
-                    placeholder="Nombre del destinatario" value="Luana">
+                    placeholder="Nombre del destinatario" value="Luana" required>
 
                 <label for="correo-destinatario">
                     <h3>Correo electrónico del destinatario: </h3>
                 </label>
-                <input id="correo-destinatario" type="mail" name="correo-destinatario" class="destinatario" placeholder="Ingrese su mail" required>
+                <input id="correo-destinatario" type="mail" name="correo-destinatario" class="destinatario"
+                    placeholder="Ingrese su mail" required>
 
 
                 <h3 class="subtitulo">Color</h3>
                 <div class="colores">
                     <div class="color1">
-                        <input type="radio" name="tipo_color" id="blanco" value="blanco">
+                        <input type="radio" name="tipo_color" id="blanco" value="blanco" required>
                         <div class="color"></div>
                     </div>
 
@@ -170,7 +171,7 @@
                 <h3 class="subtitulo">Tamaño de fuente</h3>
                 <div class="tamanio-fuentes">
                     <div class="fuente20">
-                        <input type="radio" name="tamanio_fuente" id="fuente20"><span class="fuente">20px</span>
+                        <input type="radio" name="tamanio_fuente" id="fuente20" required><span class="fuente">20px</span>
                     </div>
 
                     <div class="fuente28">
@@ -194,13 +195,13 @@
                     <label for="monto">
                         <h3 class="subtitulo-monto">Monto $</h3>
                     </label>
-                    <input id="monto" type="number" name="edad" min="0" max="90000" value="90000">
+                    <input id="monto" type="number" name="edad" min="0" max="90000" value="90000" required>
                 </div>
 
                 <h3 class="subtitulo">Ubicación</h3>
                 <div class="ubicaciones">
                     <div class="ubicacion1">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf" required>
                         <div class="ubicacion ub1">
                             <p class="ubicacion-precio-der-inf">$</p>
                         </div>
@@ -225,7 +226,7 @@
                 <h3 class="subtitulo">Fondo</h3>
                 <div class="fondos">
                     <div class="fondo1">
-                        <input type="radio" name="tipo_fondo" id="fondo-cumple" value="fondo-cumple" checked>
+                        <input type="radio" name="tipo_fondo" id="fondo-cumple" value="fondo-cumple" checked required>
                         <div class="fondo">
                             <img src="../assets/1-fondo-cumple.jpg" alt="">
                         </div>
@@ -259,10 +260,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="contenedor-boton-confirmar">
-                    <a class="boton-enviar-formulario" href="../pages/medio_pago.html">Confirmar</a>
-                </div>
-
+                <button type="submit" class="boton-enviar-formulario">
+                    Confirmar
+                </button>
+                <!--
+                <button type="submit" id="btn-guardar-usuario" class="btn-guardar">
+                    Registrar
+                </button>
+            -->
                 <!--
                 <div id="IrVentanaFlotante2" class="modal">
 

@@ -4,9 +4,9 @@ body {
     padding: 0;
 }
 
-header, footer {
+header{
     background-color: #f1f1f1;
-    padding: 1em;
+    /*padding: 1em;*/
     text-align: center;
 }
 
