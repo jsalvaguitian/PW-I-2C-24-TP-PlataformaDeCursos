@@ -6,5 +6,6 @@ export class Usuario{
         this.pass = pass;
         this.id = id;
         this.metodoDePago = [];
+        this.cursosComprados =[];
     }
 }

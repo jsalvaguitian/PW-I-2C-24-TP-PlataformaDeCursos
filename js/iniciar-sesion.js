@@ -1,19 +1,28 @@
-document.querySelector(".js-btn-iniciar-sesion").addEventListener('click', loguearUsuario);
+const formulario =  document.querySelector(".js-formulario-login");
+
+formulario.addEventListener("submit", (event) =>{
+    event.preventDefault();
+    loguearUsuario();
+});
 
 function loguearUsuario() {
-    let emailIngresado = document.getElementById("mail").value;
+    
+   let emailIngresado = document.getElementById("mail").value;
     let contraseniaIngresada = document.getElementById("password").value;
     let mensajeError;
     let usuarioLogueado = buscarUsuario(emailIngresado, contraseniaIngresada);
+    console.log(usuarioLogueado);
 
-    if (usuarioLogueado != null) {
-        guardarUsuarioLogueadoSessionStorage(usuarioLogueado);
-        mensajeError = " ";
-        document.getElementById("mensaje").innerHTML = mensajeError
-
-    } else {
+    if (usuarioLogueado == null) {
         mensajeError = "<p>Mail y/o contraseña incorrecta.</p>";
         document.getElementById("mensaje").innerHTML = mensajeError;
+        return;
+    } else {
+        guardarUsuarioLogueadoSessionStorage(usuarioLogueado);
+        mensajeError = " ";
+        document.getElementById("mensaje").innerHTML = mensajeError;
+        formulario.action = '../pages/perfil.html';
+        formulario.submit();
     }
 
 }
