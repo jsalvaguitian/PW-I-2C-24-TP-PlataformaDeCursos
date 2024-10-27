@@ -28,14 +28,15 @@
         </section>
 
         <section class="Wrapper-User-Login">
-            <form action="./perfil.html" method="get" autocomplete="off"> <!-- sacar enlace de perfil o dejarlo?-->
+            <!--./perfil.html-->
+            <form action="./perfil.html" method="" autocomplete="off"> <!-- sacar enlace de perfil o dejarlo?-->
 
                 <div class="input-box">
-                    <input type="email" placeholder="Correo electrónico" required>
+                    <input type="email" id="mail" placeholder="Correo electrónico" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Contraseña" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
 
@@ -44,21 +45,21 @@
                 </div>
 
                 <div class="form-button">
-                    <button type="submit" class="btn">Iniciar sesión</button>
+                    <button type="submit" class="btn js-btn-iniciar-sesion">Iniciar sesión</button>
                 </div>
 
                 <div class="register-link">
                     <p>No creaste una cuenta? <a href="./registrar_persona.html">Registrate</a> </p>
                 </div>
 
+                <div id="mensaje"></div>
             </form>
 
         </section>
 
 
     </main>
-
-
+    <script src="../js/iniciar-sesion.js" type="module"></script>
 </body>
 
 </html>

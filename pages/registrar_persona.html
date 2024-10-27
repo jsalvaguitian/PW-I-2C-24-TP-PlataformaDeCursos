@@ -15,7 +15,7 @@
 <body>
     <main class="main-registrate">
         <section class="encabezado-registrate">
-            <a href="../index.html" class="logo-titulo">
+            <a href="./InicioSesionIndividuo.html" class="logo-titulo">
                 <img src="../assets/logo_unlam.png" alt="">
                 <p>Unlamy</p>
             </a>
@@ -23,7 +23,7 @@
         </section>
 
         <section class="contenedor-registrate">
-            <form action="../index.html" method="#">
+            <form action="./InicioSesionIndividuo.html" method="#">
                 <div class="form-element">
                     <label for="mail">Email</label>
                     <input type="email" name="mail" id="mail" placeholder="Correo electrónico" required>
@@ -51,14 +51,14 @@
                 </div>
 
                 <div class="form-button">
-                    <button type="submit" id="btn-guardar-usuario" class="btn-guardar">
+                    <button type="submit" class="btn-guardar js-btn-guarda-usuario">
                         Registrar
                     </button>
                     <button class="form-button-cancelar">
                         <a class="a-to-button" href="../pages/InicioSesionIndividuo.html">Cancelar </a>
                     </button>
                 </div>
-                <div id="mensaje" class="error">
+                <div id="mensaje" class="error"> </div>
             </form>
 
             <!--<div id="IrVentanaFlotante" class="modal">
@@ -77,6 +77,8 @@
             
         </section>
     </main>
+    <script src="../js/validacion-crear-usuario.js"></script>
+    <script src="../js/registro-usuario.js" type="module"></script>
 </body>
 
 </html>

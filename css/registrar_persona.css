@@ -5,24 +5,27 @@
 }
 
 body{
+    min-height: 100vh;
     background-image: radial-gradient(circle at 73.27% 0.09%, #d7d75d 0, #c7d961 6.25%, #b5d966 12.5%, #a2d76c 18.75%, #8dd271 25%, #77cb76 31.25%, #60c179 37.5%, #48b67b 43.75%, #2ea87b 50%, #0a9a79 56.25%, #008e78 62.5%, #008477 68.75%, #007b76 75%, #007477 81.25%, #006f78 87.5%, #006b7a 93.75%, #00697d 100%);
     background-repeat: no-repeat;
-    height: 100vh;/*ocupa toda la ventana*/
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .main-registrate{
     background-color:#fff;
-    height: 30em;
+    /*height: 30em;*/
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
     padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 3rem;
+    padding: 0 3rem 1rem 3rem;
+    max-width: 15rem;
 }
 .encabezado-registrate{
     display: flex;
@@ -114,7 +117,9 @@ body{
 .btn-guardar{
     padding: 0.5em;
 }
-
+.error{
+    padding-top: 1rem;
+}
 /*POPUP*/
 
 .ventana{
