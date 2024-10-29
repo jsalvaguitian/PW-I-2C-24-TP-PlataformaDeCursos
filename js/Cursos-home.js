@@ -11,43 +11,56 @@ let curso7 = new Curso(6, "./assets/curso-7-docker.jpg", "Curso Docker de Princi
 let curso8 = new Curso(7, "./assets/curso-8-jest.jpg", "Curso Test Driven Development con Jest", "Online", "Testing QA", 766900, 100, 90000, 4.7, "Homero Simpson");
 
 let cursoList = [curso1, curso2, curso3, curso4, curso5, curso6, curso7, curso8];
-const botonesCarritosSelector = document.querySelectorAll(".js-card_curso-carrito");
+const todosBotonesComprarSelector = document.querySelectorAll(".js-card_curso-carrito");
 
 localStorage.setItem("curso", JSON.stringify(cursoList));  //persisto los datos de cada curso en localstorage
 
-
-
 guardarIdEnlaceCursoEnSessionStorage();
 
-if (ayudante.buscarEntidadEnSessionStorage("botones") == []) {
+if (sessionStorage.getItem("botones") == null) 
     crearBotonesEnSessionStorage();
-}
-
 
 dirigirBotonCarrito();
 
-incrementarContadorCarritoPorCurso();
+if(sessionStorage.getItem("usuarioLogueado") != "")
+    incrementarContadorBotonComprarPorCurso();
+
+/****  FUNCIONES********************/
 
 function dirigirBotonCarrito() {
-    if (ayudante.buscarEntidadEnSessionStorage("usuarioLogueado") == []) {
-        botonesCarritosSelector.forEach((boton, index) => {
-            boton.addEventListener("click", () => {
-                let botonesStorage = ayudante.buscarEntidadEnSessionStorage("botones");
+    let botonesComprarCursosOnline = document.querySelectorAll(".js-online-curso");
+    let botonesComprarCursosPresencial = document.querySelectorAll(".js-presencial-curso");
+    let enlacePago = '/pages/medio_pago.html';
+    let enlaceFormulario = '/pages/inscripcion_curso_presencial.html';
+    let enlaceInicioSesion = '/pages/InicioSesionIndividuo.html';
 
-            })
-        })
+    if (JSON.stringify(ayudante.buscarEntidadEnSessionStorage("usuarioLogueado")) == JSON.stringify([])) {
+        dirigirEnlace(todosBotonesComprarSelector, enlaceInicioSesion);
+    } else {
+        dirigirEnlace(botonesComprarCursosOnline, enlacePago);
+        dirigirEnlace(botonesComprarCursosPresencial, enlaceFormulario);
     }
+
+
 }
 
-function incrementarContadorCarritoPorCurso() {
+function dirigirEnlace(botones, enlace) {
+    botones.forEach(boton => {
+        boton.addEventListener("click", (event) => {
+            event.preventDefault();
+            window.location.href = enlace;
+        })
+    })
+}
 
-    botonesCarritosSelector.forEach((boton, index) => {
+function incrementarContadorBotonComprarPorCurso() {
+
+    todosBotonesComprarSelector.forEach((boton, index) => {
         boton.addEventListener("click", () => {
             console.log(index);//me devuelve el indice del boton
 
             let botonesStorage = ayudante.buscarEntidadEnSessionStorage("botones");
-            let cont = botonesStorage[index].contador + 1;
-            botonesStorage[index].contador = cont;
+            botonesStorage[index].contador += 1;
             sessionStorage.setItem("botones", JSON.stringify(botonesStorage));
             console.log("cont " + cont);
         })
@@ -58,7 +71,7 @@ function incrementarContadorCarritoPorCurso() {
 function crearBotonesEnSessionStorage() {
     let botonesCarritos = [];
 
-    for (let i = 0; i < botonesCarritosSelector.length; i++) {
+    for (let i = 0; i < todosBotonesComprarSelector.length; i++) {
         let unboton = {
             indexBtn: i,
             contador: 0,

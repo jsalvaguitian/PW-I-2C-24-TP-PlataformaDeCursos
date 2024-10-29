@@ -85,7 +85,7 @@
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>
-                <span class="texto-carrito">2</span>
+                <span class="texto-carrito"></span>
             </a>
             <a href="./pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
@@ -216,9 +216,9 @@
         <!--DESTACADOS-->
         <aside class="aside">
             <h2 class="titulo">Cursos destacados</h2>
-
+            <!--./pages/detalles_de_un_curso_virtual.html-->
             <div class="cursos_destacados">
-                <a href="./pages/detalles_de_un_curso_virtual.html" id="0-link" class="js-enlace-card">
+                <a href="#" id="0-link" class="js-enlace-card">
                     <article class="cursos_destacados-card">
                         <div class="card_contenedor-imagen">
                             <img src="./assets/curso-1-Microsoft-Power-BI.jpg" alt="" class="card-imagen">
@@ -246,7 +246,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-online-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -284,7 +284,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito" >
+                            <button class="card_curso-carrito js-card_curso-carrito js-online-curso" >
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -320,7 +320,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-presencial-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -357,7 +357,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-online-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -393,7 +393,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-online-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -428,7 +428,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-presencial-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -463,7 +463,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-online-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -498,7 +498,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito js-card_curso-carrito">
+                            <button class="card_curso-carrito js-card_curso-carrito js-online-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -577,6 +577,8 @@
     </footer>
     <script src="https://kit.fontawesome.com/d3605530f4.js" crossorigin="anonymous"></script>
     <script src="./js/Cursos-home.js" type="module"></script>
+    <script type="module" src="./js/contador-carrito.js"></script>
+    <script type="module" src="./js/cerrar-session.js"></script>
 </body>
 
 </html>
