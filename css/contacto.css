@@ -58,6 +58,7 @@ h3 {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.2em;
+  margin-top: 1em;
 }
 
 .formulario-contacto form textarea,
@@ -67,7 +68,6 @@ h3 {
 .formulario-contacto form input[type="tel"] {
   width: 100%;
   padding: 0.8em;
-  margin-bottom: 1em;
   border: 1px solid #ccc;
   border-radius: 0.5em;
   font-size: 1em;
@@ -90,6 +90,7 @@ h3 {
   width: 35%; 
   text-align: center;
   margin-right: 0;
+  margin-top: 1em;
 }
 
 .formulario-contacto form button:hover {
@@ -155,4 +156,47 @@ h3 {
   h3 {
     font-size: 1.2em;
   }
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+#acceptButton{
+  background-color: #28a745; 
+  color: white; 
+  border: 1px solid #28a745; 
+  border-radius: 1em; 
+  padding: 0.7em 1.3em; 
+  font-size: 0.8em; 
+  cursor: pointer; 
+  margin-top: 1em;
+}
+.modal-contenido {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 1.3em;
+  border: 0.2em solid #888;
+  width: 15%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
