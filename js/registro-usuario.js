@@ -6,6 +6,7 @@ apellido
 password
 */
 import { Usuario } from "./ClaseUsuario.js";
+import { buscarEntidadEnLocalStorage } from "./ayudante.js";
 
 document.querySelector('.js-btn-guarda-usuario').addEventListener('click',guardarUsuario);
 function generarIdUsuario(){
@@ -44,12 +45,4 @@ function agregarUsuario(email, name, surname, pwd, id){
 
 }
 
-function buscarEntidadEnLocalStorage(entidad){
-    if(localStorage.getItem(entidad) == null){
-        localStorage.setItem(entidad, [])
-        return [];
-    }else if(localStorage.getItem(entidad) == []){
-        return [];
 
-    }else return JSON.parse(localStorage.getItem(entidad));
-}

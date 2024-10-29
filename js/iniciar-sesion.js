@@ -1,3 +1,5 @@
+import { buscarEntidadEnLocalStorage } from "./ayudante.js";
+
 const formulario =  document.querySelector(".js-formulario-login");
 
 formulario.addEventListener("submit", (event) =>{
@@ -47,12 +49,3 @@ function guardarUsuarioLogueadoSessionStorage(unUsuario) {
     sessionStorage.setItem("usuarioLogueado", JSON.stringify(unUsuario));
 }
 
-function buscarEntidadEnLocalStorage(entidad) {
-    if (localStorage.getItem(entidad) == null) {
-        localStorage.setItem(entidad, [])
-        return [];
-    } else if (localStorage.getItem(entidad) == []) {
-        return [];
-
-    } else return JSON.parse(localStorage.getItem(entidad));
-}
