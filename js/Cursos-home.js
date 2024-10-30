@@ -1,3 +1,9 @@
+/*ToDo 
+1. escribir en cada parte del curso destacado nombre, precio, etc, sin borrar la estructura html
+2. sacar incrementador de cada botones
+3. en Carrito cursos a comprar [{cant:2, curso},]
+
+*/
 import { Curso } from "./ClaseCurso.js";
 import * as ayudante from "./ayudante.js";
 
@@ -11,38 +17,39 @@ let curso7 = new Curso(6, "./assets/curso-7-docker.jpg", "Curso Docker de Princi
 let curso8 = new Curso(7, "./assets/curso-8-jest.jpg", "Curso Test Driven Development con Jest", "Online", "Testing QA", 766900, 100, 90000, 4.7, "Homero Simpson");
 
 let cursoList = [curso1, curso2, curso3, curso4, curso5, curso6, curso7, curso8];
-const todosBotonesComprarSelector = document.querySelectorAll(".js-card_curso-carrito");
 
 localStorage.setItem("curso", JSON.stringify(cursoList));  //persisto los datos de cada curso en localstorage
 
-guardarIdEnlaceCursoEnSessionStorage();
+hacerDinamicoLosCursosDestacados();
 
-if (sessionStorage.getItem("botones") == null) 
-    crearBotonesEnSessionStorage();
+actualizarClaseBoton()
+
+guardarIdEnlaceCursoEnSessionStorage();
 
 dirigirBotonCarrito();
 
-if(sessionStorage.getItem("usuarioLogueado") != "")
-    incrementarContadorBotonComprarPorCurso();
-
 /****  FUNCIONES********************/
 
-function dirigirBotonCarrito() {
+function dirigirBotonCarrito(){
+    let todosBotonesComprar = document.querySelectorAll(".js-card-curso-carrito");
     let botonesComprarCursosOnline = document.querySelectorAll(".js-online-curso");
     let botonesComprarCursosPresencial = document.querySelectorAll(".js-presencial-curso");
+
+    let enlaceInicioSesion = '/pages/InicioSesionIndividuo.html';
     let enlacePago = '/pages/medio_pago.html';
     let enlaceFormulario = '/pages/inscripcion_curso_presencial.html';
-    let enlaceInicioSesion = '/pages/InicioSesionIndividuo.html';
 
-    if (JSON.stringify(ayudante.buscarEntidadEnSessionStorage("usuarioLogueado")) == JSON.stringify([])) {
-        dirigirEnlace(todosBotonesComprarSelector, enlaceInicioSesion);
+    console.log(botonesComprarCursosOnline);
+    console.log(todosBotonesComprar)
+
+    if (sessionStorage.getItem("usuarioLogueado") == "" || sessionStorage.getItem("usuarioLogueado") == null) {
+        dirigirEnlace(todosBotonesComprar, enlaceInicioSesion)
     } else {
         dirigirEnlace(botonesComprarCursosOnline, enlacePago);
-        dirigirEnlace(botonesComprarCursosPresencial, enlaceFormulario);
+        dirigirEnlace(botonesComprarCursosPresencial,enlaceFormulario);
     }
-
-
 }
+
 
 function dirigirEnlace(botones, enlace) {
     botones.forEach(boton => {
@@ -53,42 +60,78 @@ function dirigirEnlace(botones, enlace) {
     })
 }
 
-function incrementarContadorBotonComprarPorCurso() {
+function actualizarClaseBoton() {
+    let botonesComprar = document.querySelectorAll(".js-card-curso-carrito");
+    let modalidadesH4 = document.querySelectorAll(".modalidad-curso");
 
-    todosBotonesComprarSelector.forEach((boton, index) => {
-        boton.addEventListener("click", () => {
-            console.log(index);//me devuelve el indice del boton
-
-            let botonesStorage = ayudante.buscarEntidadEnSessionStorage("botones");
-            botonesStorage[index].contador += 1;
-            sessionStorage.setItem("botones", JSON.stringify(botonesStorage));
-            console.log("cont " + cont);
-        })
-    })
-
+    for (let i = 0; i < modalidadesH4.length; i++) {
+        if (modalidadesH4[i].innerText === "Online") {
+            botonesComprar[i].className += " js-online-curso";
+        } else {
+            botonesComprar[i].className += " js-presencial-curso";
+        }
+    }
 }
 
-function crearBotonesEnSessionStorage() {
-    let botonesCarritos = [];
 
-    for (let i = 0; i < todosBotonesComprarSelector.length; i++) {
-        let unboton = {
-            indexBtn: i,
-            contador: 0,
+function hacerDinamicoLosCursosDestacados() {
+    let divCursosDestacados = document.querySelector(".cursos_destacados");
+    let cursosDB = ayudante.buscarEntidadEnLocalStorage("curso")
+
+    for (let i = 0; i < 8; i++) {
+        const nuevaTarjeta = document.createElement('a');
+        nuevaTarjeta.className = "js-enlace-card";
+
+        nuevaTarjeta.innerHTML =
+            `<article class="cursos_destacados-card">
+                        <div class="card_contenedor-imagen">
+                            <img src="${cursosDB[i].imagen_url}" alt="" class="card-imagen">
+                            <h4 class="modalidad-curso">${cursosDB[i].modalidad}</h4>
+                        </div>
+                        <div class="card_contenedor-descripcion">
+                            <h3 class="card_curso-titulo">${cursosDB[i].nombre}</h3>
+                            <p class="card_curso-mentor">${cursosDB[i].profNombre}</p>
+
+                            <p class="card_curso-puntaje">${cursosDB[i].puntaje}
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </p>
+                            <p class="card_curso-alumnos">
+                                <i class="fa-solid fa-user"></i>
+                                (${cursosDB[i].cantidad_alumnos})
+                            </p>
+
+                            <div class="card_curso-hora">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <p>${cursosDB[i].horas}hrs</p>
+                            </div>
+                            <p class="card_curso-precio">$${cursosDB[i].precio}</p>
+
+                            <button class="card_curso-carrito js-card-curso-carrito">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                <p>Comprar</p>
+                            </button>
+                        </div>
+                    </article>`;
+
+        if (cursosDB[i].modalidad == "Online") {
+            nuevaTarjeta.href = "./pages/detalles_de_un_curso_virtual.html";
+        } else {
+            nuevaTarjeta.href = "./pages/detalles_de_un_curso_presencial.html"
         }
-        botonesCarritos.push(unboton);
+
+        divCursosDestacados.appendChild(nuevaTarjeta);
     }
 
-    console.log(botonesCarritos);
-    sessionStorage.setItem("botones", JSON.stringify(botonesCarritos));
 }
+
 
 
 function guardarIdEnlaceCursoEnSessionStorage() {
     const enlacesTarjetas = document.querySelectorAll(".js-enlace-card");
-
-    console.log(enlacesTarjetas);
-
     enlacesTarjetas.forEach((cardEnlace, index) => {
         cardEnlace.addEventListener("click", () => {
             let indiceCard = index;
@@ -171,14 +214,4 @@ let contenidoPresencial=[
     }
 ]
 */
-
-
-
-
-
-
-
-
-
-
 
