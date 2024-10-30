@@ -120,10 +120,10 @@
                 <h2>Datos de los inscriptos:</h2>
             </div>
 
-            <form id="registrationForm" action="./medio_pago.html" method="GET"> <!-- Agregue redirect a medio pago-->
+            <form id="registrationForm" action="./carrito.html" method="GET"> 
                 <!-- Contenedor de personas inscritas -->
-                <div id="person-container">
-                    <div class="person-data">
+                <div class="person-container">
+                    <div class="person-data i1">
                         <div class="input-group">
                             <label for="nombre1">Nombre:</label>
                             <input type="text" id="nombre1" name="nombre1" required>
@@ -136,66 +136,58 @@
                             <label for="dni1">DNI:</label>
                             <input type="number" id="dni1" name="dni1" required>
                         </div>
-                        <div class="delete-person">
-                            <button type="button" class="person-btn"> − </button>
-                        </div>
-                    </div>
-                    <div class="person-data">
                         <div class="input-group">
-                            <label for="nombre2">Nombre:</label>
-                            <input type="text" id="nombre2" name="nombre2" required>
+                            <label for="email1">Email:</label>
+                            <input type="email" id="email1" name="email1" required>
                         </div>
                         <div class="input-group">
-                            <label for="apellido2">Apellido:</label>
-                            <input type="text" id="apellido2" name="apellido2" required>
+                            <label for="telefono1">Teléfono:</label>
+                            <input type="tel" id="telefono1" name="telefono1" placeholder="1122224444"   pattern="[0-9]{10}" required>
                         </div>
                         <div class="input-group">
-                            <label for="dni2">DNI:</label>
-                            <input type="number" id="dni2" name="dni2" required>
+                            <label for="importe1">Importe:</label>
+                            <input type="text" id="importe1" name="importe1" value="25000 ARS" disabled required>
                         </div>
                         <div class="delete-person">
-                            <button type="button" class="person-btn"> − </button>
+                            <button type="button" class="person-btn delete" name="btn-delete1" onclick="eliminar_persona(1)"> − </button>
                         </div>
                     </div>
-                    <div class="person-data">
-                        <div class="input-group">
-                            <label for="nombre3">Nombre:</label>
-                            <input type="text" id="nombre3" name="nombre3" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="apellido3">Apellido:</label>
-                            <input type="text" id="apellido3" name="apellido3" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="dni3">DNI:</label>
-                            <input type="number" id="dni3" name="dni3" required>
-                        </div>
-                        <div class="delete-person">
-                            <button type="button" class="person-btn"> − </button>
-                        </div>
-                    </div>
+
+                   
                 </div>
                 
                 <!-- Botón para agregar más personas -->
                 <div class="add-person">
-                    <button type="button" class="person-btn"> + </button>
+                    <button type="button" class="person-btn add"> + </button>
                     <p class="p-add-person">Agregar Persona</p>
                 </div>
 
                 <!-- Importe a pagar -->
                 <div class="payment-info">
-                    <p id="totalAmount">$000.-</p> <!-- Fijo por ahora -->
+                    <p id="totalAmount">$25000.-</p> <!-- Fijo por ahora -->
                 </div>
 
-                <!-- Botón de Envío -->
+                <!-- Botón de Modal -->
                 <div class="submit-btn">
-                    <button type="submit" class="form-btn">Inscribirse</button>
+                    <button type="button" class="form-btn" >Inscribirse</button>
                 </div>
+                
+               <!-- Modal box -->
+                 <div class="modal">
+                    <div class="js-modal-content">
+                        <p>Resumen de personas inscriptas:</p>
+                        <div class="js-persons-data"></div>
+                        <button type="submit" class="add-cart-btn">Agregar al carrito</button>
+                        <button type="button" class="cancel-btn">Cancelar</button>
+                    </div>
+                
+
+
             </form>
         </section>
     </main>
 
-
+  
 
 
     <footer class="footer">
@@ -240,11 +232,9 @@
         </div>
     </footer>
 
-
+    <script src="../js/inscripcion_curso_presencial.js"></script>
 
 </body>
 </html>
-
-
 
 
