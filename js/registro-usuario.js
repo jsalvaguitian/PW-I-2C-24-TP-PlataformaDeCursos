@@ -13,7 +13,7 @@ function generarIdUsuario(){
     let newId = 0;
 
     let usuariosStorage = buscarEntidadEnLocalStorage("usuario");
-    if(usuariosStorage == []){
+    if(JSON.stringify(usuariosStorage) == JSON.stringify([])){
         return newId;
 
     }else{

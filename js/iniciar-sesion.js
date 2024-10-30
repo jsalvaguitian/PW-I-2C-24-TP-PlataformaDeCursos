@@ -32,7 +32,7 @@ function loguearUsuario() {
 function buscarUsuario(email, contrasenia) {
     let storageUsuarios = buscarEntidadEnLocalStorage("usuario");
 
-    if (storageUsuarios == []) {
+    if (JSON.stringify(storageUsuarios) == JSON.stringify([])) {
         return null;
 
     } else {
