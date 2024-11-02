@@ -42,11 +42,15 @@ main .input-group input, main select {
 }
 
 
-main .save-btn {
+main .save-btn, .delete-btn{
     margin-top: 2em;
     text-align: center;
 }
 
+#botones{
+    display: flex;
+    justify-content: space-around;
+}
 main .save-btn button {
     padding: 1em 2em;
     background-color: #01A679;
@@ -57,8 +61,21 @@ main .save-btn button {
     font-size: 1.2em;
 }
 
+main .delete-btn button {
+    padding: 1em 2em;
+    background-color: rgba(255,0,0,0.8);
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
 main .save-btn button:hover {
     background-color: #018f63;
+}
+main .delete-btn button:hover {
+    background-color: #9f1b1b;
 }
 
 @media (max-width: 768px) {
@@ -75,3 +92,50 @@ main .save-btn button:hover {
     }
 }
 
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 40em;
+    padding: 2em;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#modal-contenedor-info {
+    margin-bottom: 2em;
+    font-size: 1em;
+}
+
+button#acceptButton {
+    display: block;
+    margin-left: auto; /* Esto empuja el botón a la derecha */
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+button#acceptButton:hover {
+    background-color: #45a049;
+}
