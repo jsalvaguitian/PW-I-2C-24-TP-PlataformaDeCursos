@@ -61,7 +61,10 @@ function eliminarCursoDelCarrito(index) {
     let carrito = ayudante.buscarEntidadEnSessionStorage("carrito");
 
     if (carrito && carrito.cursos_a_comprar) {
+        const precioCursoAEliminar = carrito.cursos_a_comprar[index].curso.precio;
         carrito.cursos_a_comprar.splice(index, 1); //eliminar el indice que le doy 
+        carrito.cantidad_total -= 1;
+        carrito.precio_total -= precioCursoAEliminar; 
     }
 
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
