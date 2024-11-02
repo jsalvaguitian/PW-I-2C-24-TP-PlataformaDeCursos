@@ -31,18 +31,22 @@ js
 
 
 document.querySelector('#eliminarcuenta').addEventListener('click',mostrarPopUP);
-
+document.querySelector('#cancelButton').addEventListener('click',()=>{
+    const modal = document.getElementById('popupModal');
+    modal.style.display = 'none';
+});
 function mostrarPopUP() {
     const modal = document.getElementById('popupModal');
     modal.style.display = 'block';
 
     document.getElementById('acceptButton').onclick = function() {
         modal.style.display = 'none';
+        eliminarCuenta();
     };
 
-    document.getElementById('closeModal').onclick = function() {
+    /*document.getElementById('closeModal').onclick = function() {
         modal.style.display = 'none';
-    };
+    };*/
 
     window.onclick = function(event) {
         if (event.target === modal) {
@@ -51,13 +55,16 @@ function mostrarPopUP() {
     };
 }
 
-document.querySelector('#acceptButton').addEventListener('click',eliminarCuenta);
 
 function eliminarCuenta(){
-    const listaUsuarios = buscarEntidadEnLocalStorage("usuario");
-    const usuarioActual = sessionStorage.getItem("usuario");
+    let listaUsuarios = buscarEntidadEnLocalStorage("usuario");
+    const usuarioActual = JSON.parse(sessionStorage.getItem("usuarioLogueado"));
     console.log(JSON.stringify(listaUsuarios));
     console.log("usar: "+usuarioActual);
+    listaUsuarios = listaUsuarios.filter(usuario => usuario.mail != usuarioActual.mail);
+    localStorage.setItem("usuario",JSON.stringify(listaUsuarios));
+    sessionStorage.clear();
+    window.location.href = '../index.html';
 }
 
 function buscarEntidadEnLocalStorage(entidad){

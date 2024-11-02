@@ -123,17 +123,25 @@ main .delete-btn button:hover {
     margin-bottom: 2em;
     font-size: 1em;
 }
-
-button#acceptButton {
+#control-botones{
+    display: flex;
+    justify-content: space-around;
+}
+button#acceptButton, #cancelButton {
     display: block;
-    margin-left: auto; /* Esto empuja el botón a la derecha */
-    background-color: #4CAF50;
     color: white;
     padding: 0.75em 1.5em;
     font-size: 1em;
     border: none;
     border-radius: 0.25em;
     cursor: pointer;
+}
+#acceptButton{
+    background-color: #4CAF50;
+}
+
+#cancelButton{
+    background-color: #9f1b1b;
 }
 
 button#acceptButton:hover {
