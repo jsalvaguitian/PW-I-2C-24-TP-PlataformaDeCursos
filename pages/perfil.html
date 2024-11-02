@@ -130,7 +130,7 @@
                     <label for="paymentMethod">Método de Pago</label>
                     <select id="paymentMethod" name="paymentMethod">
                         <option value="card">Tarjeta de Crédito</option>
-                        <option value="paypal">PayPal</option>
+                        <option value="cardDeb">Tarjeta de Debito</option>
                     </select>
                 </div>
                 <div class="input-group">
@@ -140,9 +140,15 @@
             </form>
         </section>
 
-        <div class="save-btn">
-            <button type="submit">Guardar Cambios</button>
+        <div id="botones">
+            <div class="save-btn">
+                <button type="submit">Guardar Cambios</button>
+            </div>
+            <div class="delete-btn">
+                <button type="submit" id="eliminarcuenta">Eliminar Cuenta</button>
+            </div>
         </div>
+        
     </main>
     <footer class="footer">
         <div class="footer__columna-uno">
@@ -185,5 +191,12 @@
             </p>
         </div>
     </footer>
+    <div id="popupModal" class="modal">
+        <div class="modal-contenido">
+            <div id="modal-contenedor-info"><p>Esta seguro que desea eliminar la cuenta</p></div>
+            <button id="acceptButton">Aceptar</button>
+        </div>
+    </div>
+    <script src="../js/eliminar-usuario.js"></script>
 </body>
 </html>
