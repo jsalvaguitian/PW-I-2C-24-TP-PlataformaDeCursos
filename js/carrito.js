@@ -1,6 +1,7 @@
 import * as ayudante from "./ayudante.js";
 
 hacerDinamicoLosCursosDestacados();
+
 function hacerDinamicoLosCursosDestacados() {
     const sectionMostrarCarrito = document.querySelector(".carrito-container");
 
@@ -16,7 +17,8 @@ function hacerDinamicoLosCursosDestacados() {
     
     let subtotal = 0; // Inicializa subtotal
 
-    carritoDB.cursos_a_comprar.forEach((item) => {
+    sectionMostrarCarrito.innerHTML = ""; 
+    carritoDB.cursos_a_comprar.forEach((item,index) => {
         const nuevaTarjeta = document.createElement('div');
         nuevaTarjeta.className = "producto";
 
@@ -26,6 +28,7 @@ function hacerDinamicoLosCursosDestacados() {
                 <p class="producto-nombre">${item.curso.nombre}</p>
                 <p class="producto-cantidad">Cantidad: ${item.cantidad}</p>
                 <p class="producto-precio">$${item.curso.precio.toFixed(2)}</p>
+                <button class="btn-eliminar" data-index="${index}">X</button>
             </div>`;
             console.log(nuevaTarjeta);
 
@@ -43,4 +46,25 @@ function hacerDinamicoLosCursosDestacados() {
 
     sectionMostrarCarrito.appendChild(carritoResumen); // Agregaal final
 
+    // Agregar evento para eliminar cursos
+    const btnEliminar = document.querySelectorAll(".btn-eliminar");
+    btnEliminar.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+            const index = event.target.dataset.index; //al definir el class con el data-, puedo recuperar del evento al hacer click la clase del elemento que realizo el ckick
+            eliminarCursoDelCarrito(index);
+        });
+    });
+
+}
+
+function eliminarCursoDelCarrito(index) {
+    let carrito = ayudante.buscarEntidadEnSessionStorage("carrito");
+
+    if (carrito && carrito.cursos_a_comprar) {
+        carrito.cursos_a_comprar.splice(index, 1); //eliminar el indice que le doy 
+    }
+
+    sessionStorage.setItem("carrito", JSON.stringify(carrito));
+
+    hacerDinamicoLosCursosDestacados();
 }
