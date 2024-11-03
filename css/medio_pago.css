@@ -48,8 +48,14 @@ main {
     margin-bottom: 0.5em;
     color: #555;
 }
-
-.input-group input {
+select{
+    width: calc(100% + 1.7em);
+    padding: 0.8em;
+    border: 0.1em solid #ddd;
+    border-radius: 0.5em;
+    font-size: 1em;
+}
+.input-group input{
     width: 100%;
     padding: 0.8em;
     border: 0.1em solid #ddd;
@@ -82,7 +88,6 @@ main {
 .payment-summary p {
     margin-bottom: 1em;
 }
-
 .payment-summary p strong {
     font-size: 1.2em;
 }
@@ -130,3 +135,4 @@ main {
         font-size: 1.2em;
     }
 }
+
