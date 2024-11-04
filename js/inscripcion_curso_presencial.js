@@ -128,7 +128,7 @@ function evitarEnvio(evento) {
 
     modal.style.display = "block";
     mostrarResumenInscriptosModal();
-    guardarInscripcionLocalStorage();
+    
 
     closeModalBtn.onclick = function () {
         modal.style.display = "none";
@@ -143,6 +143,7 @@ function evitarEnvio(evento) {
 
     const carritoBTN = document.querySelector('.add-cart-btn');
     carritoBTN.addEventListener('click', function() {
+        guardarInscripcionLocalStorage();
         form.submit();
     });
 
