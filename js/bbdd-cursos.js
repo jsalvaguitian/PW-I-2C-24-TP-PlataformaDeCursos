@@ -2,7 +2,9 @@ import { CursoPresencial } from "./ClaseCursoPresencial.js";
 import { CursoVirtual } from "./ClaseCursoVirtual.js";
 
 export function llenarDatosEnLaBBDDCursos(){
-    let curso1 = new CursoVirtual(0, "./assets/curso-1-Microsoft-Power-BI.jpg", "Curso Power BI- Analisis de Datos y Business Intelligence", "Online", "Analisis de datos", 210900, 152, 25000, 4.7, "Frink Smith",[
+    let curso1 = new CursoVirtual(0, "../assets/curso-1-Microsoft-Power-BI.jpg", "Curso Power BI- Analisis de Datos y Business Intelligence",
+        "Curso de Power BI en Español - Datos desde Excel, Dashboards, y DAX en Microsoft Power BI ¡Power BI Desktop es gratis!",
+        "Online", "Analisis de datos", 210900, 152, 25000, 4.7, "Frink Smith",[
         {
             temaPrincipal: "Introduccion",
             clases: [
@@ -65,7 +67,7 @@ export function llenarDatosEnLaBBDDCursos(){
         }
     
     ]);
-    let curso2 = new CursoVirtual(1, "./assets/curso-2-html-js-css.jpg", "Aprende Html5, Javascript y CSS3 desde cero", "Online", "Desarrollo web", 323000, 200, 40000, 4.7, "Javier Gonzalez",[
+    let curso2 = new CursoVirtual(1, "../assets/curso-2-html-js-css.jpg", "Aprende Html5, Javascript y CSS3 desde cero","Aprende HTML5, CSS3 y JavaScript: Curso Completo de Desarrollo Web desde Principiante hasta Avanzado", "Online", "Desarrollo web", 323000, 200, 40000, 4.7, "Javier Gonzalez",[
         {
             temaPrincipal: "Introduccion",
             clases: [
@@ -128,7 +130,7 @@ export function llenarDatosEnLaBBDDCursos(){
         }
     ]);
     
-    let curso3 = new CursoPresencial(2, "./assets/curso-3-pandas.jpg", "Curso Python: Manejo de datos con Pandas", "Presencial", "Analisis de datos", 156982, 40, 15000, 4.7, "Leandro Martinez",[
+    let curso3 = new CursoPresencial(2, "../assets/curso-3-pandas.jpg", "Curso Python: Manejo de datos con Pandas","Maneja y grafica datos utilizando los módulos mas utilizados en el mundo del Data Science", "Presencial", "Analisis de datos", 156982, 40, 15000, 4.7, "Leandro Martinez",[
         {
             Titulo: "Introduccion", 
             tema:["Introducción a la programación.", "Estructura general de un algoritmo.", "Diseño de Algoritmos."]
@@ -145,7 +147,7 @@ export function llenarDatosEnLaBBDDCursos(){
         }
     ]);
     
-    let curso4 = new CursoVirtual(3, "./assets/curso-4-angular.jpg", "Aprende Angular desde cero a experto", "Online", "Desarrollo web", 345222, 52, 89000, 4.7, "Geraldine Keller",[
+    let curso4 = new CursoVirtual(3, "../assets/curso-4-angular.jpg", "Aprende Angular desde cero a experto","Signals, componentes, directivas, servicios, mapas, JWT, autenticación, despliegues, mongo, Git, GitHub y mucho más", "Online", "Desarrollo web", 345222, 52, 89000, 4.7, "Geraldine Keller",[
         {
             temaPrincipal: "Introduccion",
             clases: [
@@ -207,7 +209,7 @@ export function llenarDatosEnLaBBDDCursos(){
             ]
         }
     ]);
-    let curso5 = new CursoVirtual(4, "./assets/curso-5-hacking.jpg", "Curso Ethical Hacking y Ciberseguridad", "Online", "Ciberseguridad", 456744, 220, 90000, 4.7, "Pablo Lopez",[
+    let curso5 = new CursoVirtual(4, "../assets/curso-5-hacking.jpg", "Curso Ethical Hacking y Ciberseguridad","Aprende Hacking Ético y Ciberseguridad de manera práctica, ¡conviértete en un experto en Hacking Ético y Ciberseguridad!", "Online", "Ciberseguridad", 456744, 220, 90000, 4.7, "Pablo Lopez",[
         {
             temaPrincipal: "Introduccion",
             clases: [
@@ -269,7 +271,7 @@ export function llenarDatosEnLaBBDDCursos(){
             ]
         }
     ]);
-    let curso6 = new CursoPresencial(5, "./assets/curso-6-java.jpg", "Curso Completo de Java Desde Cero", "Presencial", "Desarrollo web", 789900, 300, 99000, 4.7, "Juan Benitez", [
+    let curso6 = new CursoPresencial(5, "../assets/curso-6-java.jpg", "Curso Completo de Java Desde Cero","Aprende con el mejor curso Java de cero con las mejores prácticas POO, Java EE 9, CDI, JPA, EJB, JSF, Web Services, JAAS", "Presencial", "Desarrollo web", 789900, 300, 99000, 4.7, "Juan Benitez", [
         {
             Titulo:"Introduccion",
             tema: ["Introducción a la programación.","Estructura general de un algoritmo.", "Diseño de Algoritmos.", "Estructuras Algorítmicas. Secuenciales. Condicionales. Cíclicas. Repetitivas."]
@@ -284,7 +286,7 @@ export function llenarDatosEnLaBBDDCursos(){
         }
     ]);
     
-    let curso7 = new CursoVirtual(6, "./assets/curso-7-docker.jpg", "Curso Docker de Principiante a Experto", "Online", "DevOps", 250000, 100, 66000, 4.7, "Bart Simpson", [
+    let curso7 = new CursoVirtual(6, "../assets/curso-7-docker.jpg", "Curso Docker de Principiante a Experto","Aprende desde los fundamentos, arquitectura, hasta despliegue de aplicaciones con multiples contenedores", "Online", "DevOps", 250000, 100, 66000, 4.7, "Bart Simpson", [
         {
             temaPrincipal: "Introduccion",
             clases: [
@@ -346,7 +348,7 @@ export function llenarDatosEnLaBBDDCursos(){
             ]
         }
     ]);
-    let curso8 = new CursoVirtual(7, "./assets/curso-8-jest.jpg", "Curso Test Driven Development con Jest", "Online", "Testing QA", 766900, 100, 90000, 4.7, "Homero Simpson",[
+    let curso8 = new CursoVirtual(7, "../assets/curso-8-jest.jpg", "Curso Test Driven Development con Jest","Mejora tus habilidades en React usando TDD - Jest, React Testing Library, MSW, React Router, React Query, Hooks y más!", "Online", "Testing QA", 766900, 100, 90000, 4.7, "Homero Simpson",[
         {
             temaPrincipal: "Introduccion",
             clases: [

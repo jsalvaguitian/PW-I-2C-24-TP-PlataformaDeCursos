@@ -18,3 +18,4 @@ export function buscarEntidadEnSessionStorage(entidad){
     }else return JSON.parse(sessionStorage.getItem(entidad));
 
 }
+
