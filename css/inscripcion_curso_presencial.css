@@ -179,10 +179,11 @@ input[type="tel"] {
     transition: background-color 0.3s;
 }
 
-
-
-
-
+.js-modal-content .js-inscriptos-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 
 

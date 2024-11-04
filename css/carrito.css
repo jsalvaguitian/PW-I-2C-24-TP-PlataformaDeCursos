@@ -78,6 +78,20 @@ h1 {
   background-color: #2a7659;
 }
 
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px; /* Ajusta según tu diseño */
+  margin-left: 10px; /* Espaciado opcional */
+}
+
+.btn-eliminar:hover {
+  color: darkred; /* Cambio de color al pasar el mouse */
+}
+
 @media (max-width: 768px) {
   .producto {
     flex-direction: column;

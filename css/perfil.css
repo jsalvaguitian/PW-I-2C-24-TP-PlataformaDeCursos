@@ -17,7 +17,7 @@ main h2 {
     margin-bottom: 1em;
 }
 
-main form {
+.profile-form , .card-info{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
@@ -33,7 +33,15 @@ main .input-group label {
     font-size: 1.2em;
     margin-bottom: 0.5em;
 }
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
+#div-cv{
+    margin-left: 1.5em;
+}
 main .input-group input, main select {
     padding: 0.8em;
     font-size: 1em;
@@ -42,12 +50,16 @@ main .input-group input, main select {
 }
 
 
-main .save-btn {
+main .save-btn, .delete-btn, .submit-btn{
     margin-top: 2em;
     text-align: center;
 }
 
-main .save-btn button {
+#botones{
+    display: flex;
+    justify-content: space-around;
+}
+main .save-btn button, .btn-submit {
     padding: 1em 2em;
     background-color: #01A679;
     color: white;
@@ -57,8 +69,22 @@ main .save-btn button {
     font-size: 1.2em;
 }
 
-main .save-btn button:hover {
+main .delete-btn button {
+    padding: 1em 2em;
+    background-color: rgba(255,0,0,0.8);
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+main .save-btn button:hover,
+.btn-submit:hover {
     background-color: #018f63;
+}
+main .delete-btn button:hover {
+    background-color: #9f1b1b;
 }
 
 @media (max-width: 768px) {
@@ -66,12 +92,73 @@ main .save-btn button:hover {
         width: 80%;
     }
 
-    main form {
+    .profile-form , .card-info {
         flex-direction: column;
     }
 
+    .input-row{
+        flex-direction: column;
+    }
+    #div-cv{
+        margin-left: 0;
+    }
     main .input-group {
         width: 100%;
     }
 }
 
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 40em;
+    padding: 2em;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#modal-contenedor-info {
+    margin-bottom: 2em;
+    font-size: 1em;
+}
+#control-botones{
+    display: flex;
+    justify-content: space-around;
+}
+button#acceptButton, #cancelButton {
+    display: block;
+    color: white;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+#acceptButton{
+    background-color: #4CAF50;
+}
+
+#cancelButton{
+    background-color: #9f1b1b;
+}
+
+button#acceptButton:hover {
+    background-color: #45a049;
+}

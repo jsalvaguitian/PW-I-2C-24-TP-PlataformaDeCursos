@@ -111,3 +111,45 @@ body {
 .form-button-cancelar:hover {
   background-color: #666;
 }
+
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.3);
+  width: 30%;
+  max-width: 40em;
+  padding: 2em;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  position: relative;
+}
+
+#modal-contenedor-info {
+  margin-bottom: 2em;
+  font-size: 1em;
+}
+#control-botones{
+  display: flex;
+  justify-content: space-around;
+}
+button#acceptButton {
+  display: block;
+  color: white;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+button#acceptButton:hover {
+  background-color: #45a049;
+}
