@@ -17,7 +17,7 @@ main h2 {
     margin-bottom: 1em;
 }
 
-main form {
+.profile-form , .card-info{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
@@ -33,7 +33,15 @@ main .input-group label {
     font-size: 1.2em;
     margin-bottom: 0.5em;
 }
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
+#div-cv{
+    margin-left: 1.5em;
+}
 main .input-group input, main select {
     padding: 0.8em;
     font-size: 1em;
@@ -42,7 +50,7 @@ main .input-group input, main select {
 }
 
 
-main .save-btn, .delete-btn{
+main .save-btn, .delete-btn, .submit-btn{
     margin-top: 2em;
     text-align: center;
 }
@@ -51,7 +59,7 @@ main .save-btn, .delete-btn{
     display: flex;
     justify-content: space-around;
 }
-main .save-btn button {
+main .save-btn button, .btn-submit {
     padding: 1em 2em;
     background-color: #01A679;
     color: white;
@@ -71,7 +79,8 @@ main .delete-btn button {
     font-size: 1.2em;
 }
 
-main .save-btn button:hover {
+main .save-btn button:hover,
+.btn-submit:hover {
     background-color: #018f63;
 }
 main .delete-btn button:hover {
@@ -83,10 +92,16 @@ main .delete-btn button:hover {
         width: 80%;
     }
 
-    main form {
+    .profile-form , .card-info {
         flex-direction: column;
     }
 
+    .input-row{
+        flex-direction: column;
+    }
+    #div-cv{
+        margin-left: 0;
+    }
     main .input-group {
         width: 100%;
     }

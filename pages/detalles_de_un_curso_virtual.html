@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--EL ELEGIDO PARA HACERLO DINAMICO-->
 
 <head>
     <meta charset="UTF-8">
@@ -21,17 +22,25 @@
                 <a href="#IrVentanaFlotante" class="menu-hamburguesa"><i class="fa-solid fa-bars"></i></a>
             </div>
 
-            <div id="IrVentanaFlotante" class="menu-responsive-flotante" >
+            <div id="IrVentanaFlotante" class="menu-responsive-flotante">
                 <div class="ventana-menu">
                     <a href="#" class="elemento-cancelar-responsive">
                         X
                     </a>
 
                     <ul class="menu_responsive-lista">
-                        <li class="responsive_lista-item"><a href="../pages/InicioSesionIndividuo.html"><h4>Iniciar sesion</h4></a></li>
-                        <li class="responsive_lista-item"><a href="../pages/gift_cards.html"><h4>Gift Cards</h4></a></li>
-                        <li class="responsive_lista-item"><a href="../pages/calendario_lanzamiento.html"><h4>Lanzamiento</h4></a></li>
-                        <li class="responsive_lista-item"><a href="../pages/contacto.html"><h4>Contacto</h4></a></li>
+                        <li class="responsive_lista-item"><a href="../pages/InicioSesionIndividuo.html">
+                                <h4>Iniciar sesion</h4>
+                            </a></li>
+                        <li class="responsive_lista-item"><a href="../pages/gift_cards.html">
+                                <h4>Gift Cards</h4>
+                            </a></li>
+                        <li class="responsive_lista-item"><a href="../pages/calendario_lanzamiento.html">
+                                <h4>Lanzamiento</h4>
+                            </a></li>
+                        <li class="responsive_lista-item"><a href="../pages/contacto.html">
+                                <h4>Contacto</h4>
+                            </a></li>
                         <li class="esponsive_lista-item">
                             <h4>Categorias</h4>
                             <ul class="menu_responsive-sublista">
@@ -83,7 +92,7 @@
             <a href="../pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
             </a>
-        
+
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
@@ -107,12 +116,11 @@
         <section class="descripcion_del_curso">
 
             <article class="detalles_introductorio_curso">
-                <h1>Curso Power BI – Análisis de Datos y Business Intelligence</h1>
-                <p>
-                    Curso de Power BI en Español - Datos desde Excel, Dashboards, y DAX en Microsoft Power BI ¡Power BI
-                    Desktop es gratis!
+                <h1 class="nombre-dinamico"></h1> <!--Curso Power BI – Análisis de Datos y Business Intelligence-->
+                <p class="sinopsis-dinamico">
+
                 </p>
-                <span class="curso-modalidad">Online</span>
+                <span class="curso-modalidad"></span>
                 <span class="curso-puntaje">4,7
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
@@ -121,22 +129,22 @@
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </span>
                 <span class="curso-alumnos">
-                    210.900 Estudiantes
+
                 </span>
                 <p class="curso-mentor">
-                    <span>Creado por </span> <a href="#descripcion_docente">Javier Gomez</a>
+                    <span>Creado por </span> <a class="nombre-profe-dinamico" href="#descripcion_docente"></a>
                 </p>
 
                 <div class="precio-comprar">
-                    <h3>$25000</h3>
-                    <a class="curso-carrito" href="../pages/medio_pago.html">
+                    <h3 class="precio-dinamico"></h3>
+                    <button class="curso-carrito" id="js-abrir-modal">
                         <span class="material-symbols-outlined">shopping_cart</span>
-                        Comprar
-                    </a>
+                        <span class="texto-enlace-carrito">Comprar</span>
+                    </button>
                 </div>
             </article>
             <article class="curso_foto_comprar">
-                <img src="../assets/curso-1-Microsoft-Power-BI.jpg" alt="">
+                <img class="imagen-dinamica" src="" alt="">
             </article>
         </section>
 
@@ -146,7 +154,7 @@
                 <div class="descripcion-columna">
                     <div class="descripcion-item">
                         <i class="fa-regular fa-file-video"></i>
-                        <p> 22 horas de video bajo demanda</p>
+                        <p class="hora-dinamica"> </p>
                     </div>
 
                     <div class="descripcion-item">
@@ -170,22 +178,26 @@
 
             <h2>Descripción</h2>
             <p class="descripcion-texto">
-                En este curso de Power BI en español vas a aprender como hacer informes y reportes con dashboards en
-                distintos proyectos, ejercicios y prácticas ¡Power BI Desktop es gratis!
-                Microsoft Power BI es uno de los programas con tecnologías de Business Intelligence más robusto en el
-                mercado, y al mismo tiempo es uno de los más baratos ¡incluso gratuito! Cualquiera puede iniciar a
-                desarrollar reportes con visualizaciones interactivas gratis. Si eres dueño de un negocio, gerente de un
-                departamento, o simplemente tienes interés en analizar y dar seguimiento a tus actividades y objetivos,
-                entonces este curso es para ti.
-                En este curso realizaremos múltiples proyectos desde cero, en donde tomaremos datos de distintas
-                fuentes, los transformaremos y el resultado final: reportes interactivos sorprendentes. Es así como al
-                terminar este curso, además de certificarte, contarás con las habilidades y conocimientos para crear
-                visualizaciones usando tus propios datos y poder así cumplir con tus metas.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, reiciendis omnis odio obcaecati
+                aspernatur amet magnam. Fugit accusantium porro cum ut vel, modi laboriosam? Expedita ut exercitationem
+                doloremque eligendi quibusdam?
+                Ex, tempora culpa animi rerum possimus ipsam numquam nemo voluptatem doloremque voluptatum! Accusamus
+                aliquid totam repellendus quia repudiandae culpa quasi quibusdam natus! Sequi asperiores saepe facilis
+                esse officia aliquam obcaecati?
+                Incidunt, accusamus doloribus nemo autem repudiandae eius, sunt eos iste odit corporis enim velit porro
+                soluta. Quibusdam iure est deleniti similique. Saepe dolor ratione dolorem voluptatibus voluptatem illo
+                expedita cum!
+                Totam modi maxime sed placeat reprehenderit quos aspernatur voluptatum ipsa autem sunt earum nemo,
+                repudiandae nesciunt corporis minus eum voluptate nulla porro fuga libero eius, voluptatibus delectus
+                tenetur. Eligendi, nam!
+                Dolores soluta, quibusdam ipsam ipsa assumenda suscipit tenetur adipisci molestiae. Odio veniam debitis
+                atque quaerat illum officiis ab! Error corrupti sit explicabo fuga quidem expedita est aspernatur eum.
+                Voluptate, possimus?
             </p>
             <h2>Requisitos previos.</h2>
             <ul class="listado-requerimientos">
                 <li>Ser usuario de PC / Windows.</li>
-                <li>Descargar Power BI Desktop (Gratis).</li>
+                <li>Descargar software recomendado.</li>
                 <li>Interés por practicar y preguntar: Cualquier duda que tengas durante el curso tendrás soporte uno a
                     uno en cuestión de minutos ¡Compruébalo!</li>
             </ul>
@@ -337,14 +349,14 @@
             </details>
         </section>
 
-        <h2 class="titulo">Docente</h2>
+        <h2 class="titulo" id="descripcion_docente">Docente</h2>
         <section class="docente_del_curso">
             <article class="foto-perfil-profesor">
                 <img src="../assets/Frink2.png" alt="">
             </article>
 
             <article class="descripcion-profesor">
-                <h4>Javier Gomez</h4>
+                <h4 class="nombre-profe-dinamico"></h4>
                 <span class="curso-puntaje">
                     <i class="fa-sharp fa-solid fa-star"></i>
                     <i class="fa-sharp fa-solid fa-star"></i>
@@ -353,12 +365,14 @@
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </span>
                 <p>
-                    Javier es un MBA, certificado como Microsoft Expert, y Project Manager por el PMI. Con vasta
-                    experiencia en Data Analysis y Business Intelligence, forma parte del equipo Udemy para contribuir
-                    con la misión de ayudar a individuos a lograr sus metas y perseguir sus sueños.
-                    Actualmente ejerciendo con proyectos de tecnologías de información, y como global-freelancer guiando
-                    a estudiantes y profesionales de múltiples industrias a visualizar y dar seguimiento a sus
-                    objetivos.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur accusamus, aspernatur, officiis
+                    consequuntur sed expedita reiciendis deserunt laboriosam veniam voluptatibus ex officia. Officia
+                    sapiente et, dolorem illo corrupti recusandae officiis?
+                    Provident ratione et dolores. Voluptatem quasi in natus a nihil blanditiis dolore suscipit expedita
+                    rem ex! Explicabo maiores placeat ducimus rem fugit, ut aut enim ab ipsum sit, expedita quos.
+                    Odio ipsa facilis placeat culpa minima non, nostrum sit molestiae magnam dolorum. Voluptate vero
+                    fugit sapiente velit dolores dolor totam distinctio, eveniet illo perspiciatis, aliquam sequi non ea
+                    deserunt provident.
                 </p>
             </article>
         </section>
@@ -367,7 +381,7 @@
             <h2 class="titulo">Cursos relacionados</h2>
 
             <div class="cursos_destacados">
-
+                <!---
                 <a href="../pages/detalles_de_un_curso_virtual.html">
                     <article class="cursos_destacados-card">
                         <div class="card_contenedor-imagen">
@@ -396,7 +410,7 @@
                             </div>
                             <p class="card_curso-precio">$25000</p>
 
-                            <button class="card_curso-carrito">
+                            <button class="card_curso-carrito .js-online-curso">
                                 <span class="material-symbols-outlined">shopping_cart</span>
                                 <p>Comprar</p>
                             </button>
@@ -508,10 +522,24 @@
                         </div>
                     </article>
                 </a>
-
+            -->
             </div>
         </aside>
     </main>
+    <div id="modalFelicitaciones" class="modal">
+        <div class="modal-content">
+            <span id="cerrarModal">&times;</span>
+            <div>
+                <img src="../assets/happy.gif" alt="" class="ventana-emogic">
+                <div class="texto-modal">
+                    <h5>¡Felicitaciones por adquirir el curso de <span id="nombre-curso"></span>!🎉</h5>
+                    <p id="descripcion-curso"></p>
+                    <a id="paso-siguiente" href="">Continuar</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     <footer class="footer">
         <div class="footer__columna-uno">
             <p class="footer__columna-titulo">EQUIPO FOURTEEN:</p>
@@ -553,8 +581,10 @@
             </p>
         </div>
     </footer>
-    <script type="module" src="../js/contador-carrito.js"></script>
     <script type="module" src="../js/cerrar-session.js"></script>
+    <script type="module" src="../js/detalle-curso.js"></script>
+    <script type="module" src="../js/contador-carrito-detalles.js"></script>
+
 </body>
 
 </html>

@@ -5,32 +5,22 @@ llenarDatosEnLaBBDDCursos();
 
 hacerDinamicoLosCursosDestacados();
 
-actualizarClaseBoton()
+actualizarClaseBoton();
 
-if (sessionStorage.getItem("btnCursoOnline") == null)
-    crearBotonesOnlineSessionStorage("btnCursoOnline");
+agregarNombreAlosBotonesCarritos();
 
 guardarIdEnlaceCursoEnSessionStorage();
 
+
+
+if (sessionStorage.getItem("btnCursos") == null)
+    crearBotonesSessionStorage("btnCursos");
+
 dirigirBotonCarrito();
 
-
-
-/****  FUNCIONES********************/
-function crearBotonesOnlineSessionStorage(keySession) {
-    let botonesComprarCursosOnline = document.querySelectorAll(".js-online-curso");
-    let botonesCarritosVirtual = [];
-
-    for (let i = 0; i < botonesComprarCursosOnline.length; i++) {
-        let fueClickeado = false
-        botonesCarritosVirtual.push(fueClickeado);
-    }
-    sessionStorage.setItem(keySession, JSON.stringify(botonesCarritosVirtual));
-}
-
+//FUNCIONES
 function dirigirBotonCarrito() {
     let todosBotonesComprar = document.querySelectorAll(".js-card-curso-carrito");
-    let botonesComprarCursosOnline = document.querySelectorAll(".js-online-curso");
     let botonesComprarCursosPresencial = document.querySelectorAll(".js-presencial-curso");
 
     let enlaceInicioSesion = '/pages/InicioSesionIndividuo.html';
@@ -38,56 +28,119 @@ function dirigirBotonCarrito() {
     let enlaceFormulario = '/pages/inscripcion_curso_presencial.html';
     let enlaceCarrito = '/pages/carrito.html';
 
-    console.log(botonesComprarCursosOnline);
-    console.log(todosBotonesComprar)
-
     if (sessionStorage.getItem("usuarioLogueado") == "" || sessionStorage.getItem("usuarioLogueado") == null) {
         dirigirEnlace(todosBotonesComprar, enlaceInicioSesion)
+
     } else {
+        console.log(botonesComprarCursosPresencial)
         dirigirEnlace(botonesComprarCursosPresencial, enlaceFormulario);
 
-        cambiarEstadoBtnStorageClickeado(botonesComprarCursosOnline);
+        cambiarEstadoBtnOnlineClickeado(todosBotonesComprar);
 
-        let botonesStorage = JSON.parse(sessionStorage.getItem("btnCursoOnline"));
+        let botonesStorage = JSON.parse(sessionStorage.getItem("btnCursos"));
 
-        for (let i = 0; i < botonesStorage.length; i++) {
-            if (botonesStorage[i] == true) {
-                botonesComprarCursosOnline[i].querySelector(".btn-texto").innerHTML= " Verlo en el Carrito";
-                
-                botonesComprarCursosOnline[i].addEventListener("click", (event) => {
-                    event.preventDefault();
-                    window.location.href = enlaceCarrito;
-                })
-            }else{
-                botonesComprarCursosOnline[i].addEventListener("click", (event) => {
-                    event.preventDefault();
-                    window.location.href = enlacePago;
-                })
-
+        for(let i=0; i<botonesStorage.length; i++){
+            if(botonesStorage[i].tipo == "Online"){
+                if (botonesStorage[i].estado == true) {
+                    todosBotonesComprar[i].querySelector(".btn-texto").innerHTML = " Verlo en el Carrito";
+    
+                    todosBotonesComprar[i].addEventListener("click", (event) => {
+                        event.preventDefault();
+                        window.location.href = enlaceCarrito;
+                    })
+                } else {
+                    todosBotonesComprar[i].addEventListener("click", (event) => {
+                        event.preventDefault();
+                        window.location.href = enlacePago;
+                    })
+    
+                }
             }
+            
         }
+
     }
 }
 
+function cambiarEstadoBtnOnlineClickeado(botonesComprar) {
+    let modalidadesH4 = document.querySelectorAll(".modalidad-curso");
+    let botonesStorage = ayudante.buscarEntidadEnSessionStorage("btnCursos");
 
-function cambiarEstadoBtnStorageClickeado(botonesComprarCursoOnline) {
-    botonesComprarCursoOnline.forEach((boton, index) => {
-        boton.addEventListener("click", () => {
-            let botonesStorage = ayudante.buscarEntidadEnSessionStorage("btnCursoOnline");
-            //let cont = botonesStorage[index] + 1;
-            botonesStorage[index] = true;
-            sessionStorage.setItem("btnCursoOnline", JSON.stringify(botonesStorage));
-        })
+    botonesComprar.forEach((boton, index) => {
+        if (modalidadesH4[index].textContent == "Online") {
+            boton.addEventListener("click", () => {
+                botonesStorage[index].estado = true;
+                sessionStorage.setItem("btnCursos", JSON.stringify(botonesStorage));
+ 
+            })
+
+        }
+
     })
 
 }
 
 function dirigirEnlace(botones, enlace) {
+    sessionStorage.setItem("dirigirenlaceformulario", true)
     botones.forEach(boton => {
         boton.addEventListener("click", (event) => {
             event.preventDefault();
             window.location.href = enlace;
         })
+    })
+}
+
+function crearBotonesSessionStorage(keySession) {
+    let botonesComprarCursos = document.querySelectorAll(".js-card-curso-carrito");
+    let modalidadesH4 = document.querySelectorAll(".modalidad-curso");
+    let botonesCarritos = [];
+
+    for (let i = 0; i < botonesComprarCursos.length; i++) {
+        if (modalidadesH4[i].textContent == "Online") {
+            let boton = {
+                tipo: "Online",
+                estado: false,
+            }
+            botonesCarritos.push(boton);
+            sessionStorage.setItem(keySession, JSON.stringify(botonesCarritos));
+
+
+        } else {
+            let boton = {
+                tipo: "Presencial",
+                estado: false,
+            }
+            botonesCarritos.push(boton);
+            sessionStorage.setItem(keySession, JSON.stringify(botonesCarritos));
+
+        }
+    }
+}
+
+function agregarNombreAlosBotonesCarritos() {
+    let botonesComprarCursos = document.querySelectorAll(".js-card-curso-carrito");
+    let modalidadesH4 = document.querySelectorAll(".modalidad-curso");
+    let btnText = document.querySelectorAll(".btn-texto");
+
+    for (let i = 0; i < botonesComprarCursos.length; i++) {
+        if (modalidadesH4[i].textContent == "Online") {
+            btnText[i].innerText = "Comprar";
+        } else {
+            btnText[i].innerText = "Inscribir";
+        }
+    }
+}
+
+
+function guardarIdEnlaceCursoEnSessionStorage() {
+    const enlacesTarjetas = document.querySelectorAll(".js-enlace-card");//la tarjeta esta dentro de la etiqueta a
+
+    enlacesTarjetas.forEach((cardEnlace, index) => {
+        cardEnlace.addEventListener("click", () => {
+            let indiceCard = index;
+
+            sessionStorage.setItem("indiceCursoAVer", JSON.stringify(indiceCard));
+        });
     })
 }
 
@@ -103,7 +156,6 @@ function actualizarClaseBoton() {
         }
     }
 }
-
 
 function hacerDinamicoLosCursosDestacados() {
     let divCursosDestacados = document.querySelector(".cursos_destacados");
@@ -143,31 +195,16 @@ function hacerDinamicoLosCursosDestacados() {
 
                             <button class="card_curso-carrito js-card-curso-carrito">
                                 <span class="material-symbols-outlined">shopping_cart</span>
-                                <p class= "btn-texto">Comprar</p>
+                                <p class= "btn-texto"></p>
                             </button>
                         </div>
                     </article>`;
 
-        if (cursosDB[i].modalidad == "Online") {
-            nuevaTarjeta.href = "./pages/detalles_de_un_curso_virtual.html";
-        } else {
-            nuevaTarjeta.href = "./pages/detalles_de_un_curso_presencial.html"
-        }
+
+        nuevaTarjeta.href = "../pages/detalles_de_un_curso_virtual.html";
+
 
         divCursosDestacados.appendChild(nuevaTarjeta);
     }
 
-}
-
-
-
-function guardarIdEnlaceCursoEnSessionStorage() {
-    const enlacesTarjetas = document.querySelectorAll(".js-enlace-card");
-    enlacesTarjetas.forEach((cardEnlace, index) => {
-        cardEnlace.addEventListener("click", () => {
-            let indiceCard = index;
-
-            sessionStorage.setItem("indiceCursoAVer", JSON.stringify(indiceCard));
-        });
-    })
 }

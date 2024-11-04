@@ -1,3 +1,4 @@
+/*  Para Pagina Curso Detalles FUNCIONA MAL EL CARRITO BOTON PRINCIPAL DE PRESENCIAL NO DEBE AGREGAR EN EL CARRITO */
 import { buscarEntidadEnLocalStorage, buscarEntidadEnSessionStorage } from "./ayudante.js";
 import { Carrito } from "./ClaseCarrito.js"
 
@@ -5,6 +6,8 @@ let botonCarrito = document.querySelector(".header__principal-carrito");
 let textoCarrito = botonCarrito.querySelector(".texto-carrito");
 
 let botonesComprarCursoOnline = document.querySelectorAll(".js-online-curso");
+let botonCursoPrincipal = document.querySelector(".curso-carrito");
+
 
 let cont = 0;
 
@@ -17,17 +20,52 @@ if (sessionStorage.getItem("usuarioLogueado") != null) {
     let carrito = buscarEntidadEnSessionStorage("carrito");
     textoCarrito.innerHTML = carrito.cantidad_total;
 
+    agregarCursoPrincipalEspecifico(carrito);
     agregarCursoRelacionadoEnElCarrito(carrito);
-
-    
 
     //console.log(JSON.parse(sessionStorage.getItem("carrito")).cursos_a_comprar.length);
 
 } else {
     textoCarrito.innerHTML = 0;
 }
+function agregarCursoPrincipalEspecifico(carrito){
+        botonCursoPrincipal.addEventListener("click", () => {
+            ponerCursoPrincipalEspecificoEnCarrito(carrito);
+            sessionStorage.setItem("carrito", JSON.stringify(carrito));
+        })
+}
 
+function ponerCursoPrincipalEspecificoEnCarrito(carrito){
+    let indiceCursoPrincipal =JSON.parse(sessionStorage.getItem("indiceCursoAVer"));
+    let cursoBuscado = buscarPorIdCursoDB(indiceCursoPrincipal);
+    let botonesComprarStorage = JSON.parse(sessionStorage.getItem("btnCursos"));
+    
 
+    if(botonesComprarStorage[indiceCursoPrincipal].tipo == "Online"){
+        if (carrito.cursos_a_comprar.length == 0) {
+            agregarUnaFilaACarrito(carrito, cursoBuscado);
+            calcularPrecioTotal(carrito);
+        } else {
+            if (existeCursoEnCarrito(carrito, cursoBuscado) == false) {
+                agregarUnaFilaACarrito(carrito, cursoBuscado);
+                calcularPrecioTotal(carrito);
+            }
+        }
+
+    }
+    
+
+}
+
+function buscarPorIdCursoDB(indice){
+    let cursosDB = buscarEntidadEnLocalStorage("curso");
+
+    for (let i = 0; i < cursosDB.length; i++) {
+        if (cursosDB[i].id == indice)
+            return cursosDB[i];
+    }
+    return null;
+}
 
 function agregarCursoRelacionadoEnElCarrito(carrito){
     botonesComprarCursoOnline.forEach(unBotonOnline => {
@@ -37,6 +75,7 @@ function agregarCursoRelacionadoEnElCarrito(carrito){
 
         })
     })
+
 }
 
 function calcularPrecioTotal(carrito) {
