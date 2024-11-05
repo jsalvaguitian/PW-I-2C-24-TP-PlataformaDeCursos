@@ -3,7 +3,11 @@ import * as ayudante from "./ayudante.js";
 //1-me conecto a la ddbb cursos
 let cursosDB = ayudante.buscarEntidadEnLocalStorage("curso");
 
-let indiceCurso, nombreCurso, imagen, modalidad, sinopsis, cantidadAlumnos, horas, precio, profNombres;
+let indiceCurso, nombreCurso, 
+imagen, modalidad, sinopsis, 
+cantidadAlumnos, horas, precio,
+profNombres, descripcion, descripcionProf;
+
 let botonCursoPrincipal = document.querySelector(".curso-carrito");
 
 indiceCurso = ayudante.buscarEntidadEnSessionStorage("indiceCursoAVer");
@@ -31,6 +35,14 @@ horas.innerHTML = cursosDB[indiceCurso].horas + " horas de video bajo demanda";
 precio = document.querySelector(".precio-dinamico");
 precio.innerHTML = "$ " + cursosDB[indiceCurso].precio;
 
+descripcion = document.querySelector(".descripcion-texto");
+descripcion.innerHTML = cursosDB[indiceCurso].descripcion;
+
+let fotoprof = document.querySelector(".foto-prof");
+fotoprof.src = cursosDB[indiceCurso].imagenProf;
+
+descripcionProf = document.querySelector(".descripcion-texto-prof");
+descripcionProf.innerHTML = cursosDB[indiceCurso].descripcionProf;
 profNombres = document.querySelectorAll(".nombre-profe-dinamico");
 profNombres.forEach(nombre => {
     nombre.innerHTML = cursosDB[indiceCurso].profNombre;
@@ -66,7 +78,7 @@ guardarIdEnlaceCursoEnSessionStorage();
 
 dirigirbotonesCarritos();
 
-//FUNCIONES
+///////////////////////////////// FUNCIONES ////////////////////////////////////
 function hacerDinamicoElAcordionDeContenidoDelCurso() {
     let cursosDB = ayudante.buscarEntidadEnLocalStorage("curso")
     let unCurso = cursosDB[indiceCurso];
@@ -112,18 +124,31 @@ function hacerDinamicoElAcordionDeContenidoDelCurso() {
             }
         }
     }else if(unCurso.modalidad == "Presencial"){
-        /*for(let i=0; i<unCurso.programaAnalitico.length; i++){
+        console.log(unCurso.programaAnalitico[0])
+
+        for(let i=0; i< unCurso.programaAnalitico.length; i++){
             let nuevoDetail = document.createElement("details");
             nuevoDetail.className = "details-contenido";
+
             let nuevoSummary = document.createElement("summary");
-            nuevoSummary.innerHTML = unCurso.contenido[i].titulo;
+            nuevoSummary.innerHTML = unCurso.programaAnalitico[i].Titulo;
 
             nuevoDetail.appendChild(nuevoSummary);
 
             divContenidosCurso.appendChild(nuevoDetail);
 
-        }*/
+            for (let j = 0; j < unCurso.programaAnalitico[i].tema.length; j++) {
+                let nuevaDivFila = document.createElement("div");
+                nuevaDivFila.className = "summary-fila";
 
+                nuevaDivFila.innerHTML=`<p>${unCurso.programaAnalitico[i].tema[j]}</p>`;
+
+                nuevoDetail.appendChild(nuevaDivFila);
+
+            }
+
+
+        }
     }
 
 }
@@ -168,6 +193,8 @@ function dirigirbotonesCarritos() {
         }
 
         //BOTONCITOS
+        console.log(botonesStorage[0]);
+
         for (let i = 0; i < botonesStorage.length; i++) {
             if (botonesStorage[i].tipo == "Online") {
                 if (botonesStorage[i].estado == true) {
