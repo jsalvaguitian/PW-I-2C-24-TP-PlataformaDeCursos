@@ -35,6 +35,7 @@ profNombres = document.querySelectorAll(".nombre-profe-dinamico");
 profNombres.forEach(nombre => {
     nombre.innerHTML = cursosDB[indiceCurso].profNombre;
 })
+
 let textobotonCursoPrincipal = document.querySelector(".texto-enlace-carrito");
 let textoModalidad = document.querySelector(".curso-modalidad").textContent;
 
@@ -48,6 +49,9 @@ if (textoModalidad == "Online") {
     textobotonCursoPrincipal.innerHTML = "Inscribir"
 }
 
+hacerDinamicoElAcordionDeContenidoDelCurso();
+
+////////////////////////////////////////////////////////////////////////////////////
 hacerDinamicoLosCursosDestacados(0, 4);
 
 actualizarClaseBoton();
@@ -63,6 +67,67 @@ guardarIdEnlaceCursoEnSessionStorage();
 dirigirbotonesCarritos();
 
 //FUNCIONES
+function hacerDinamicoElAcordionDeContenidoDelCurso() {
+    let cursosDB = ayudante.buscarEntidadEnLocalStorage("curso")
+    let unCurso = cursosDB[indiceCurso];
+
+    let divContenidosCurso = document.querySelector(".contenido-curso");
+
+
+    if (unCurso.modalidad == "Online") {
+        for (let i = 0; i < unCurso.contenido.length; i++) {
+            let nuevoDetail = document.createElement("details");
+            nuevoDetail.className = "details-contenido";
+            let nuevoSummary = document.createElement("summary");
+            nuevoSummary.innerHTML = unCurso.contenido[i].temaPrincipal;
+
+            nuevoDetail.appendChild(nuevoSummary);
+
+            divContenidosCurso.appendChild(nuevoDetail);
+
+            for (let j = 0; j < unCurso.contenido[i].clases.length; j++) {
+                let nuevaDivFila = document.createElement("div");
+                nuevaDivFila.className = "summary-fila";
+
+                const nuevoDiv1ColumnaIconSubtem = document.createElement("div");
+                nuevoDiv1ColumnaIconSubtem.className = "summary-columna";
+
+                nuevoDiv1ColumnaIconSubtem.innerHTML = `<i class="fa-regular fa-circle-play"></i>
+                                <p>${unCurso.contenido[i].clases[j].subtema}</p>`;
+
+                const nuevoDiv2ColumnaTime = document.createElement("div");
+                nuevoDiv2ColumnaTime.className = "summary-columna";
+                nuevoDiv2ColumnaTime.innerHTML = `<i class="fa-regular fa-clock"></i>
+                                <p>${unCurso.contenido[i].clases[j].duracion}</p>`;
+
+                const nuevoDiv3ColumnCheck = document.createElement("i");
+                nuevoDiv3ColumnCheck.className = "fa-regular fa-circle-check";
+
+                nuevaDivFila.appendChild(nuevoDiv1ColumnaIconSubtem);
+                nuevaDivFila.appendChild(nuevoDiv2ColumnaTime);
+                nuevaDivFila.appendChild(nuevoDiv3ColumnCheck);
+
+                nuevoDetail.appendChild(nuevaDivFila);
+
+            }
+        }
+    }else if(unCurso.modalidad == "Presencial"){
+        /*for(let i=0; i<unCurso.programaAnalitico.length; i++){
+            let nuevoDetail = document.createElement("details");
+            nuevoDetail.className = "details-contenido";
+            let nuevoSummary = document.createElement("summary");
+            nuevoSummary.innerHTML = unCurso.contenido[i].titulo;
+
+            nuevoDetail.appendChild(nuevoSummary);
+
+            divContenidosCurso.appendChild(nuevoDetail);
+
+        }*/
+
+    }
+
+}
+
 function dirigirbotonesCarritos() {
     let todosBotonesComprar = document.querySelectorAll(".js-card-curso-carrito");
     let botonesComprarCursosPresencial = document.querySelectorAll(".js-presencial-curso");
@@ -155,24 +220,6 @@ function mostrarModal() {
 
 }
 
-function dirigirActualizarBotonPrincipalOnline(indiceBtnStorage, enlace) {
-    if (indiceBtnStorage == indiceCurso) {
-        textobotonCursoPrincipal.innerHTML = "Verlo en el carrito";
-        botonCursoPrincipal.addEventListener("click", (event) => {
-            event.preventDefault();
-            window.location.href = enlace;
-        })
-    }
-}
-function dirigirActualizarBotonesCursoRelacionado(todosBotonesComprar, indice, enlace) {
-    let btnText = document.querySelectorAll(".btn-texto");
-
-    //btnText[indice].innerHTML = "Verlo en el carrito";
-    /*todosBotonesComprar[indice].addEventListener("click", (event)=>{
-        event.preventDefault();
-        window.location.href = enlace;
-    })*/
-}
 function cambiarEstadoBtnOnlineClickeado(botonesComprar) {
     let modalidadesH4 = document.querySelectorAll(".modalidad-curso");
     let botonesStorage = ayudante.buscarEntidadEnSessionStorage("btnCursos");
