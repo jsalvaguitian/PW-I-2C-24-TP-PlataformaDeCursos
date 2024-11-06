@@ -39,12 +39,14 @@ function agregarCursoRelacionadoEnElCarrito(carrito){
     })
 }
 
-function calcularPrecioTotal(carrito) {
-let precioTotal =0
+function calcularPrecioTotal(carrito,cursoBuscado) {
+    carrito.precio_total +=cursoBuscado.precio
+
+/*let precioTotal =0
     for (let i = 0; i < carrito.cursos_a_comprar.length; i++) {
         precioTotal += carrito.cursos_a_comprar[i].curso.precio;
     }
-    carrito.precio_total = precioTotal;
+    carrito.precio_total += precioTotal;*/
 }
 
 function ponerCursoOnlineCarrito(carrito, divDescripcionCardOnline) {
@@ -53,11 +55,11 @@ function ponerCursoOnlineCarrito(carrito, divDescripcionCardOnline) {
 
     if (carrito.cursos_a_comprar.length == 0) {
         agregarUnaFilaACarrito(carrito, cursoBuscado);
-        calcularPrecioTotal(carrito);
+        calcularPrecioTotal(carrito,cursoBuscado);
     } else {
         if (existeCursoEnCarrito(carrito, cursoBuscado) == false) {
             agregarUnaFilaACarrito(carrito, cursoBuscado);
-            calcularPrecioTotal(carrito);
+            calcularPrecioTotal(carrito,cursoBuscado);
         }
 
     }

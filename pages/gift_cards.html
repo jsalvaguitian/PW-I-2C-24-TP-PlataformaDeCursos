@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/header_footer.css">
     <link rel="stylesheet" href="../css/gift_cards.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <link rel="shortcut icon" href="../assets/logo_unlam.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/d3605530f4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
@@ -93,10 +94,7 @@
             </a>
             <a href="../pages/perfil.html" class="header__principal-perfil" id="header__principal-perfil">
                 Mi Perfil
-            </a>            <a href="./pages/perfil.html" class="header__principal-perfil" id="header__principal-perfil">
-                Mi Perfil
             </a>
-
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
@@ -124,19 +122,19 @@
                     <p class="nombre-destinatario"></p>
                 </div>
                 <div class="giftcard_box_muestra-monto">
-                    <p class="giftcard_box-monto">$ 90000</p>
+                    <p style="color: white; font-weight:bold;">$</p><p class="giftcard_box-monto"></p>
                 </div>
             </article>
             <h3 class="subtitulo-previzualizacion">Vista previa del resultado de personalización</h3>
         </section>
         <section class="section-columna2">
             <h1>Personalización de Gifcard</h1>
-            <form action="./medio_pago.html" method="#" class="formulario-gift">
+            <form action="./medio_pago.html" method="#" class="formulario-gift" id="js-form">
                 <label for="destinatario">
                     <h3>Para: </h3>
                 </label>
                 <input id="destinatario" type="text" name="destinatario" class="destinatario" onkeyup="mostrarNombreDestinatario()"
-                    placeholder="Nombre del destinatario" value="Leandro" required>
+                    placeholder="Nombre del destinatario" value="" required>
 
                 <label for="correo-destinatario">
                     <h3>Correo electrónico del destinatario: </h3>
@@ -200,28 +198,27 @@
                     <label for="monto">
                         <h3 class="subtitulo-monto">Monto $</h3>
                     </label>
-                    <input id="monto" type="number" name="edad" min="0" max="90000" value="90000" required>
+                    <input id="monto" type="number" name="monto" min="0" max="90000" value="" onkeyup="mostrarMonto()">
                 </div>
 
                 <h3 class="subtitulo">Ubicación</h3>
                 <div class="ubicaciones">
                     <div class="ubicacion1">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf" required>
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf" onchange="cambiarPosicionMonto()">
                         <div class="ubicacion ub1">
                             <p class="ubicacion-precio-der-inf">$</p>
                         </div>
                     </div>
 
                     <div class="ubicacion2">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-izq-sup" value="ubicacion-izq-sup">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-izq-sup" value="ubicacion-izq-sup" onchange="cambiarPosicionMonto()">
                         <div class="ubicacion">
                             <p class="ubicacion-precio-izq-sup">$</p>
                         </div>
                     </div>
 
                     <div class="ubicacion3">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-sup" value="ubicacion-der-sup"
-                            checked>
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-sup" value="ubicacion-der-sup" onchange="cambiarPosicionMonto()">
                         <div class="ubicacion">
                             <p class="ubicacion-precio-der-sup">$</p>
                         </div>
@@ -268,6 +265,15 @@
                 <button type="submit" class="boton-enviar-formulario">
                     Confirmar
                 </button>
+                <div id="mensaje" class="error"> </div>
+
+                <div id="modalAviso" class="modal">
+                    <div class="modal-content">
+                        <span id="cerrarModal">&times;</span>
+                        <div class="texto-modal">
+                        </div>
+                    </div>
+                </div>
                 <!--
                 <button type="submit" id="btn-guardar-usuario" class="btn-guardar">
                     Registrar
@@ -304,7 +310,7 @@
                     </div>
 
                 </div>-->
-                <div id="mensaje" class="error"> </div>
+                
             </form>
         </section>
     </main>
@@ -351,7 +357,9 @@
     </footer>
     <script type="module" src="../js/contador-carrito-online.js"></script>
     <script type="module" src="../js/cerrar-session.js"></script>
-    <script src="../js/gift-card.js"></script>
+    <script type="module" src="../js/gift-card.js"></script>
+    <script src="../js/gift-card-dinamico.js"></script>
+
 </body>
 
 </html>

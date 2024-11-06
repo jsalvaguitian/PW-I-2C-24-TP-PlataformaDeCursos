@@ -7,146 +7,90 @@ monto
 generarCodigo
 ////////////////
 */
-let destinatario = document.querySelector(".nombre-destinatario");
-destinatario.innerHTML = "Leandro";
+
+import { buscarEntidadEnLocalStorage } from "./ayudante.js";
+import { Carrito } from "./ClaseCarrito.js"
+import { GiftCard } from "./ClaseGiftCard.js";
+import { validarDatosDestinatario } from "./validacion-gift-card.js";
+
+let giftCard = buscarEntidadEnLocalStorage("giftCardsCompradas");// creo la bbdd de gift cards []
+let botonCarrito = document.querySelector(".header__principal-carrito");
+let textoCarrito = botonCarrito.querySelector(".texto-carrito");
 
 
-
-if (sessionStorage.getItem("usuarioLogueado") != null) {
-    document.querySelector('.boton-enviar-formulario').addEventListener('click', enviarFormulario);
-}
+document.querySelector(".boton-enviar-formulario").addEventListener("click",verificarUsuarioLogueado);
 
 ////////////// FUNCIONES ////////////
-function cambiarPosicionMonto(){
-    let cuadroMonto = document.querySelector(".giftcard_box_muestra-monto");
+function verificarUsuarioLogueado(event){
+    if(sessionStorage.getItem("usuarioLogueado") != null){
+        event.preventDefault();
 
-    let opcionesUbicacion = document.getElementsByName("tipo_ubicacion");
+        if(sessionStorage.getItem("carrito")==null)
+            sessionStorage.setItem("carrito",  JSON.stringify(new Carrito()));
 
-}
+        if(validarDatosDestinatario()==true){
+            sessionStorage.setItem("prueba", "estoy en vslidscion");
+            let formulario = document.querySelector("#js-form");
+            let mail= document.querySelector("#correo-destinatario").value;
+            let nombre = document.querySelector("#destinatario").value;
+            let monto = parseInt(document.querySelector("#monto").value);
+            let codigoGenerado = generarCodigo(nombre);
+            let nuevaGiftCard = new GiftCard(nombre,mail,monto,codigoGenerado);
 
-function cambiarTamanioTexto() {
-    let cuadroTexto = document.querySelector(".giftcard-cuadro-texto");
-    let texto = cuadroTexto.querySelectorAll("p");
+            sessionStorage.setItem("prueba3", nuevaGiftCard)
 
-    let opcionesTamanio = document.getElementsByName("tamanio_fuente");
-
-    opcionesTamanio.forEach(tamanio => {
-        if (tamanio.value == "20" && tamanio.checked)
-            texto.forEach(partText => {
-                partText.style.fontSize = "1.25em";
-            });
-
-        if (tamanio.value == "28" && tamanio.checked)
-            texto.forEach(partText => {
-                partText.style.fontSize = "1.75em";
-            });
-
-        if (tamanio.value == "32" && tamanio.checked)
-            texto.forEach(partText => {
-                partText.style.fontSize = "2em";
-            });
-
-        if (tamanio.value == "48" && tamanio.checked)
-            texto.forEach(partText => {
-                partText.style.fontSize = "3em";
-            });
-
-        if (tamanio.value == "60" && tamanio.checked)
-            texto.forEach(partText => {
-                partText.style.fontSize = "3.75em";
-            });
-    })
-}
-function cambiarColorTexto() {
-    let cuadroTexto = document.querySelector(".giftcard-cuadro-texto");
-    let texto = cuadroTexto.querySelectorAll("p");
-
-    let opcionesColor = document.getElementsByName("tipo_color");
-
-    opcionesColor.forEach(opcion => {
-        if (opcion.value == "blanco" && opcion.checked)
-            texto.forEach(parteText => {
-                parteText.style.color = "#FFFF";
-            });
-
-        if (opcion.value == "negro" && opcion.checked)
-            texto.forEach(parteText => {
-                parteText.style.color = "black";
-            });
-
-        if (opcion.value == "dorado" && opcion.checked)
-            texto.forEach(parteText => {
-                parteText.style.color = "#dba233";
-            })
-        if (opcion.value == "azul" && opcion.checked)
-            texto.forEach(parteText => {
-                parteText.style.color = "#0000FF";
-            })
-        if (opcion.value == "rojo" && opcion.checked)
-            texto.forEach(parteText => {
-                parteText.style.color = "#FF0000";
-            })
-    })
-
-}
-
-function cambiarFondoImagen() {
-    let opcionesFondoImg = document.getElementsByName("tipo_fondo");
-
-    opcionesFondoImg.forEach(opcionImg => {
-        if (opcionImg.value == "fondo-cumple" && opcionImg.checked)
-            document.querySelector(".cuadro-gift-card").style.backgroundImage = `url(../assets/1-fondo-cumple.jpg)`;
-
-        if (opcionImg.value == "fondo-brillo" && opcionImg.checked)
-            document.querySelector(".cuadro-gift-card").style.backgroundImage = `url(../assets/2-fondo-gliter.jpg)`;
-
-        if (opcionImg.value == "fondo-galaxy" && opcionImg.checked)
-            document.querySelector(".cuadro-gift-card").style.backgroundImage = `url(../assets/3-fondo-galaxy.jpg)`;
-
-        if (opcionImg.value == "fondo-navidad" && opcionImg.checked)
-            document.querySelector(".cuadro-gift-card").style.backgroundImage = `url(../assets/4-fondo-navidad-nuevo.jpg)`;
-
-        if (opcionImg.value == "fondo-san-valentin" && opcionImg.checked)
-            document.querySelector(".cuadro-gift-card").style.backgroundImage = `url(../assets/5-san-valentin.jpeg)`;
-
-    })
-
-}
-function mostrarNombreDestinatario() {
-    let nombreIngresado = document.getElementById("destinatario").value;
-    destinatario.innerHTML = nombreIngresado
-
-}
-
-function enviarFormulario() {
-    let mail
-    if (validarMailDestinatario() == true) {
-        mail = document.querySelector("#correo-destinatario").value;
+            agregarGiftCardAlCarrito(nuevaGiftCard);
+            sessionStorage.setItem("prueba7", "estoy en vslidscion");
+            formulario.submit();  
+        }
+        
+    }else{
+        event.preventDefault();
+        mostrarModal();
     }
-    console.log(mail);
+    
 }
 
-function validarMailDestinatario() {
-    let regexMail = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
+function agregarGiftCardAlCarrito(nuevaGiftCard){
+    sessionStorage.setItem("prue", "estoy carritp")
+    let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+    carrito.gift_card.push(nuevaGiftCard);
+    carrito.cantidad_total+=1;
+    carrito.precio_total += nuevaGiftCard.monto;
+    sessionStorage.setItem("prueba2", JSON.stringify(nuevaGiftCard));
 
-    let mensajeError = "";
-    let error = false;
-    let passwordIngresada = document.getElementById("correo-destinatario").value;
+    sessionStorage.setItem("carrito", JSON.stringify(carrito));
+    textoCarrito.innerHTML = carrito.cantidad_total;
+}
 
-    if (!regexMail.test(passwordIngresada)) {
-        error = true;
-        mensajeError += "<p>- Tiene que ser un email válido.</p>";
+function generarCodigo(nombre){
+    let letraInicial = nombre.charAt(0).toUpperCase();
+    let codigo = letraInicial+Math.round(Math.random()*9000)+1000;
+    return codigo;
+}
+
+function mostrarModal() {
+
+    const modal = document.getElementById("modalAviso");
+    modal.style.display = "block";
+
+    const spanCerrarModal = document.getElementById("cerrarModal");
+
+    let divTexto = document.querySelector(".texto-modal");
+
+    spanCerrarModal.onclick = function () {
+        modal.style.display = "none";
     }
 
-    if (error) {
-        document.getElementById("mensaje").innerHTML = mensajeError;
-        return false;
-    }
-    else {
-        mensajeError = "";
-        document.getElementById("mensaje").innerHTML = mensajeError;
-        return true;
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 
+    divTexto.innerHTML = `<h3>😊 Por favor inicie sesion</h3> <a href="../pages/InicioSesionIndividuo.html"><strong>aqui</strong></a>`
+
+    return false;
 
 }
+

@@ -230,7 +230,6 @@ function mostrarModal() {
     const modal = document.getElementById("modalFelicitaciones");
     modal.style.display = "block";
 
-    const btn = document.getElementById("abrirModal");
     const span = document.getElementById("cerrarModal");
 
     // Cuando se hace clic en <span> (x), se cierra el modal
