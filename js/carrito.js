@@ -13,16 +13,14 @@ function hacerDinamicoLosCursosDestacados() {
     const carritoDB = ayudante.buscarEntidadEnSessionStorage("carrito");
     const cantidadCursosCarrito = carritoDB.cantidad_total;
     console.log("la cant de cursos es "+cantidadCursosCarrito);
-    console.log(JSON.stringify(carritoDB));
     
     let subtotal = 0; // Inicializa subtotal
 
     sectionMostrarCarrito.innerHTML = ""; 
-    if(carritoDB == []){
+    if(carritoDB != []){
         carritoDB.cursos_a_comprar.forEach((item,index) => {
             const nuevaTarjeta = document.createElement('div');
             nuevaTarjeta.className = "producto";
-    
             nuevaTarjeta.innerHTML =
                 `<img src="../${item.curso.imagen_url}" alt="Imagen del curso ${item.curso.nombre}">
                 <div class="producto-info">
@@ -31,7 +29,6 @@ function hacerDinamicoLosCursosDestacados() {
                     <p class="producto-precio">$${item.curso.precio.toFixed(2)}</p>
                     <button class="btn-eliminar" data-index="${index}">X</button>
                 </div>`;
-                console.log(nuevaTarjeta);
     
                 subtotal += item.curso.precio * item.cantidad;
     
