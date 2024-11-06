@@ -197,6 +197,67 @@
 .header__principal-menu-responsive,.menu-responsive-flotante{
     display: none;
 }
+/************************ SIDEBAR **************************************************/
+.carrito-sidebar{
+    position: absolute;
+    z-index: 20;
+    background-color: white;
+    border: 1px solid gray;
+    width: 50%;
+    right: 0.1em;
+    min-height: 10rem;
+    padding: 0.3rem;
+    display: none;
+    /*display: flex;
+    justify-content: center;
+    align-items: center; texto*/
+}
+
+
+
+.carrito-lista-producto{
+    display: grid;
+    grid-template-columns: 8fr 1.1fr 1.5fr 1fr;
+    gap: 5px;
+
+}
+
+.carrito-espacio-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.carrito-img-curso img{
+    width: 10rem;
+}
+.carrito-desc-curso{
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-desc-curso, .carrito-nombre-curso{
+    margin-left: 0.3rem ;
+    margin-right: 0.3rem;
+}
+
+.msj-logueado{
+    display: none;
+}
+.carrito-mensaje{
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #2D2F31;
+    display: none;
+}
+
+.carrito-columna1-curso-comprar{
+    display: flex;
+}
+
+
 
 
 /***************************[FOOTER]**************************************/
