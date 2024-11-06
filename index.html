@@ -117,21 +117,37 @@
         <!--CARRUSEL-->
         <section class="contenedor_carrusel_principal">
             <div class="contenedor_carrusel_principal-carrusel">
-                <div class="slider-seccion">
+                <div class="slider-seccion" id="slide1">
                     <img src="./assets/1-slider.jpg" alt="" class="slider-img">
                 </div>
+                <div class="slider-seccion" id="slide2">
+                    <img src="./assets/2-slider.png" alt="" class="slider-img">
+                </div>
+                <div class="slider-seccion" id="slide3">
+                    <img src="./assets/3-slider.jpg" alt="" class="slider-img">
+                </div>
             </div>
-            <button class="slider-btn btn-slider-right">
+            <button class="slider-btn btn-slider-right" id="nextButton">
                 <span class="material-symbols-outlined">
                     chevron_right
                 </span>
             </button>
 
-            <button class="slider-btn btn-slider-left">
+            <button class="slider-btn btn-slider-left" id="prevButton">
                 <span class="material-symbols-outlined">
                     chevron_left
                 </span>
             </button>
+
+            <!--Indicadores-->
+
+            <div class="slider-indicators">
+                <button class="indicator" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+            </div>
+
+
         </section>
 
         <!--PASOS PARA INSCRIBIRSE-->
@@ -230,18 +246,30 @@
             <h2 class="titulo">Métodos de pago</h2>
             <div class="contenedor-metodos-de-pago" id="contenedor-metodos-de-pago">
                 <div class="carrusel-pagos" id="carrousel-pagos">
-                    <img class="metodo" src="./assets/mastercard-logo.png" alt="">
-                    <img class="metodo" src="./assets/mercado-pago-logo.jpg" alt="">
-                    <img class="metodo" src="./assets/visa-debito.png" alt="">
-                    <img class="metodo" src="./assets/cabal_debito.png" alt="">
+                    <div class="slide-payment">
+                        <div class="slide-img-contenedor">
+                            <img class="metodo" src="./assets/mastercard-logo.png" alt="Mastercard">
+                            <img class="metodo" src="./assets/mercado-pago-logo.jpg" alt="Mercado Pago">
+                            <img class="metodo" src="./assets/visa-debito.png" alt="Visa">
+                            <img class="metodo" src="./assets/cabal_debito.png" alt="Cabal">
+                        </div>  
+                    </div>
+                    <div class="slide-payment">
+                        <div class="slide-img-contenedor">
+                            <img class="metodo" src="./assets/america-express-logo.png" alt="American express">
+                            <img class="metodo" src="./assets/hsbc-logo.png" alt="HSBC">
+                            <img class="metodo" src="./assets/naranja-logo.png" alt="Naranja">
+                            <img class="metodo" src="./assets/pago-facil-logo.png" alt="Pago facil">
+                        </div>
+                    </div>
                 </div>
-                <button class="slider-metodos-pagos-btn btn-slider-right">
+                <button class="slider-metodos-pagos-btn btn-slider-right" id="nextBtnPayment">
                     <span class="material-symbols-outlined">
                         chevron_right
                     </span>
                 </button>
 
-                <button class="slider-metodos-pagos-btn btn-slider-left">
+                <button class="slider-metodos-pagos-btn btn-slider-left" id="prevBtnPayment">
                     <span class="material-symbols-outlined">
                         chevron_left
                     </span>
@@ -295,6 +323,7 @@
     <script src="./js/Cursos-home.js" type="module"></script>
     <script type="module" src="./js/contador-carrito-online.js"></script>
     <script type="module" src="./js/cerrar-session.js"></script>
+    <script src="./js/carrusel.js"></script>
 </body>
 
 </html>
