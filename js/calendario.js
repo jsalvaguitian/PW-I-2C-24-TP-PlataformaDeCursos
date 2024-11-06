@@ -7,6 +7,9 @@ cursos.forEach((elemento)=>{
 
 function mostrarInfoCurso(idCurso){
     let listaRecuperada = JSON.parse(localStorage.getItem('curso'));
+    let indiceCurso = sessionStorage.getItem('indiceCursoAVer');
+    indiceCurso = idCurso;
+    sessionStorage.setItem('indiceCursoAVer', indiceCurso);
     if (listaRecuperada) {
         listaRecuperada.forEach((elemento) => {
           if(idCurso==elemento.id){
@@ -19,7 +22,7 @@ function actualizarPopUp(elemento){
     const mostrarInfo = document.querySelector('#modal-descripcion-curso');
     mostrarInfo.innerHTML=`<h2>${elemento.nombre}</h2><p>Modalidad: ${elemento.modalidad}</p>
     <p>Categoría: ${elemento.categoria}</p><p>Precio: ${elemento.precio}</p>`;
-    const url="../pages/detalles_de_un_curso_presencial.html";
+    const url="../pages/detalles_de_un_curso_virtual.html";
     if(elemento.modalidad=="Online"){
         const urlVir="../pages/detalles_de_un_curso_virtual.html";
         mostrarPopUP(urlVir);
