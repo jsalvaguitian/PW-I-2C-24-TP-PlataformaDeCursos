@@ -1,0 +1,53 @@
+
+mostrarCompraExitosa();
+function mostrarCompraExitosa() {
+    const sectionCompraExitosa = document.querySelector(".compra-exitosa-container");
+
+    sectionCompraExitosa.innerHTML = "";
+
+    const titulo = document.createElement("h1");
+    titulo.textContent = "¡Felicidades, has comprado estos cursos!";
+    sectionCompraExitosa.appendChild(titulo);
+
+    const carritoDB = buscarEntidadEnSessionStorage("carrito");
+
+    if (carritoDB && carritoDB.cursos_a_comprar && carritoDB.cursos_a_comprar.length > 0) {
+        carritoDB.cursos_a_comprar.forEach((item) => {
+            const nuevaTarjeta = document.createElement("div");
+            nuevaTarjeta.className = "producto";
+
+            nuevaTarjeta.innerHTML = `
+                <img src="../${item.curso.imagen_url}" alt="Curso ${item.curso.nombre}">
+                <div class="producto-info">
+                    <p class="producto-nombre">${item.curso.nombre}</p>
+                    <p class="producto-precio">$${item.curso.precio.toFixed(2)}</p>
+                </div>
+            `;
+
+            sectionCompraExitosa.appendChild(nuevaTarjeta);
+        });
+
+        const compraResumen = document.createElement("div");
+        compraResumen.className = "compra-resumen";
+        compraResumen.innerHTML = `
+            <p class="total">Total Pagado: $${carritoDB.precio_total.toFixed(2)}</p>
+            <a href="../index.html" class="btn-volver">Volver al Inicio</a>
+        `;
+
+        sectionCompraExitosa.appendChild(compraResumen);
+    } else {
+        sectionCompraExitosa.innerHTML = "<p>No hay cursos comprados.</p>";
+    }
+}
+
+function buscarEntidadEnSessionStorage(entidad){
+    if(sessionStorage.getItem(entidad) == null){
+        sessionStorage.setItem(entidad, [])
+        return [];
+    }else if(sessionStorage.getItem(entidad) == []){
+        return [];
+
+    }else return JSON.parse(sessionStorage.getItem(entidad));
+
+}
+
