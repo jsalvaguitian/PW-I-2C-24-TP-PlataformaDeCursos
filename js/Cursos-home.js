@@ -1,3 +1,7 @@
+/*Al finalizar la compra el carrito se volvera vacio
+poner los botones clickeado en false
+*/
+
 import * as ayudante from "./ayudante.js";
 import { llenarDatosEnLaBBDDCursos } from "./bbdd-cursos.js";
 
