@@ -21,7 +21,8 @@ function mostrarInfoCurso(idCurso){
 function actualizarPopUp(elemento){
     const mostrarInfo = document.querySelector('#modal-descripcion-curso');
     mostrarInfo.innerHTML=`<h2>${elemento.nombre}</h2><p>Modalidad: ${elemento.modalidad}</p>
-    <p>Categoría: ${elemento.categoria}</p><p>Precio: ${elemento.precio}</p>`;
+    <p>Categoría: ${elemento.categoria}</p><p>Precio: ${elemento.precio}</p>
+    <p>${elemento.sinopsis}</p>`;
     const url="../pages/detalles_de_un_curso_virtual.html";
     if(elemento.modalidad=="Online"){
         const urlVir="../pages/detalles_de_un_curso_virtual.html";

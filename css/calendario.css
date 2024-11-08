@@ -181,6 +181,9 @@ body section{
         height: 2.5em; 
     }
  
+    #popupModal{
+        width: 70%;
+    }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
@@ -223,6 +226,9 @@ body section{
     .current-day .day-number::before {
         width: 2.5em;
         height: 2.5em;
+    }
+    #popupModal{
+        width: 80%;
     }
 }
 .modal {
