@@ -126,14 +126,6 @@ main .delete-btn button:hover {
     position: relative;
 }
 
-.close {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
 #modal-contenedor-info {
     margin-bottom: 2em;
     font-size: 1em;

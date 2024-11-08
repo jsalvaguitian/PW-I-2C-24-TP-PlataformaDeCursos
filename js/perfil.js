@@ -1,4 +1,5 @@
 import * as ayudante from "./ayudante.js";
+import * as validaciones from "./validar-medio-pago.js";
 
 let nombre = document.getElementById('firstName');
 let apellido = document.getElementById('lastName');
@@ -13,21 +14,34 @@ if (usuarioLogueado) {
     nombre.value = usuarioLogueado.nombre || ''; 
     apellido.value = usuarioLogueado.apellido || '';
     mail.value = usuarioLogueado.mail || '';
+    mail.style.pointerEvents = "none"; 
+    mail.style.backgroundColor = "#f0f0f0"; 
+    nombre.style.pointerEvents = "none"; 
+    nombre.style.backgroundColor = "#f0f0f0"; 
+    apellido.style.pointerEvents = "none"; 
+    apellido.style.backgroundColor = "#f0f0f0"; 
+
 }
 
-document.getElementById('agregar-tarj').addEventListener('click',agregarTarjeta);
+document.getElementById('agregar-tarj').addEventListener('click',(event)=>{
+    event.preventDefault();
+    if(validaciones.validacionesMp()){
+        agregarTarjeta();
+    }
+});
 document.getElementById('guardar').addEventListener('click',()=>{
     window.location.href = '../index.html';
 });
 
 function agregarTarjeta(){
-    // Recuperar val
+    
+        // Recuperar val
     let numeroTarjeta = document.getElementById('cardNumber').value;
     let fechaVenc = document.getElementById('expiryDate').value;
     let cvv = document.getElementById('cvv').value;
     let nombreTarjeta = document.getElementById('cardName').value;
 
-    // Crea un objeto con los datos de la tarjeta
+    // Crea datos de la tarjeta
     const tarjeta = {
         numeroTarjeta: numeroTarjeta,
         fechaVenc: fechaVenc,
@@ -35,7 +49,7 @@ function agregarTarjeta(){
         nombreTarjeta: nombreTarjeta
     };
     console.log(`agregar tarj${tarjeta}`);
-    // Obtengo el usuario del local
+    // Obtener usuario del local
     let mailUsuarioLogueadoLS = usuarioLogueado.mail;
     let usuario = listaUsuarios.find(user => user.mail === mailUsuarioLogueadoLS);
     console.log("mail "+ mailUsuarioLogueadoLS);
@@ -55,6 +69,10 @@ function agregarTarjeta(){
         document.getElementById('cvv').value = '';
         document.getElementById('cardName').value = '';
     }
+    
+    
 }
+
+
 
  
