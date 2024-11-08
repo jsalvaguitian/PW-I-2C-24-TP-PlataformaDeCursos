@@ -1,5 +1,6 @@
 
 mostrarCompraExitosa();
+eliminarCarrito();
 function mostrarCompraExitosa() {
     const sectionCompraExitosa = document.querySelector(".compra-exitosa-container");
 
@@ -37,6 +38,17 @@ function mostrarCompraExitosa() {
         sectionCompraExitosa.appendChild(compraResumen);
     } else {
         sectionCompraExitosa.innerHTML = "<p>No hay cursos comprados.</p>";
+    }
+}
+
+function eliminarCarrito(){
+    let carrito = buscarEntidadEnSessionStorage("carrito");
+
+    if (carrito) {
+        carrito.cursos_a_comprar = [];  
+        carrito.precio_total = 0;  
+        carrito.cantidad_total = 0; 
+        sessionStorage.setItem("carrito", JSON.stringify(carrito));
     }
 }
 
