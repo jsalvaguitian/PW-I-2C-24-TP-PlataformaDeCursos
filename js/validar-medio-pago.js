@@ -14,6 +14,7 @@ export function validacionesMp(){
     document.getElementById('errorName').textContent = '';
 
     let isValid = true; 
+    const regex = /^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/;
 
     // Validación de los inputs
     if (!cardNumber) {
@@ -39,8 +40,11 @@ export function validacionesMp(){
         document.getElementById('errorCVV').textContent = 'El CVV debe tener 3 dígitos.';
         isValid = false;
     }
-    if(cardName == ""){
+    if(!cardName){
         document.getElementById('errorName').textContent = 'El nombre es obligatorio.';
+        isValid = false;
+    }else if(!regex.test(cardName)){
+        document.getElementById('errorName').textContent = 'El nombre debe ser texto.';
         isValid = false;
     }
 
