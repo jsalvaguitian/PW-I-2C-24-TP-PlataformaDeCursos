@@ -9,9 +9,6 @@ let botonesComprarCursoOnline = document.querySelectorAll(".js-online-curso");
 let botonCursoPrincipal = document.querySelector(".curso-carrito");
 
 
-let cont = 0;
-
-
 if (sessionStorage.getItem("usuarioLogueado") != null) {
 
     if (sessionStorage.getItem("carrito") == null) {
@@ -83,11 +80,6 @@ function agregarCursoRelacionadoEnElCarrito(carrito){
 
 function calcularPrecioTotal(carrito,cursoBuscado) {
     carrito.precio_total +=cursoBuscado.precio
-/*let precioTotal =0
-    for (let i = 0; i < carrito.cursos_a_comprar.length; i++) {
-        precioTotal += carrito.cursos_a_comprar[i].curso.precio;
-    }
-    carrito.precio_total += precioTotal;*/
 }
 
 function ponerCursoOnlineCarrito(carrito, divDescripcionCardOnline) {

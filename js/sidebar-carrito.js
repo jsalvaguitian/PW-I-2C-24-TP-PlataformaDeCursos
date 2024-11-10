@@ -34,7 +34,7 @@ btnCarrito.addEventListener("click", () => {
     }
 
 });
-function actualizarSidebar() {
+export function actualizarSidebar() {
     //preguntar si se encuentra el carrito (se encuentra si el usuario esta logueado) o esta vacio
 
     if (sessionStorage.getItem("usuarioLogueado") == null) {
