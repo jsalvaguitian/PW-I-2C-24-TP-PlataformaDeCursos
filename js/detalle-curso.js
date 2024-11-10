@@ -405,6 +405,3 @@ function hacerDinamicoLosCursosDestacados(inicio, fin) {
     }
 
 }
-
-
-

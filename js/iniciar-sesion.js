@@ -23,7 +23,7 @@ function loguearUsuario() {
         guardarUsuarioLogueadoSessionStorage(usuarioLogueado);
         mensajeError = " ";
         document.getElementById("mensaje").innerHTML = mensajeError;
-        formulario.action = '../pages/perfil.html';
+        formulario.action = '../index.html';
         formulario.submit();
     }
 
