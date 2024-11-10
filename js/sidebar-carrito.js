@@ -1,4 +1,5 @@
 import { buscarEntidadEnLocalStorage, buscarEntidadEnSessionStorage } from "./ayudante.js";
+import { Carrito } from "./ClaseCarrito.js"
 
 
 let btnCarrito = document.querySelector(".header__principal-carrito");
@@ -6,6 +7,7 @@ let sidebar = document.querySelector(".carrito-sidebar");
 
 const eliminarCursoDelCarritoSide = (index) => {
     let carrito = buscarEntidadEnSessionStorage("carrito");
+    let textoCarrito = document.querySelector(".texto-carrito");
     console.log("estoy dentro de eliminar");
     if (carrito && carrito.cursos_a_comprar) {
         console.log("estoy dentro del if final");
@@ -16,6 +18,7 @@ const eliminarCursoDelCarritoSide = (index) => {
     }
 
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
+    textoCarrito.innerHTML = carrito.cantidad_total;//actualizo el contadorTotal
     actualizarSidebar();
 }
 const eliminarGiftCardDelCarritoSide = (index) => {
@@ -127,8 +130,6 @@ function actualizarSidebar() {
 
             sidebar.innerHTML += `<a href="../pages/carrito.html" class="a_irCarrito">Ir al carrito </a>`
 
-
-
         }
         const btnEliminar = document.querySelectorAll(".btn-carrito-eliminar");
         btnEliminar.forEach((btn) => {
@@ -139,6 +140,7 @@ function actualizarSidebar() {
                 if (index !== undefined) {
                     console.log("estoy dentro de aca");
                     eliminarCursoDelCarritoSide(index);
+                    location.reload();
                 } else if (indexG !== undefined) {
                     eliminarGiftCardDelCarritoSide(indexG);
                 }
