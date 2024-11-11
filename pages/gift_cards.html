@@ -131,19 +131,20 @@
                     <p class="nombre-destinatario"></p>
                 </div>
                 <div class="giftcard_box_muestra-monto">
-                    <p style="color: white; font-weight:bold;">$</p><p class="giftcard_box-monto"></p>
+                    <p style="color: white; font-weight:bold;">$</p>
+                    <p class="giftcard_box-monto"></p>
                 </div>
             </article>
             <h3 class="subtitulo-previzualizacion">Vista previa del resultado de personalización</h3>
         </section>
         <section class="section-columna2">
             <h1>Personalización de Gifcard</h1>
-            <form action="./medio_pago.html" method="#" class="formulario-gift" id="js-form">
+            <form action="./carrito.html" method="#" class="formulario-gift" id="js-form">
                 <label for="destinatario">
                     <h3>Para: </h3>
                 </label>
-                <input id="destinatario" type="text" name="destinatario" class="destinatario" onkeyup="mostrarNombreDestinatario()"
-                    placeholder="Nombre del destinatario" value="" required>
+                <input id="destinatario" type="text" name="destinatario" class="destinatario"
+                    onkeyup="mostrarNombreDestinatario()" placeholder="Nombre del destinatario" value="" required>
 
                 <label for="correo-destinatario">
                     <h3>Correo electrónico del destinatario: </h3>
@@ -183,23 +184,28 @@
                 <h3 class="subtitulo">Tamaño de fuente</h3>
                 <div class="tamanio-fuentes">
                     <div class="fuente20">
-                        <input type="radio" name="tamanio_fuente" id="fuente20" value="20" onchange="cambiarTamanioTexto()"><span class="fuente">20px</span>
+                        <input type="radio" name="tamanio_fuente" id="fuente20" value="20"
+                            onchange="cambiarTamanioTexto()"><span class="fuente">20px</span>
                     </div>
 
                     <div class="fuente28">
-                        <input type="radio" name="tamanio_fuente" id="fuente20" value="28" onchange="cambiarTamanioTexto()"><span class="fuente">28px</span>
+                        <input type="radio" name="tamanio_fuente" id="fuente20" value="28"
+                            onchange="cambiarTamanioTexto()"><span class="fuente">28px</span>
                     </div>
 
                     <div class="fuente32">
-                        <input type="radio" name="tamanio_fuente" id="fuente20" value="32" onchange="cambiarTamanioTexto()"><span class="fuente">32px</span>
+                        <input type="radio" name="tamanio_fuente" id="fuente20" value="32"
+                            onchange="cambiarTamanioTexto()"><span class="fuente">32px</span>
                     </div>
 
                     <div class="fuente48">
-                        <input type="radio" name="tamanio_fuente" id="fuente20" value="48" onchange="cambiarTamanioTexto()"><span class=fuente>48px</span>
+                        <input type="radio" name="tamanio_fuente" id="fuente20" value="48"
+                            onchange="cambiarTamanioTexto()"><span class=fuente>48px</span>
                     </div>
 
                     <div class="fuente60">
-                        <input type="radio" name="tamanio_fuente" id="fuente20" value="60" onchange="cambiarTamanioTexto()"><span class="fuente">60px</span>
+                        <input type="radio" name="tamanio_fuente" id="fuente20" value="60"
+                            onchange="cambiarTamanioTexto()"><span class="fuente">60px</span>
                     </div>
                 </div>
 
@@ -213,21 +219,24 @@
                 <h3 class="subtitulo">Ubicación</h3>
                 <div class="ubicaciones">
                     <div class="ubicacion1">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf" onchange="cambiarPosicionMonto()">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-inf" value="ubicacion-der-inf"
+                            onchange="cambiarPosicionMonto()">
                         <div class="ubicacion ub1">
                             <p class="ubicacion-precio-der-inf">$</p>
                         </div>
                     </div>
 
                     <div class="ubicacion2">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-izq-sup" value="ubicacion-izq-sup" onchange="cambiarPosicionMonto()">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-izq-sup" value="ubicacion-izq-sup"
+                            onchange="cambiarPosicionMonto()">
                         <div class="ubicacion">
                             <p class="ubicacion-precio-izq-sup">$</p>
                         </div>
                     </div>
 
                     <div class="ubicacion3">
-                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-sup" value="ubicacion-der-sup" onchange="cambiarPosicionMonto()">
+                        <input type="radio" name="tipo_ubicacion" id="ubicacion-der-sup" value="ubicacion-der-sup"
+                            onchange="cambiarPosicionMonto()">
                         <div class="ubicacion">
                             <p class="ubicacion-precio-der-sup">$</p>
                         </div>
@@ -237,35 +246,40 @@
                 <h3 class="subtitulo">Fondo</h3>
                 <div class="fondos">
                     <div class="fondo1">
-                        <input type="radio" name="tipo_fondo" id="fondo-cumple" value="fondo-cumple" onchange="cambiarFondoImagen()">
+                        <input type="radio" name="tipo_fondo" id="fondo-cumple" value="fondo-cumple"
+                            onchange="cambiarFondoImagen()">
                         <div class="fondo">
                             <img src="../assets/1-fondo-cumple.jpg" alt="">
                         </div>
                     </div>
 
                     <div class="fondo2">
-                        <input type="radio" name="tipo_fondo" id="fondo-brillo" value="fondo-brillo" onchange="cambiarFondoImagen()">
+                        <input type="radio" name="tipo_fondo" id="fondo-brillo" value="fondo-brillo"
+                            onchange="cambiarFondoImagen()">
                         <div class="fondo">
                             <img src="../assets/2-fondo-gliter.jpg" alt="">
                         </div>
                     </div>
 
                     <div class="fondo3">
-                        <input type="radio" name="tipo_fondo" id="fondo-galaxy" value="fondo-galaxy" onchange="cambiarFondoImagen()">
+                        <input type="radio" name="tipo_fondo" id="fondo-galaxy" value="fondo-galaxy"
+                            onchange="cambiarFondoImagen()">
                         <div class="fondo">
                             <img src="../assets/3-fondo-galaxy.jpg" alt="">
                         </div>
                     </div>
 
                     <div class="fondo4">
-                        <input type="radio" name="tipo_fondo" id="fondo-navidad" value="fondo-navidad" onchange="cambiarFondoImagen()">
+                        <input type="radio" name="tipo_fondo" id="fondo-navidad" value="fondo-navidad"
+                            onchange="cambiarFondoImagen()">
                         <div class="fondo">
                             <img src="../assets/4-fondo-navidad-nuevo.jpg" alt="">
                         </div>
                     </div>
 
                     <div class="fondo5">
-                        <input type="radio" name="tipo_fondo" id="fondo-san-valentin" value="fondo-san-valentin" onchange="cambiarFondoImagen()">
+                        <input type="radio" name="tipo_fondo" id="fondo-san-valentin" value="fondo-san-valentin"
+                            onchange="cambiarFondoImagen()">
                         <div class="fondo">
                             <img src="../assets/5-san-valentin.jpeg" alt="">
                         </div>
@@ -319,7 +333,7 @@
                     </div>
 
                 </div>-->
-                
+
             </form>
         </section>
     </main>

@@ -41,7 +41,7 @@ function verificarUsuarioLogueado(event){
 
             agregarGiftCardAlCarrito(nuevaGiftCard);
             sessionStorage.setItem("prueba7", "estoy en vslidscion");
-            formulario.submit();  
+            mostrarModalExitoso(nuevaGiftCard,formulario);
         }
         
     }else{
@@ -49,6 +49,20 @@ function verificarUsuarioLogueado(event){
         mostrarModal();
     }
     
+}
+function mostrarModalExitoso(nuevaGiftCard,formulario) {
+    prepararModal();
+    let divTexto = document.querySelector(".texto-modal");
+    divTexto.innerHTML = `<h3>😊 El código de la giftCard para ${nuevaGiftCard.nombreDestinatario} es ${nuevaGiftCard.codigo}</h3>
+                        <p>Este código será válido luego de ser pagado. Haga clic en el botón para continuar.</p>
+                        <button class ="boton-modal">Ir al carrito</button>`
+
+    let botonCarrito = document.querySelector(".boton-modal");
+    botonCarrito.addEventListener("click", ()=>{
+        formulario.submit();
+    })
+
+    return true;    
 }
 
 function agregarGiftCardAlCarrito(nuevaGiftCard){
@@ -65,18 +79,23 @@ function agregarGiftCardAlCarrito(nuevaGiftCard){
 
 function generarCodigo(nombre){
     let letraInicial = nombre.charAt(0).toUpperCase();
-    let codigo = letraInicial+Math.round(Math.random()*9000)+1000;
+    let codigo = letraInicial+(Math.round(Math.random()*9000)+1000);
     return codigo;
 }
 
 function mostrarModal() {
+    prepararModal();
+    let divTexto = document.querySelector(".texto-modal");
+    divTexto.innerHTML = `<h3>😊 </h3> <a href="../pages/InicioSesionIndividuo.html"><strong>aqui</strong></a>`
+    return false;
 
+}
+
+function prepararModal(){
     const modal = document.getElementById("modalAviso");
     modal.style.display = "block";
 
     const spanCerrarModal = document.getElementById("cerrarModal");
-
-    let divTexto = document.querySelector(".texto-modal");
 
     spanCerrarModal.onclick = function () {
         modal.style.display = "none";
@@ -87,10 +106,5 @@ function mostrarModal() {
             modal.style.display = "none";
         }
     }
-
-    divTexto.innerHTML = `<h3>😊 Por favor inicie sesion</h3> <a href="../pages/InicioSesionIndividuo.html"><strong>aqui</strong></a>`
-
-    return false;
-
 }
 
