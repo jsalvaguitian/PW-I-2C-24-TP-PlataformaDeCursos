@@ -1,12 +1,11 @@
-/*  Para Pagina Curso Detalles FUNCIONA MAL EL CARRITO BOTON PRINCIPAL DE PRESENCIAL NO DEBE AGREGAR EN EL CARRITO */
 import { buscarEntidadEnLocalStorage, buscarEntidadEnSessionStorage } from "./ayudante.js";
 import { Carrito } from "./ClaseCarrito.js"
 
 let botonCarrito = document.querySelector(".header__principal-carrito");
 let textoCarrito = botonCarrito.querySelector(".texto-carrito");
-
-let botonesComprarCursoOnline = document.querySelectorAll(".js-online-curso");
 let botonCursoPrincipal = document.querySelector(".curso-carrito");
+let botonesComprarCursoOnline = document.querySelectorAll(".js-online-curso");
+
 
 
 if (sessionStorage.getItem("usuarioLogueado") != null) {
@@ -26,21 +25,20 @@ if (sessionStorage.getItem("usuarioLogueado") != null) {
     textoCarrito.innerHTML = 0;
 }
 function agregarCursoPrincipalEspecifico(carrito){
-        botonCursoPrincipal.addEventListener("click", () => {
-            ponerCursoPrincipalEspecificoEnCarrito(carrito);
-            sessionStorage.setItem("carrito", JSON.stringify(carrito));
+    botonCursoPrincipal.addEventListener("click", () => {
+        ponerCursoPrincipalEspecificoEnCarrito(carrito);
+        sessionStorage.setItem("carrito", JSON.stringify(carrito));
 
-            textoCarrito.innerHTML = carrito.cantidad_total;
-        })
+        textoCarrito.innerHTML = carrito.cantidad_total;
+    })
 }
 
 function ponerCursoPrincipalEspecificoEnCarrito(carrito){
     let indiceCursoPrincipal =JSON.parse(sessionStorage.getItem("indiceCursoAVer"));
     let cursoBuscado = buscarPorIdCursoDB(indiceCursoPrincipal);
-    let botonesComprarStorage = JSON.parse(sessionStorage.getItem("btnCursos"));
-    
+    let modalidadPrincipal = document.querySelector(".curso-modalidad");
 
-    if(botonesComprarStorage[indiceCursoPrincipal].tipo == "Online"){
+    if(modalidadPrincipal.textContent == "Online"){
         if (carrito.cursos_a_comprar.length == 0) {
             agregarUnaFilaACarrito(carrito, cursoBuscado);
             calcularPrecioTotal(carrito,cursoBuscado);
@@ -50,10 +48,8 @@ function ponerCursoPrincipalEspecificoEnCarrito(carrito){
                 calcularPrecioTotal(carrito,cursoBuscado);
             }
         }
-
+        
     }
-    
-
 }
 
 function buscarPorIdCursoDB(indice){
@@ -72,10 +68,8 @@ function agregarCursoRelacionadoEnElCarrito(carrito){
             ponerCursoOnlineCarrito(carrito, unBotonOnline.parentNode);
             sessionStorage.setItem("carrito", JSON.stringify(carrito));
 
-            textoCarrito.innerHTML = carrito.cantidad_total;
         })
     })
-
 }
 
 function calcularPrecioTotal(carrito,cursoBuscado) {
