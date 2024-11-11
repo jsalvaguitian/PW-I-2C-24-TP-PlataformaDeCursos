@@ -24,6 +24,7 @@ function generarIdUsuario(){
 }
 function guardarUsuario(){
     if(validarUsuario()==true){
+        let formulario = document.querySelector(".form-new-user");
         let mail = document.querySelector("#mail").value,
             nombre = document.querySelector("#nombre").value,
             apellido = document.querySelector("#apellido").value,
@@ -32,6 +33,7 @@ function guardarUsuario(){
         let idGenerado = generarIdUsuario();
 
         agregarUsuario(mail, nombre, apellido, password, idGenerado);
+        formulario.submit();
     }
 }
 
@@ -41,7 +43,6 @@ function agregarUsuario(email, name, surname, pwd, id){
     let listaUsuarios = buscarEntidadEnLocalStorage("usuario");
     listaUsuarios.push(nuevoUsuario);
     localStorage.setItem("usuario", JSON.stringify(listaUsuarios));
-
 
 }
 
