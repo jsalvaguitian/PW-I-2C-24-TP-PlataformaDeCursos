@@ -1,4 +1,5 @@
 import * as ayudante from "./ayudante.js";
+import { Carrito } from "./ClaseCarrito.js";
 
 //1-me conecto a la ddbb cursos
 let cursosDB = ayudante.buscarEntidadEnLocalStorage("curso");
@@ -178,19 +179,28 @@ function dirigirbotonesCarritos() {
 
         let carrito = JSON.parse(sessionStorage.getItem("carrito"));
 
-        if(existeElCursoPrincipalEnCarrito(carrito)){
+        if(existeElCursoPrincipalOnlineEnCarrito(carrito)){
             textobotonCursoPrincipal.innerHTML = "Ya esta en el carrito";
             botonCursoPrincipal.addEventListener("click", (event) => {
                 event.preventDefault();
                 window.location.href = enlaceCarrito;
             })
         }else{
-
-            modalidadCursoPrincipal=== "Presencial" ? actualizarInfoModal(indiceCurso, enlaceFormulario) : actualizarInfoModal(indiceCurso, enlaceCarrito);
-            botonCursoPrincipal.addEventListener("click", () => {
-                textobotonCursoPrincipal.innerHTML = "Ya esta en el carrito";
-                mostrarModal(); 
-            })
+            console.log("estoy aqui en false");
+            //if(modalidadCursoPrincipal )
+            if(modalidadCursoPrincipal.textContent=== "Presencial"){
+                actualizarInfoModal(indiceCurso, enlaceFormulario);
+                botonCursoPrincipal.addEventListener("click", () => {
+                    mostrarModal(); 
+                })
+                
+            }else{//para cursos virtuales
+                actualizarInfoModal(indiceCurso, enlaceCarrito);
+                botonCursoPrincipal.addEventListener("click", () => {
+                    textobotonCursoPrincipal.innerHTML = "Ya esta en el carrito";
+                    mostrarModal(); 
+                })
+            }            
         }
 
 
@@ -231,9 +241,10 @@ function estaCursoEnElCarrito(carrito, indiceCurso){
 
 }
 
-function existeElCursoPrincipalEnCarrito(carrito){
+function existeElCursoPrincipalOnlineEnCarrito(carrito){
+    let modalidadOnline = document.querySelector(".curso-modalidad");
     for (let i = 0; i < carrito.cursos_a_comprar.length; i++) {
-        if (carrito.cursos_a_comprar[i].curso.id == indiceCurso) {
+        if (carrito.cursos_a_comprar[i].curso.id == indiceCurso && modalidadOnline.textContent == "Online") {
             return true;
         }
     }
