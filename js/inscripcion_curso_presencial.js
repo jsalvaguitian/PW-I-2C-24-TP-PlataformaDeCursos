@@ -53,27 +53,27 @@ function agregar_persona(event) {
     person_data.innerHTML = `
     <div class="input-group">
         <label for="nombre${contadorP}">Nombre:</label>
-        <input type="text" id="nombre${contadorP}" name="nombre" required>
+        <input type="text" id="nombre${contadorP}" name="nombre" >
     </div>
     <div class="input-group">
         <label for="apellido${contadorP}">Apellido:</label>
-        <input type="text" id="apellido${contadorP}" name="apellido" required>
+        <input type="text" id="apellido${contadorP}" name="apellido" >
     </div>
     <div class="input-group">
         <label for="dni${contadorP}">DNI:</label>
-        <input type="number" id="dni${contadorP}" name="dni" required>
+        <input type="number" id="dni${contadorP}" name="dni" >
     </div>
     <div class="input-group">
         <label for="email${contadorP}">Email:</label>
-        <input type="email" id="email${contadorP}" name="email" required>
+        <input type="email" id="email${contadorP}" name="email" >
     </div>
     <div class="input-group">
         <label for="telefono${contadorP}">Teléfono:</label>
-        <input type="tel" id="telefono${contadorP}" name="telefono" placeholder="1122224444"   pattern="[0-9]{10}" required>
+        <input type="tel" id="telefono${contadorP}" name="telefono" placeholder="1122224444">
     </div>
     <div class="input-group">
         <label for="importe${contadorP}">Importe:</label>
-        <input type="text" id="importe${contadorP}" name="importe" value="${importe_curso}" disabled required>
+        <input type="text" id="importe${contadorP}" name="importe" value="${importe_curso}" disabled >
     </div>
     <div class="delete-person">
         <button type="button" class="person-btn delete" name="btn-delete${contadorP}" onclick="eliminar_persona(${contadorP})" > − </button>
@@ -133,70 +133,76 @@ let contadorEnvio = 0; // evitar que ingrese dos veces a la funcion del boton ag
 const form = document.getElementById('registrationForm');
 form.addEventListener('submit', evitarEnvio)
 function evitarEnvio(evento) {
-    
     evento.preventDefault();
    
-    // Limpiar el array para evitar duplicados
-    inscriptos.length = 0;
-    inscripcion.length = 0;
-
-    // Obtener todos los datos de personas
-    const personas = document.querySelectorAll('.person-data');
-    personas.forEach((persona) => {
-        const nombre = persona.querySelector("input[name='nombre']").value;
-        const apellido = persona.querySelector("input[name='apellido']").value;
-        const dni = persona.querySelector("input[name='dni']").value;
-        const email = persona.querySelector("input[name='email']").value;
-        const telefono = persona.querySelector("input[name='telefono']").value;
-    
-        
-        // Crear un objeto de persona
-        const personaObj = new Inscripto(nombre,apellido,dni,email,telefono);
-
-        // Agregar el objeto al array inscriptos
-        inscriptos.push(personaObj);
-
-    });
-    
-    // Agregar el array inscriptos y importe total al array inscripcion
-    inscripcion.push(inscriptos);
-    inscripcion.push(importe_nuevo);
-    
-
     //modal box
-
     const modal = document.querySelector('.modal');
     const closeModalBtn = document.querySelector('.cancel-btn');
 
-    modal.style.display = "block";
-    mostrarResumenInscriptosModal();
+    // valida si el formulario tiene los datos correcto, si todo esta correcto continua con el proceso
+    if(validarFormularioInscripcion()) {
+
+        // Limpiar el array para evitar duplicados
+        inscriptos.length = 0;
+        inscripcion.length = 0;
+
+        // Obtener todos los datos de personas
+        const personas = document.querySelectorAll('.person-data');
+        personas.forEach((persona) => {
+            const nombre = persona.querySelector("input[name='nombre']").value;
+            const apellido = persona.querySelector("input[name='apellido']").value;
+            const dni = persona.querySelector("input[name='dni']").value;
+            const email = persona.querySelector("input[name='email']").value;
+            const telefono = persona.querySelector("input[name='telefono']").value;
+
+
+            // Crear un objeto de persona
+            const personaObj = new Inscripto(nombre, apellido, dni, email, telefono);
+
+            // Agregar el objeto al array inscriptos
+            inscriptos.push(personaObj);
+
+        });
+
+        // Agregar el array inscriptos y importe total al array inscripcion
+        inscripcion.push(inscriptos);
+        inscripcion.push(importe_nuevo);
+
+
+        //modal box
+
+        modal.style.display = "block";
+        mostrarResumenInscriptosModal();
+
+
+        closeModalBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none"
+            }
+        }
+
+
+        const carritoBTN = document.querySelector('.add-cart-btn');
+        carritoBTN.addEventListener('click', function () {
+            contadorEnvio++;
+            //solo hace una sola vez, en caso que llame 2 veces o mas
+            if (contadorEnvio == 1) {
+                let cursoPresencial = agregarInscriptosAlCursoPresencial();
+                guardarCursoPresencialCarrito(cursoPresencial, carrito);
+                sessionStorage.setItem("carrito", JSON.stringify(carrito));
+                textoCarrito.innerHTML = carrito.cantidad_total;
+                form.submit();
+            }
+
+
+        });
+
+    }
     
-
-    closeModalBtn.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none"
-        }
-    }
-
-
-    const carritoBTN = document.querySelector('.add-cart-btn');
-    carritoBTN.addEventListener('click', function() {
-        contadorEnvio++;
-        //solo hace una sola vez, en caso que llame 2 veces o mas
-        if(contadorEnvio==1) {
-            let cursoPresencial = agregarInscriptosAlCursoPresencial();
-            guardarCursoPresencialCarrito(cursoPresencial,carrito);
-            sessionStorage.setItem("carrito", JSON.stringify(carrito));
-            textoCarrito.innerHTML = carrito.cantidad_total;
-            form.submit();
-        }
-         
-
-    });
 
 } 
 

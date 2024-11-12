@@ -72,11 +72,11 @@
                 <option value="Test Driven Development (TDD) con Jest"></option>
 
             </datalist>
-            <a href="../pages/carrito.html" class="header__principal-carrito">
+            <a href="#" class="header__principal-carrito">
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>
-                <span class="texto-carrito">2</span>
+                <span class="texto-carrito"></span>
             </a>
             <a href="../pages/InicioSesionIndividuo.html" class="header__principal-iniciar-sesion">
                 Iniciar sesión
@@ -85,6 +85,21 @@
                 Mi Perfil
             </a>
         </div>
+
+         <!--///////////////////-->
+         <div class="carrito-sidebar">
+            <p class="carrito-mensaje msj-logueado">No hay cursos en tu carrito.</p>
+            <p class="carrito-mensaje">Primero inicie sesion</p>
+
+            <div class="carrito-lista-producto">
+            </div>
+        </div>
+        <!--///////////////////-->
+
+
+
+
+
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__menu-item">
@@ -215,6 +230,8 @@
         </div>
     </footer>
     <script type="module" src="../js/cerrar-session.js"></script>
+    <script type="module" src="../js/sidebar-carrito.js"></script>
+    <script src="../js/lista_cursos.js"></script>
 
 </body>
 </html>

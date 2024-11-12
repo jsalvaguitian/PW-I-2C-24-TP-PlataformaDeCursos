@@ -1,3 +1,8 @@
+let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+let botonCarrito = document.querySelector(".header__principal-carrito");
+let textoCarrito = botonCarrito.querySelector(".texto-carrito");
+textoCarrito.innerHTML = carrito.cantidad_total;
+
 const cursos = document.querySelectorAll('.course');
 cursos.forEach((elemento)=>{
     const idCurso=elemento.getAttribute('idCurso');

@@ -1,6 +1,11 @@
 import * as ayudante from "./ayudante.js";
 import * as validaciones from "./validar-medio-pago.js";
 
+let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+let botonCarrito = document.querySelector(".header__principal-carrito");
+let textoCarrito = botonCarrito.querySelector(".texto-carrito");
+textoCarrito.innerHTML = carrito.cantidad_total;
+
 let nombre = document.getElementById('firstName');
 let apellido = document.getElementById('lastName');
 let mail = document.getElementById('email');

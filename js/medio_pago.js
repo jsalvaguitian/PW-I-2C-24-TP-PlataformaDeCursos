@@ -5,6 +5,12 @@ const listaUsuarios = ayudante.buscarEntidadEnLocalStorage("usuario");
 const usuarioActual = ayudante.buscarEntidadEnSessionStorage("usuarioLogueado");
 const carrito = ayudante.buscarEntidadEnSessionStorage("carrito");
 
+/////
+let botonCarrito = document.querySelector(".header__principal-carrito");
+let textoCarrito = botonCarrito.querySelector(".texto-carrito");
+textoCarrito.innerHTML = carrito.cantidad_total;
+/////
+
 document.addEventListener("DOMContentLoaded", cargaDinamica);
 const formulario =  document.querySelector(".js-formulario");
 

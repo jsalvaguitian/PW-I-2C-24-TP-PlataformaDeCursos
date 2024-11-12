@@ -80,7 +80,7 @@
                 <option value="Test Driven Development (TDD) con Jest"></option>
 
             </datalist>
-            <a href="./carrito.html" class="header__principal-carrito">
+            <a href="#" class="header__principal-carrito">
                 <span class="material-symbols-outlined">
                     shopping_cart
                 </span>
@@ -94,6 +94,17 @@
             </a>
             
         </div>
+
+        <!--///////////////////-->
+        <div class="carrito-sidebar">
+            <p class="carrito-mensaje msj-logueado">No hay cursos en tu carrito.</p>
+            <p class="carrito-mensaje">Primero inicie sesion</p>
+
+            <div class="carrito-lista-producto">
+            </div>
+        </div>
+        <!--///////////////////-->
+
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__menu-item">
@@ -129,27 +140,27 @@
                     <div class="person-data i1">
                         <div class="input-group">
                             <label for="nombre1">Nombre:</label>
-                            <input type="text" id="nombre1" name="nombre" required>
+                            <input type="text" id="nombre1" name="nombre" >
                         </div>
                         <div class="input-group">
                             <label for="apellido1">Apellido:</label>
-                            <input type="text" id="apellido1" name="apellido" required>
+                            <input type="text" id="apellido1" name="apellido" >
                         </div>
                         <div class="input-group">
                             <label for="dni1">DNI:</label>
-                            <input type="number" id="dni1" name="dni" required>
+                            <input type="number" id="dni1" name="dni" >
                         </div>
                         <div class="input-group">
                             <label for="email1">Email:</label>
-                            <input type="email" id="email1" name="email" required>
+                            <input type="email" id="email1" name="email" >
                         </div>
                         <div class="input-group">
                             <label for="telefono1">Teléfono:</label>
-                            <input type="tel" id="telefono1" name="telefono" placeholder="1122224444"   pattern="[0-9]{10}" required>
+                            <input type="tel" id="telefono1" name="telefono" placeholder="1122224444" >
                         </div>
                         <div class="input-group">
                             <label for="importe1">Importe:</label>
-                            <input type="text" id="importe1" name="importe" value="25000" disabled required>
+                            <input type="text" id="importe1" name="importe" value="25000" disabled >
                         </div>
                         <div class="delete-person">
                             <button type="button" class="person-btn delete" name="btn-delete1" onclick="eliminar_persona(1)"> − </button>
@@ -159,6 +170,10 @@
                    
                 </div>
                 
+                <!--Mensaje de error en la validacion-->
+                <div id="mensaje_error" class="error">
+                </div>
+
                 <!-- Botón para agregar más personas -->
                 <div class="add-person">
                     <button type="button" class="person-btn add"> + </button>
@@ -237,7 +252,8 @@
 
     <script src="../js/inscripcion_curso_presencial.js" type="module"></script>
     <script type="module" src="../js/cerrar-session.js"></script>
-    <!-- <script type="module" src="../js/sidebar-carrito.js"></script> --->
+    <script src="../js/validacionInscripcion.js"></script>
+    <script type="module" src="../js/sidebar-carrito.js"></script>
 
 </body>
 </html>

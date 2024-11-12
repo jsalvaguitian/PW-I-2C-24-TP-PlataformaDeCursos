@@ -5,6 +5,12 @@ import { Carrito } from "./ClaseCarrito.js"
 let btnCarrito = document.querySelector(".header__principal-carrito");
 let sidebar = document.querySelector(".carrito-sidebar");
 
+/////
+estiloSidebar(); 
+let contadorPresencial = 0; // sirve para que ponga los inscriptos en el curso presencial correcto
+/////
+
+
 const eliminarCursoDelCarritoSide = (index) => {
     let carrito = buscarEntidadEnSessionStorage("carrito");
     let textoCarrito = document.querySelector(".texto-carrito");
@@ -64,35 +70,101 @@ export function actualizarSidebar() {
                 <p class="carrito-columna2-cant-header">Cantidad</p>
                 <p class="carrito-columna3-precio-header">Precio</p>
                 <p class="carrito-columna4-eliminar-header"></p>`;
-
+                
             //creo fila curso de carrito
             if (carrito.cursos_a_comprar.length != 0) {
                 for (let i = 0; i < carrito.cursos_a_comprar.length; i++) {
-                    carritoList.innerHTML += `  <div class="carrito-columna1-curso-comprar">
-                    <div class="carrito-img-curso">
-                        <img src="${carrito.cursos_a_comprar[i].curso.imagen_url}" alt="">
-                    </div>
-                    <div class="carrito-text-curso">
-                        <h4 class="carrito-nombre-curso">${carrito.cursos_a_comprar[i].curso.nombre}</h4>
-                        <div class="carrito-desc-curso">
-                            <p class="formato-curso">Formato:<span>${carrito.cursos_a_comprar[i].curso.modalidad}</span></p>
-                            <p class="hora-curso">Hora: <span>${carrito.cursos_a_comprar[i].curso.horas}</span></p>
-                            <p>Prof: <span class="prof-curso">${carrito.cursos_a_comprar[i].curso.profNombre}</span></p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="carrito-columna2-cant">
-                    <p>${carrito.cursos_a_comprar[i].cantidad}</p>
-                </div>
-                <div class="carrito-columna3-precio">
-                    <p>$ <span>${carrito.cursos_a_comprar[i].curso.precio}</span></p>
-                </div>
-                <div class="carrito-columna4-">
-                    <button class="btn-carrito-eliminar" indexc="${i}"><span class="material-symbols-outlined">
-                            delete
-                        </span></button>
-                </div>`
+                    if(carrito.cursos_a_comprar[i].curso.modalidad === "Online") {
+
+                        
+                        
+                        carritoList.innerHTML += `  
+                        <div class="carrito-columna1-curso-comprar">
+                            <div class="carrito-img-curso">
+                                <img src="${carrito.cursos_a_comprar[i].curso.imagen_url}" alt="">
+                            </div>
+                            <div class="carrito-text-curso">
+                                <h4 class="carrito-nombre-curso">${carrito.cursos_a_comprar[i].curso.nombre}</h4>
+                                <div class="carrito-desc-curso">
+                                    <p class="formato-curso">Formato:<span>${carrito.cursos_a_comprar[i].curso.modalidad}</span></p>
+                                    <p class="hora-curso">Hora: <span>${carrito.cursos_a_comprar[i].curso.horas}</span></p>
+                                    <p>Prof: <span class="prof-curso">${carrito.cursos_a_comprar[i].curso.profNombre}</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carrito-columna2-cant">
+                            <p>${carrito.cursos_a_comprar[i].cantidad}</p>
+                        </div>
+                        <div class="carrito-columna3-precio">
+                            <p>$ <span>${carrito.cursos_a_comprar[i].curso.precio}</span></p>
+                        </div>
+                        <div class="carrito-columna4-">
+                            <button class="btn-carrito-eliminar" indexc="${i}"><span class="material-symbols-outlined">
+                                    delete
+                                </span></button>
+                        </div>`
+
+                    }
+
+                    if(carrito.cursos_a_comprar[i].curso.modalidad === "Presencial") {
+                        contadorPresencial++;
+                        
+                        let inscriptos = [];
+                        inscriptos = carrito.cursos_a_comprar[i].curso.inscriptos;
+                        let cantidad_inscriptos = inscriptos.length;
+                        
+
+                
+                        
+                        carritoList.innerHTML += `  
+                        <div class="carrito-columna1-curso-comprar">
+                            <div class="carrito-img-curso">
+                                <img src="${carrito.cursos_a_comprar[i].curso.imagen_url}" alt="">
+                            </div>
+                            <div class="carrito-text-curso">
+                                <h4 class="carrito-nombre-curso">${carrito.cursos_a_comprar[i].curso.nombre}</h4>
+                                <div class="carrito-desc-curso">
+                                    <p class="formato-curso">Formato:<span>${carrito.cursos_a_comprar[i].curso.modalidad}</span></p>
+                                    <p class="hora-curso">Hora: <span>${carrito.cursos_a_comprar[i].curso.horas}</span></p>
+                                    <p>Prof: <span class="prof-curso">${carrito.cursos_a_comprar[i].curso.profNombre}</span></p>
+                                    <p class="cantidad-inscriptos-curso">Cantidad de inscriptos: <span>${cantidad_inscriptos}</span></p>
+                                    <div class="inscriptos-list i${contadorPresencial}">
+                                        <p class="titulo-inscriptos"><strong>Inscriptos:</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carrito-columna2-cant">
+                            <p>${carrito.cursos_a_comprar[i].cantidad}</p>
+                        </div>
+                        <div class="carrito-columna3-precio">
+                            <p>$ <span>${carrito.cursos_a_comprar[i].curso.precio}</span></p>
+                        </div>
+                        <div class="carrito-columna4-">
+                            <button class="btn-carrito-eliminar" indexc="${i}"><span class="material-symbols-outlined">
+                                    delete
+                                </span></button>
+                        </div>`
+                        
+                        const inscriptos_list = document.querySelector('.inscriptos-list.i' + contadorPresencial);
+                        //inscriptos_list.innerHTML = ""; 
+                        
+                        inscriptos.forEach((inscripto, index) => {
+                            let inscripto_data = document.createElement("div");
+                            inscripto_data.className = 'inscripto-data';
+                            inscripto_data.innerHTML =  `
+                            <p class="titulo-inscripto-data"><strong>Inscripto ${index+1}:</strong></p>
+                            <p>Nombre: ${inscripto.nombre}, Apellido: ${inscripto.apellido}, DNI: ${inscripto.dni}, Email: ${inscripto.email}, 
+                            Telefono: ${inscripto.telefono}</p>
+                            `;
+                        
+                            inscriptos_list.appendChild(inscripto_data);
+                        }); 
+
+                    }
 
                 }
 
@@ -150,3 +222,8 @@ export function actualizarSidebar() {
 }
 actualizarSidebar();
 
+
+
+function estiloSidebar() {
+    sidebar.style.width = "98%"
+}
