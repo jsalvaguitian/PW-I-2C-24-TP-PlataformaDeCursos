@@ -6,7 +6,7 @@ let btnCarrito = document.querySelector(".header__principal-carrito");
 let sidebar = document.querySelector(".carrito-sidebar");
 
 /////
-estiloSidebar(); 
+estiloSidebar();
 let contadorPresencial = 0; // sirve para que ponga los inscriptos en el curso presencial correcto
 /////
 
@@ -16,11 +16,21 @@ const eliminarCursoDelCarritoSide = (index) => {
     let textoCarrito = document.querySelector(".texto-carrito");
     console.log("estoy dentro de eliminar");
     if (carrito && carrito.cursos_a_comprar) {
+        let modalidad = carrito.cursos_a_comprar[index].curso.modalidad;
         console.log("estoy dentro del if final");
-        const precioCursoAEliminar = carrito.cursos_a_comprar[index].curso.precio;
-        carrito.cursos_a_comprar.splice(index, 1); //eliminar el indice que le doy 
-        carrito.cantidad_total -= 1;
-        carrito.precio_total -= precioCursoAEliminar;
+        if (modalidad == "Online") {
+            const precioCursoAEliminar = carrito.cursos_a_comprar[index].curso.precio;
+            carrito.cursos_a_comprar.splice(index, 1); //eliminar el indice que le doy 
+            carrito.cantidad_total -= 1;
+            carrito.precio_total -= precioCursoAEliminar;
+
+        }else{
+            const precioCursoAEliminar = carrito.cursos_a_comprar[index].curso.precio * carrito.cursos_a_comprar[index].curso.inscriptos.length;
+            carrito.cantidad_total -= carrito.cursos_a_comprar[index].curso.inscriptos.length;
+            carrito.cursos_a_comprar.splice(index, 1); //eliminar el indice que le doy 
+            carrito.precio_total -= precioCursoAEliminar;
+        }
+
     }
 
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
@@ -28,7 +38,18 @@ const eliminarCursoDelCarritoSide = (index) => {
     actualizarSidebar();
 }
 const eliminarGiftCardDelCarritoSide = (index) => {
-    console.log("se elimina la giftcard: " + index);
+    let carrito = buscarEntidadEnSessionStorage("carrito");
+    let textoCarrito = document.querySelector(".texto-carrito");
+    if (carrito && carrito.gift_card) {
+        const precioGiftCardAEliminar = carrito.gift_card[index].monto;
+        carrito.gift_card.splice(index, 1);
+        carrito.cantidad_total -= 1;
+        carrito.precio_total -= precioGiftCardAEliminar
+    }
+
+    sessionStorage.setItem("carrito", JSON.stringify(carrito));
+    textoCarrito.innerHTML = carrito.cantidad_total;//actualizo el contadorTotal
+    actualizarSidebar();
 }
 
 //mostrar-ocultar sidebar
@@ -61,7 +82,7 @@ export function actualizarSidebar() {
         if (carrito.cantidad_total == 0) {
             mensajeCarritoVacio.style.display = "block";
             let carritoList = document.querySelector(".carrito-lista-producto");
-            carritoList.innerHTML="";
+            carritoList.innerHTML = "";
         } else {
 
             let carritoList = document.querySelector(".carrito-lista-producto")
@@ -70,15 +91,15 @@ export function actualizarSidebar() {
                 <p class="carrito-columna2-cant-header">Cantidad</p>
                 <p class="carrito-columna3-precio-header">Precio</p>
                 <p class="carrito-columna4-eliminar-header"></p>`;
-                
+
             //creo fila curso de carrito
             if (carrito.cursos_a_comprar.length != 0) {
                 for (let i = 0; i < carrito.cursos_a_comprar.length; i++) {
 
-                    if(carrito.cursos_a_comprar[i].curso.modalidad === "Online") {
+                    if (carrito.cursos_a_comprar[i].curso.modalidad === "Online") {
 
-                        
-                        
+
+
                         carritoList.innerHTML += `  
                         <div class="carrito-columna1-curso-comprar">
                             <div class="carrito-img-curso">
@@ -101,23 +122,23 @@ export function actualizarSidebar() {
                             <p>$ <span>${carrito.cursos_a_comprar[i].curso.precio}</span></p>
                         </div>
                         <div class="carrito-columna4-">
-                            <button class="btn-carrito-eliminar" indexc="${i}"><span class="material-symbols-outlined">
+                            <button class="btn-carrito-eliminar btn-delete-cursos" indexc="${i}"><span class="material-symbols-outlined">
                                     delete
                                 </span></button>
                         </div>`
 
                     }
 
-                    if(carrito.cursos_a_comprar[i].curso.modalidad === "Presencial") {
+                    if (carrito.cursos_a_comprar[i].curso.modalidad === "Presencial") {
                         contadorPresencial++;
-                        
+
                         let inscriptos = [];
                         inscriptos = carrito.cursos_a_comprar[i].curso.inscriptos;
                         let cantidad_inscriptos = inscriptos.length;
-                        
 
-                
-                        
+
+
+
                         carritoList.innerHTML += `  
                         <div class="carrito-columna1-curso-comprar">
                             <div class="carrito-img-curso">
@@ -141,28 +162,28 @@ export function actualizarSidebar() {
                             <p>${carrito.cursos_a_comprar[i].cantidad}</p>
                         </div>
                         <div class="carrito-columna3-precio">
-                            <p>$ <span>${carrito.cursos_a_comprar[i].curso.precio}</span></p>
+                            <p>$ <span>${carrito.cursos_a_comprar[i].curso.precio*cantidad_inscriptos}</span></p>
                         </div>
                         <div class="carrito-columna4-">
-                            <button class="btn-carrito-eliminar" indexc="${i}"><span class="material-symbols-outlined">
+                            <button class="btn-carrito-eliminar btn-delete-cursos" indexc="${i}"><span class="material-symbols-outlined">
                                     delete
                                 </span></button>
                         </div>`
-                        
+
                         const inscriptos_list = document.querySelector('.inscriptos-list.i' + contadorPresencial);
                         //inscriptos_list.innerHTML = ""; 
-                        
+
                         inscriptos.forEach((inscripto, index) => {
                             let inscripto_data = document.createElement("div");
                             inscripto_data.className = 'inscripto-data';
-                            inscripto_data.innerHTML =  `
-                            <p class="titulo-inscripto-data"><strong>Inscripto ${index+1}:</strong></p>
+                            inscripto_data.innerHTML = `
+                            <p class="titulo-inscripto-data"><strong>Inscripto ${index + 1}:</strong></p>
                             <p>Nombre: ${inscripto.nombre}, Apellido: ${inscripto.apellido}, DNI: ${inscripto.dni}, Email: ${inscripto.email}, 
                             Telefono: ${inscripto.telefono}</p>
                             `;
-                        
+
                             inscriptos_list.appendChild(inscripto_data);
-                        }); 
+                        });
 
                     }
 
@@ -192,32 +213,58 @@ export function actualizarSidebar() {
                     <p>$ <span>${carrito.gift_card[i].monto}</span></p>
                 </div>
                 <div class="carrito-columna4-">
-                    <button class="btn-carrito-eliminar" data-indeg="${i}"><span class="material-symbols-outlined">
+                    <button class="btn-carrito-eliminar btn-delete-giftcard" indexg="${i}"><span class="material-symbols-outlined">
                             delete
                         </span></button>
                 </div>`;
 
                 }
             }
-
+            /*data-indeg="${i}" */
             sidebar.innerHTML += `<a href="../pages/carrito.html" class="a_irCarrito">Ir al carrito </a>`
 
         }
-        const btnEliminar = document.querySelectorAll(".btn-carrito-eliminar");
-        btnEliminar.forEach((btn) => {
-            btn.addEventListener("click", (event) => {
-                const index = btn.getAttribute("indexc");
-                const indexG = event.target.dataset.indeg;
-                console.log(index);
-                if (index !== undefined) {
-                    console.log("estoy dentro de aca");
-                    eliminarCursoDelCarritoSide(index);
-                    location.reload();
-                } else if (indexG !== undefined) {
-                    eliminarGiftCardDelCarritoSide(indexG);
-                }
+        const btnEliminar = document.querySelectorAll(".btn-delete-cursos");
+        const btnEliminarGift = document.querySelectorAll(".btn-delete-giftcard");
+
+        if (btnEliminar != null) {
+            btnEliminar.forEach((btn) => {
+                btn.addEventListener("click", (event) => {
+                    const index = btn.getAttribute("indexc");
+                    // const indexG = event.target.dataset.indeg;
+                    //const indexG = btn.getAttribute("indexg")
+                    console.log(index);
+                    if (index !== undefined || index !== null) {
+                        console.log("estoy dentro de aca");
+                        eliminarCursoDelCarritoSide(index);
+                        location.reload();
+                    }/*else if (indexG !== undefined  || indexG !==null ) {
+                        eliminarGiftCardDelCarritoSide(indexG);
+                    }*/
+                });
             });
-        });
+
+        }
+        if (btnEliminarGift != null) {
+            btnEliminarGift.forEach((btn) => {
+                btn.addEventListener("click", (event) => {
+                    //const index = btn.getAttribute("indexc");
+                    // const indexG = event.target.dataset.indeg;
+                    const indexG = btn.getAttribute("indexg")
+                    console.log(indexG);
+                    /*if (index !== undefined || index !==null) {
+                        console.log("estoy dentro de aca");
+                        eliminarCursoDelCarritoSide(index);
+                        location.reload();
+                    }*/
+                    if (indexG !== undefined || indexG !== null) {
+                        eliminarGiftCardDelCarritoSide(indexG);
+                    }
+                });
+            });
+
+        }
+
     }
 }
 actualizarSidebar();

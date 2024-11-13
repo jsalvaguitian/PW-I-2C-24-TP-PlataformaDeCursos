@@ -259,8 +259,9 @@ function guardarCursoPresencialCarrito(cursoPresencial,carrito) {
 // agregar info/entrada al carrito
 
 function agregarUnaFilaACarrito(carrito, cursoPresencial) {
-    carrito.cantidad_total += 1;
-    let filaCarrito = crearFilaTablaCarrito(1, cursoPresencial);
+    //carrito.cantidad_total += 1;
+    carrito.cantidad_total += cursoPresencial.inscriptos.length;
+    let filaCarrito = crearFilaTablaCarrito(cursoPresencial.inscriptos.length, cursoPresencial);//1 borrado
     carrito.cursos_a_comprar.push(filaCarrito);
 }
 
@@ -276,7 +277,7 @@ function crearFilaTablaCarrito(cantidad, cursoPresencial) {
 
 
 function calcularPrecioTotal(carrito,cursoPresencial) {
-    carrito.precio_total +=cursoPresencial.precio
+    carrito.precio_total +=(cursoPresencial.precio*cursoPresencial.inscriptos.length)
 }
 
 // ver si existe duplicado
