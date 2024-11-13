@@ -305,6 +305,10 @@
 .footer__iconos-de-redes-sociales a:hover {
     color: #fff;
 }
+
+.items-categorias-footer{
+    color: #c3c3c3;
+}
 /*********** Header-usuario-logueado*******/
 .btn-aprendizaje-usuario{
     text-decoration: none;

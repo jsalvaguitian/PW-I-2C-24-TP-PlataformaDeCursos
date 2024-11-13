@@ -86,7 +86,7 @@ function generarCodigo(nombre){
 function mostrarModal() {
     prepararModal();
     let divTexto = document.querySelector(".texto-modal");
-    divTexto.innerHTML = `<h3>😊 </h3> <a href="../pages/InicioSesionIndividuo.html"><strong>aqui</strong></a>`
+    divTexto.innerHTML = `<h3>😊Por favor inicie sesión <a href="../pages/InicioSesionIndividuo.html"><strong>aqui</strong></a></h3> `
     return false;
 
 }
