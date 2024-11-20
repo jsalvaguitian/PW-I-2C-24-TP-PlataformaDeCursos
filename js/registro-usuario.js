@@ -8,7 +8,13 @@ password
 import { Usuario } from "./ClaseUsuario.js";
 import { buscarEntidadEnLocalStorage } from "./ayudante.js";
 
-document.querySelector('.js-btn-guarda-usuario').addEventListener('click',guardarUsuario);
+
+const formulario =  document.querySelector(".js-formulario-registro");
+
+formulario.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    guardarUsuario();
+})
 function generarIdUsuario(){
     let newId = 0;
 
