@@ -54,7 +54,8 @@ const eliminarGiftCardDelCarritoSide = (index) => {
 
 //mostrar-ocultar sidebar
 btnCarrito.addEventListener("click", () => {
-    if (sidebar.style.display === 'none') {
+    if (sidebar.style.display === 'none' || sidebar.style.display == "") {
+        console.log("hice click")
         sidebar.style.display = 'block';
     } else {
         sidebar.style.display = 'none';
