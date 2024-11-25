@@ -1,6 +1,6 @@
 function validarUsuario(){
     let regexTexto = /^[a-zA-Z]+$/; //solo letras minusculas y o mayusc
-    let regexContrasenia = /^(?=.*[A-Z])(?=.*\d).{8,}$/; //requiere al menos 8 caracteres, al menos una letra mayúscula y un número
+    let regexContrasenia = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/; //requiere al menos 8 caracteres, al menos una letra mayúscula y un número
     let regexMail = /^[0-9a-zA-Z._.-]+\@[0-9a-zA-Z._.-]+\.[0-9a-zA-Z]+$/;
 
     let error = false;
